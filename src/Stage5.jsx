@@ -113,79 +113,73 @@ function Section4() {
 
     return (
       <div style={{
-        width: '100vw',
-        minHeight: '100vh',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: 'black'
+          width: '100%',
+          minHeight: '100vh',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          display: 'flex',
+          flexDirection: 'column', // Changed to column to stack video and text vertically
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: 'black',
+          position: 'relative'
       }}>
-        <span style={{
-          fontSize: '2em',
-          color: 'white',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-          fontFamily: 'sans-serif',
-          fontWeight: 'bold',
-          letterSpacing: '2px',
-        }}>
-            {videoEnded ? (
-                <img src={placeholderImage} style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '55%',
-                    height: '55%',
-                    objectFit: 'contain',
-                    zIndex: 1
-                }} alt="Placeholder"/>
-            ) : (
-                <video
-                    ref={videoRef}
-                    style={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        zIndex: 1
-                    }}
-                    poster={placeholderImage}
-                    autoPlay
-                    muted
-                    onEnded={handleVideoEnd}
-                >
-                    <source src={videoSrc} type="video/mp4"/>
-                    Your browser does not support the video tag.
-                </video>
-            )}
-            <div style={{
-                width: '100%',
-                minHeight: '100vh',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                background: 'black'
-            }}>
-                <span style={{
-                    fontSize: '2em',
-                    color: 'white',
-                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                    fontFamily: 'sans-serif',
-                    fontWeight: 'bold',
-                    letterSpacing: '2px',
-                }}>
-                    Coming Soon!
-                </span>
-            </div>
-        </div>
-    );
+          {videoEnded ? (
+              <img src={placeholderImage} style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '55%',
+                  height: '55%',
+                  objectFit: 'contain',
+                  zIndex: 1
+              }} alt="Placeholder"/>
+          ) : (
+              <video
+                  ref={videoRef}
+                  style={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      zIndex: 1
+                  }}
+                  poster={placeholderImage}
+                  autoPlay
+                  muted
+                  onEnded={handleVideoEnd}
+              >
+                  <source src={videoSrc} type="video/mp4"/>
+                  Your browser does not support the video tag.
+              </video>
+          )}
+          <div style={{
+              width: '100%',
+              minHeight: '100vh',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: 'black'
+          }}>
+              <span style={{
+                  fontSize: '2em',
+                  color: 'white',
+                  textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                  fontFamily: 'sans-serif',
+                  fontWeight: 'bold',
+                  letterSpacing: '2px',
+              }}>
+                  Coming Soon!
+              </span>
+          </div>
+      </div>
+  );
 }
 
 export default Stage5;
