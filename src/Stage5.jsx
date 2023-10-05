@@ -7,7 +7,7 @@ import logovideo from './assets/logovideo.mp4';
 
 function Stage5() {
     return (
-        <div style={{height: '100vh', width: '100%', overflowY: 'auto'}}>
+        <div style={{width: '100vw', height: '100vh'}}>
             <Section1/>
             <Section2/>
             <Section3/>
@@ -18,19 +18,23 @@ function Stage5() {
 
 
 function Section1() {
+
     const backgroundImage = `url(${section1bgImage})`;
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
-    return (
-      <div style={{
+
+    const section1css = {
         width: '100vw',
-        height: '200vw',
+        minHeight: '200vw',
         backgroundSize: '200%',
         backgroundPosition: 'calc(50% - 100px) center',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         background: `${linearGradient}, ${backgroundImage}`
-      }}>
+    };
+
+    return (
+      <div style={section1css}>
         <span style={{
           fontSize: '2em',
           color: 'white',
@@ -49,7 +53,6 @@ function Section2() {
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
     return (
       <div style={{
-        width: '100vw',
         height: '160vw',
         backgroundSize: '140%',
         backgroundPosition: 'calc(50% - 100px) center',
@@ -77,7 +80,6 @@ function Section3() {
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
     return (
       <div style={{
-        width: '100vw',
         minHeight: '100vh',
         backgroundSize: '150%',
         backgroundPosition: 'calc(50% - 220px) center',

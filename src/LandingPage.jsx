@@ -20,7 +20,7 @@ function LandingPage() {
     // Set a timeout to change the stage
     const timer = setTimeout(() => {
       setStage(prevStage => prevStage + 1);
-    }, 700); // Change stage every 1.5 seconds
+    }, 2000); // Change stage every 1.5 seconds
 
     // Clear the timeout if the component is unmounted
     return () => clearTimeout(timer);
@@ -28,20 +28,20 @@ function LandingPage() {
 
   const renderStage = () => {
     switch(stage) {
-      case 0: return <Stage0 />;
-      case 1: return <Stage1 />;
-      case 2: return <Stage2 />;
-      case 3: return <Stage3 />;
-      case 4: return <Stage4 />;
-      case 5: return <Stage5 />;
-      default: return <Stage5 />;
+      case 0: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage0 /></div>;
+      case 1: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage1 /></div>;
+      case 2: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage2 /></div>;
+      case 3: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage3 /></div>;
+      case 4: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage4 /></div>;
+      case 5: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage5 /></div>;
+      default: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width:'100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage5 /></div>;
     }
   };
 
   return (
-    <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}>
+    <>
       {renderStage()}
-    </div>
+    </>
   );
 }
 
@@ -67,15 +67,15 @@ const ringBase = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: '120px',
+    fontSize: '5vw',
     border: '1px solid white',
     fontFamily: 'NulShock'
   };
   
   function Stage0() {
     return (
-      <div style={{ ...ringBase, width: '638px', height: '638px', borderColor: '#C800FF' }}>
-        <span style={{ color: '#E75CFF', fontWeight: 'bold', letterSpacing: '2px', fontSize: '120px', webkitTextFillColor:"transparent", webkitTextStrokeWidth: "3px"}}>
+      <div style={{ ...ringBase, width: '25vw', height: '25vw', borderColor: '#C800FF' }}>
+        <span style={{ color: '#E75CFF', fontWeight: 'bold', letterSpacing: '2px', webkitTextFillColor:"transparent", webkitTextStrokeWidth: "3px"}}>
         MUSIC
         </span>
       </div>
@@ -85,12 +85,12 @@ const ringBase = {
   function Stage1() {
     return (
       <>
-        <div style={{ ...ringBase, width: '846px', height: '846px', whiteSpace: 'nowrap',  borderColor: 'rgba(254, 0, 0, 1)' }}>
+        <div style={{ ...ringBase, width: '33vw', height: '33vw', whiteSpace: 'nowrap',  borderColor: 'rgba(254, 0, 0, 1)' }}>
           <span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px'}}>
-            MUSIC, <span style={{ color: 'rgba(254, 0, 0, 1)', webkitTextFillColor:"transparent", webkitTextStrokeWidth: "3px", fontSize: '120px'}}>DRINKS</span>
+            MUSIC, <span style={{ color: 'rgba(254, 0, 0, 1)', webkitTextFillColor:"transparent", webkitTextStrokeWidth: "3px"}}>DRINKS</span>
           </span>
         </div>
-        <div style={{ ...ringBase, width: '638px', height: '638px', borderColor: '#fff' }}></div>
+        <div style={{ ...ringBase, width: '25vw', height: '25vw', borderColor: '#fff' }}></div>
       </>
     );
   }
@@ -98,13 +98,13 @@ const ringBase = {
   function Stage2() {
     return (
       <>
-        <div style={{ ...ringBase, width: '1102px', height: '1102px', borderColor: 'rgba(1, 255, 255, 1)', whiteSpace: 'nowrap'}}>
+        <div style={{ ...ringBase, width: '43vw', height: '43vw', borderColor: 'rgba(1, 255, 255, 1)', whiteSpace: 'nowrap'}}>
           <span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px'}}>
             MUSIC, DRINKS,<br/> <span style={{ color: 'rgba(1, 255, 255, 1)', webkitTextFillColor:"transparent", webkitTextStrokeWidth: '3px' }}>LIGHTS</span>
           </span>
         </div>
-        <div style={{ ...ringBase, width: '368px', height: '368px', borderColor: '#fff' }}></div>
-        <div style={{ ...ringBase, width: '578px', height: '578px', borderColor: 'rgba(255, 255, 255, 1)' }}></div>
+        <div style={{ ...ringBase, width: '14vw', height: '14vw', borderColor: '#fff' }}></div>
+        <div style={{ ...ringBase, width: '23vw', height: '23vw', borderColor: 'rgba(255, 255, 255, 1)' }}></div>
       </>
     );
   }
@@ -112,14 +112,14 @@ const ringBase = {
   function Stage3() {
     return (
       <>
-        <div style={{ ...ringBase, width: '1200px', height: '1200px', borderColor: 'rgba(0, 255, 1, 1)', whiteSpace: 'nowrap' }}>
+        <div style={{ ...ringBase, width: '47vw', height: '47vw', borderColor: 'rgba(0, 255, 1, 1)', whiteSpace: 'nowrap' }}>
           <span style={{color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
             MUSIC, DRINKS,<br/> LIGHTS <span style={{ color: 'rgba(0, 255, 1, 1)', webkitTextFillColor:"transparent", webkitTextStrokeWidth: "3px" }}>& ACTION</span>
           </span>
         </div>
-        <div style={{ ...ringBase, width: '368px', height: '368px' }}></div>
-        <div style={{ ...ringBase, width: '528px', height: '528px' }}></div>
-        <div style={{ ...ringBase, width: '578px', height: '578px', borderColor: 'rgba(255, 255, 255, 1)' }}></div>
+        <div style={{ ...ringBase, width: '14vw', height: '14vw' }}></div>
+        <div style={{ ...ringBase, width: '21vw', height: '21vw' }}></div>
+        <div style={{ ...ringBase, width: '23vw', height: '23vw', borderColor: 'rgba(255, 255, 255, 1)' }}></div>
       </>
     );
   }
@@ -127,15 +127,15 @@ const ringBase = {
   function Stage4() {
     return (
       <>
-        <div style={{ ...ringBase, width: '1200px', height: '1200px', whiteSpace: 'nowrap' }}>
+        <div style={{ ...ringBase, width: '47vw', height: '47vw', whiteSpace: 'nowrap' }}>
           <span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
             MUSIC, DRINKS,<br/> LIGHTS & ACTION
           </span>
         </div>
-        <div style={{ ...ringBase, width: '368px', height: '368px' }}></div>
-        <div style={{ ...ringBase, width: '528px', height: '528px' }}></div>
-        <div style={{ ...ringBase, width: '578px', height: '578px' }}></div>
-        <div style={{ ...ringBase, width: '928px', height: '928px' }}></div>
+        <div style={{ ...ringBase, width: '14vw', height: '14vw' }}></div>
+        <div style={{ ...ringBase, width: '21vw', height: '21vw' }}></div>
+        <div style={{ ...ringBase, width: '23vw', height: '23vw' }}></div>
+        <div style={{ ...ringBase, width: '36vw', height: '36vw' }}></div>
       </>
     );
   }
