@@ -4,15 +4,6 @@ import Stage5 from './Stage5';
 function LandingPage() {
   const [stage, setStage] = useState(0);
 
-  /*const handleTap = () => {
-    if (stage < 5) {
-      setStage(prevStage => prevStage + 1);
-    } else {
-      setStage(5);
-    }
-  };
-  console.log(stage);*/
-
   useEffect(() => {
     // If it's the last stage, don't set a timeout
     if (stage >= 5) return;
@@ -20,7 +11,7 @@ function LandingPage() {
     // Set a timeout to change the stage
     const timer = setTimeout(() => {
       setStage(prevStage => prevStage + 1);
-    }, 2000); // Change stage every 1.5 seconds
+    }, 700); // Change stage every 0.7 seconds
 
     // Clear the timeout if the component is unmounted
     return () => clearTimeout(timer);
