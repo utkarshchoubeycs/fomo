@@ -62,14 +62,14 @@ function Section2() {
             background: `${linearGradient}, ${backgroundImage}`
         }}>
         <span style={{
-            fontSize: '2em',
+            textAlign: 'left',
+            font: 'normal normal medium 50px/61px Roboto',
+            fontSize: '4vw',
             color: 'white',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-            fontFamily: 'sans-serif',
-            fontWeight: 'bold',
-            letterSpacing: '2px',
+            letterSpacing: '0px',
         }}>
-          Text for Section 2
+          Picture this: <br/>
+            Vibrant parties, dynamic pubs, and buzzing clubs, all curated with a passion that only true party enthusiasts can understand. We've meticulously handpicked the hottest DJs, the most happening parties, and the trendiest spots to ensure you're always at the forefront of the action.
         </span>
         </div>
     );
@@ -83,8 +83,8 @@ function Section3() {
             width: '100vw',
             height: '100vh',
             minHeight: '4208',
-            backgroundSize: '150%',
-            backgroundPosition: 'calc(50% - 220px) center',
+            //backgroundSize: '150%',
+            //backgroundPosition: 'calc(50% - 220px) center',
             display: 'flex',
             flexDirection: 'column', // To stack the text lines vertically
             justifyContent: 'center',
@@ -140,8 +140,8 @@ function Section4() {
     return (
         <div style={{
             width: '100%',
-            height: '100vh',
             minHeight: '1791',
+            height: '100vh',
             background: 'black',
             display: 'flex',
             flexDirection: 'column', // Stack children vertically
