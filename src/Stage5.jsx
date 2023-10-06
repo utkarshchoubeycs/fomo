@@ -34,13 +34,13 @@ function Section1() {
     };
 
     return (
-      <div style={section1css}>
+        <div style={section1css}>
         <span style={{
-          fontSize: '2em',
-          color: 'white',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-          fontFamily: 'Roboto',
-          letterSpacing: '2px',
+            fontSize: '2em',
+            color: 'white',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+            fontFamily: 'Roboto',
+            letterSpacing: '2px',
         }}>
           Text for Section 1
         </span>
@@ -52,15 +52,15 @@ function Section2() {
     const backgroundImage = `url(${section2bgImage})`;
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
     return (
-      <div style={{
-        height: '160vw',
-        backgroundSize: '140%',
-        backgroundPosition: 'calc(50% - 100px) center',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: `${linearGradient}, ${backgroundImage}`
-      }}>
+        <div style={{
+            height: '160vw',
+            backgroundSize: '140%',
+            backgroundPosition: 'calc(50% - 100px) center',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background: `${linearGradient}, ${backgroundImage}`
+        }}>
         <span style={{
             fontSize: '2em',
             color: 'white',
@@ -79,28 +79,52 @@ function Section3() {
     const backgroundImage = `url(${section3bgImage})`;
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
     return (
-      <div style={{
-        minHeight: '100vh',
-        backgroundSize: '150%',
-        backgroundPosition: 'calc(50% - 220px) center',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: `${linearGradient}, ${backgroundImage}`
-      }}>
+        <div style={{
+            width: '100vw',
+            height: '100vh',
+            minHeight: '4208',
+            backgroundSize: '150%',
+            backgroundPosition: 'calc(50% - 220px) center',
+            display: 'flex',
+            flexDirection: 'column', // To stack the text lines vertically
+            justifyContent: 'center',
+            alignItems: 'center',
+            background: `${linearGradient}, ${backgroundImage}`
+        }}>
         <span style={{
-            fontSize: '2em',
+            fontSize: '4vw',
             color: 'white',
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-            fontFamily: 'sans-serif',
+            fontFamily: 'Roboto',
             fontWeight: 'bold',
             letterSpacing: '2px',
         }}>
-          Text for Section 3
+          {"Cause the"}
+        </span>
+            <span style={{
+                fontSize: '5vw',
+                color: 'white',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                fontFamily: 'Nulshock', // Different font for the middle line
+                fontWeight: 'bold',
+                letterSpacing: '2px',
+            }}>
+          {"FEAR OF MISSING OUT"}
+        </span>
+            <span style={{
+                fontSize: '4vw',
+                color: 'white',
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+                fontFamily: 'Roboto',
+                fontWeight: 'bold',
+                letterSpacing: '2px',
+            }}>
+          {"is a thing of the past."}
         </span>
         </div>
     );
 }
+
 
 function Section4() {
     const videoSrc = logovideo;
@@ -171,4 +195,4 @@ function Section4() {
     );
 }
 
-    export default Stage5;
+export default Stage5;
