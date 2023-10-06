@@ -64,12 +64,15 @@ function Section2() {
         <span style={{
             textAlign: 'left',
             font: 'normal normal medium 50px/61px Roboto',
-            fontSize: '4vw',
+            fontSize: '2vw',
             color: 'white',
             letterSpacing: '0px',
         }}>
           Picture this: <br/>
-            Vibrant parties, dynamic pubs, and buzzing clubs, all curated with a passion that only true party enthusiasts can understand. We've meticulously handpicked the hottest DJs, the most happening parties, and the trendiest spots to ensure you're always at the forefront of the action.
+            Vibrant parties, dynamic pubs, and buzzing clubs, all curated with a <br/>
+            passion  that only true party enthusiasts can understand. We've meticulously <br/>
+            handpicked the hottest DJs, the most happening parties, and the trendiest <br/>
+            spots to ensure you're always at the forefront of the action.
         </span>
         </div>
     );
