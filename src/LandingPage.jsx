@@ -24,8 +24,8 @@ function LandingPage() {
       case 2: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage2 /></div>;
       case 3: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage3 /></div>;
       case 4: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage4 /></div>;
-      case 5: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage5 /></div>;
-      default: return <div style={{background:getBackgroundForStage(stage), height: '100vh', width:'100vw', display: 'flex', justifyContent: 'center', alignItems: 'center', transition: 'background 0.5s'}}><Stage5 /></div>;
+      case 5: return <Stage5 />
+      default: return <Stage5 />
     }
   };
 
