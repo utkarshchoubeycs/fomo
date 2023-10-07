@@ -58,9 +58,7 @@ function Section({ image, altText, aspectRatio, style, children }) {
 
     return (
         <div style={sectionStyle}>
-
                 {children}
-
         </div>
     );
 }
