@@ -100,36 +100,7 @@ function Section3() {
             alignItems: 'center',
             background: `${linearGradient}, ${backgroundImage}`
         }}>
-        <span style={{
-            fontSize: '4vw',
-            color: 'white',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-            fontFamily: 'Roboto',
-            fontWeight: 'bold',
-            letterSpacing: '2px',
-        }}>
-          {"Cause the"}
-        </span>
-            <span style={{
-                fontSize: '5vw',
-                color: 'white',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                fontFamily: 'Nulshock', // Different font for the middle line
-                fontWeight: 'bold',
-                letterSpacing: '2px',
-            }}>
-          {"FEAR OF MISSING OUT"}
-        </span>
-            <span style={{
-                fontSize: '4vw',
-                color: 'white',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                fontFamily: 'Roboto',
-                fontWeight: 'bold',
-                letterSpacing: '2px',
-            }}>
-          {"is a thing of the past."}
-        </span>
+        
         </div>
     );
 }
