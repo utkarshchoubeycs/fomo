@@ -26,16 +26,16 @@ const mainImageStyle3 = {
 };
 
 
-const contentStyle = {
+const contentStyle3 = {
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    top: '26%',
+    left: '25%',
+    right: '25%',
+    bottom: '50%',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+
+
 };
 
 const contentStyle1 = {
@@ -48,6 +48,26 @@ const contentStyle1 = {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start'
+};
+
+const contentStyle2 = {
+    position: 'absolute',
+    top: '14%',
+    left: '22%',
+    right: '22%',
+    bottom: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
+};
+
+const maskImageStyle1 = {
+    position: 'absolute',
+    top: '102%',
+    width: '100%',
+    height: '100%',
+
 };
 
 const maskImageStyle2 = {
@@ -93,49 +113,53 @@ function Section1() {
             <div style={contentStyle1}>
                 <HorizontalScrollText/>
                 <div style={{
-                    paddingTop: '55%',
-
-                    display: 'flex', alignItems: 'flex-start', flexDirection: 'column', justifyContent: 'flex-start',
+                    marginTop: '50%',
+                    display: 'flex',
+                    flexDirection: 'column',
                 }}>
                     <span
                         style={{
-                            paddingLeft: '10%', fontSize: '1.15vw', color: 'white',
+                             fontSize: '1.5vw', color: 'white', fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'left', paddingLeft: '8%',
                         }}>
                         {"Welcome to F.O.M.O., your ultimate guide to an ehilarating"}
                     </span>
 
                     <span style={{
-                        paddingLeft: '10%', fontSize: '3vw', color: 'white', fontFamily: 'Nulshock', fontWeight: 'bold'
+                        fontSize: '5vw', color: 'white', fontFamily: 'Nulshock', fontWeight: 'bold', textAlign: 'left', marginTop: '3%', paddingLeft: '8%',
                     }}>
-                        {"NOTURAL ESCAPADEL"}
+                        NOTURAL <br/> ESCAPADEL
                     </span>
                     <img
                         src={section1maskimage}
                         height={'100%'}
                         width={'100%'}
                         alt={"Section 1 Mask"}
-                        style={{paddingLeft: '10%'}}
+                        style={maskImageStyle1}
+
                     />
                     <span
                         style={{
-                            fontSize: '1.15vw',
+                            fontSize: '1.4vw',
                             color: 'white',
-                            paddingRight: '10%',
-                            paddingTop: '5%',
-                            justifyContent: 'flex-start',
-                            paddingLeft: '10%',
+                            fontFamily: 'Roboto',
+                            fontWeight: 'bold',
+                            textAlign: 'left',
+                            paddingRight: '8%',
+                            marginTop: '58%',
+                            paddingLeft: '8%',
                         }}
                     >
                         {"Get ready to immerse yourself in the pulsating heartbeats of Bangalore and the sun-kissed shores of Goa, as we unveil a platform that's set to redefine your"}
 
                     </span>
                     <span style={{
-                        paddingLeft: '10%',
-                        fontSize: '3vw',
+                        fontSize: '5vw',
                         color: 'white',
                         fontFamily: 'Nulshock',
                         fontWeight: 'bold',
-                        paddingTop: '15%'
+                        paddingTop: '3%',
+                        textAlign: 'left',
+                        paddingLeft: '8%',
                     }}>
                         PARTY <br/>  EXPERIENCE
                     </span>
@@ -149,22 +173,74 @@ function Section2() {
     const section2Gradient = 'linear-gradient(180deg, #9750F0 0%, #9750F0 60%, #BA12F1 90%, #E050F0 100%)';
 
     return (<Section
-            image={section2bgimage}
-            sectionGradient={section2Gradient}
-            gradientBlendMode={'multiply'}
-            altText="Section 1 Background"
-            aspectRatio={0.7068}
-            style={mainImageStyle2}>
-            <div style={maskImageStyle2}>
-                {/*content*/}
-                <img
-                    src={section2maskimage}
-                    height={'100%'}
-                    width={'100%'}
-                    alt={"Section 2 Mask"}
-                />
+        image={section2bgimage}
+        sectionGradient={section2Gradient}
+        gradientBlendMode={'multiply'}
+        altText="Section 1 Background"
+        aspectRatio={0.7068}
+        style={mainImageStyle2}>
+        <div style={maskImageStyle2}>
+            <img
+                src={section2maskimage}
+                height={'100%'}
+                width={'100%'}
+                alt={"Section 2 Mask"}
+            />
+        </div>
+        <div style={contentStyle2}>
+            <span style={{fontFamily: 'Roboto', fontWeight: 'bold', color: 'white', fontSize: '1.72vw', textAlign: 'left'}}>
+                Picture this: <br/>
+                Vibrant parties, dynamic pubs, and buzzing clubs, all curated with a passion that only true party enthusiasts can understand. We've meticulously handpicked the hottest DJs, the most happening parties, and the trendiest spots to ensure you're always at the forefront of the action.
+            </span>
+
+
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'absolute',
+                top: '30%',
+                alignItems: 'center',
+                left: '10%',
+            }}>
+                <span style={{fontFamily: 'NulShock', color: 'white', fontSize:'1.5vw', marginBottom: '10%'}}>
+                    We're the ones
+                </span>
+                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '2.5vw', marginBottom: '10%'}}>
+                    We're the ones who
+                </span>
+                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '4.5vw', marginBottom: '10%'}}>
+                    Understand
+                </span>
+                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '4.5vw', marginBottom: '10%'}}>
+                    Your Craving
+                </span>
+                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '4.5vw', marginBottom: '10%'}}>
+                    For A Night to
+                </span>
+                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '6.2vw', marginBottom: '47%'}}>
+                    Remember!
+                </span>
+                <span
+                    style={{
+                        fontFamily: 'NulShock',
+                        fontSize: '13vw',
+                        color: 'transparent',
+                        backgroundClip: 'text',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundImage: `url(${section3bgimage})`,
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        display: 'inline'}}>
+                    WHY
+                </span>
             </div>
-        </Section>)
+
+
+
+
+        </div>
+    </Section>)
 }
 
 
@@ -178,36 +254,39 @@ function Section3() {
             altText="Section 3 Background"
             aspectRatio={1.777}
             style={mainImageStyle3}>
-            <div style={contentStyle}>
+            <div style={contentStyle3}>
                 <span style={{
                     fontSize: '2vw',
                     color: 'white',
                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
                     fontFamily: 'Roboto',
                     fontWeight: 'bold',
-                    letterSpacing: '2px',
+                    marginBottom: '2%'
+
+
                 }}>
                 {"Cause the"}
-            </span> <br/>
+            </span>
                 <span style={{
-                    fontSize: '3vw',
+                    fontSize: '2.5vw',
                     color: 'white',
                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
                     fontFamily: 'Nulshock',
                     fontWeight: 'bold',
-                    letterSpacing: '2px',
+                    marginBottom: '2%'
+
                 }}>
                 {"FEAR OF MISSING OUT"}
-            </span> <br/>
+            </span>
                 <span style={{
                     fontSize: '2vw',
                     color: 'white',
                     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
                     fontFamily: 'Roboto',
                     fontWeight: 'bold',
-                    letterSpacing: '2px',
+
                 }}>
-                {"is a thing of the past."}
+                {"is a thing of the past!"}
             </span>
             </div>
         </Section>)
@@ -224,45 +303,49 @@ function Section4() {
         setVideoEnded(true);
     };
 
-    return (<div style={{
+    return (
+        <div style={{
             width: '100%',
-            minHeight: '3266',
-            height: '80vh',
+            height: '100%',
             background: 'black',
             display: 'flex',
             flexDirection: 'column', // Stack children vertically
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'relative'
+            paddingTop: '20%',
+            position: 'relative',
+
         }}>
             {videoEnded ? (<img src={placeholderImage} style={{
-                    width: '50%', height: '50%', objectFit: 'contain', marginBottom: '50px' // Space between image and text
-                }} alt="Placeholder"/>) : (<video
-                    ref={videoRef}
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain', //marginBottom: '50px' // Space between video and text
-                    }}
-                    poster={placeholderImage}
-                    autoPlay
-                    muted
-                    onEnded={handleVideoEnd}
-                >
-                    <source src={videoSrc} type="video/mp4"/>
-                    {/* Fallback content for browsers that don't support the video tag */}
-                    <img src={placeholderImage} style={{
-                        width: '50%', height: '50%', objectFit: 'contain', marginBottom: '50px'
-                    }} alt="Placeholder"/>
-                </video>)}
+                width: '100%', height: '100%', objectFit: 'contain', marginBottom: '10%' // Space between image and text
+            }} alt="Placeholder"/>) : (<video
+                ref={videoRef}
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    padding: '21%',
+                    objectFit: 'contain',
+                    marginBottom: '10%',
+                    borderRadius: '100%',
+                }}
+                poster={placeholderImage}
+                autoPlay
+                muted
+                onEnded={handleVideoEnd}
+            >
+                <source src={videoSrc} type="video/mp4"/>
+                {/* Fallback content for browsers that don't support the video tag */}
+                <img src={placeholderImage} style={{
+                    width: '100%', height: '100%', objectFit: 'contain', marginBottom: '10%'
+                }} alt="Placeholder"/>
+            </video>)}
             <span style={{
                 fontSize: '2em',
                 color: 'white',
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                fontFamily: 'sans-serif',
-                fontWeight: 'bold',
+                fontFamily: 'Roboto',
                 letterSpacing: '2px',
-                marginBottom: '50px'
+                paddingBottom: '40%'
             }}>
             Coming Soon!
         </span>
