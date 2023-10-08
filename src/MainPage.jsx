@@ -27,9 +27,9 @@ const mainImageStyle2 = {
 };
 
 const mainImageStyle3 = {
-    marginTop: '30%',
-    transform: 'scale(2)',
-    marginBottom: '28%',
+    marginTop: '36%',
+    transform: 'scale(2.2)',
+    marginBottom: '30%',
 };
 
 
@@ -42,14 +42,15 @@ const contentStyle = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 };
 
-function Section({ image, altText, aspectRatio, style, children }) {
+function Section({ image, sectionGradient, gradientBlendMode, altText, aspectRatio, style, children }) {
     const sectionStyle = {
-        backgroundImage: `url(${image})`,
+        backgroundImage: `url(${image}) , ${sectionGradient}`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundBlendMode: `${gradientBlendMode}`,
         paddingTop: `${100 / aspectRatio}%`,// This will maintain the aspect ratio
         ...style
     };
@@ -58,12 +59,12 @@ function Section({ image, altText, aspectRatio, style, children }) {
 
     return (
         <div style={sectionStyle}>
-
-                {children}
-
+            {children}
         </div>
     );
 }
+
+
 function MainPage() {
     return (
         <div style={parentStyle}>
@@ -76,9 +77,12 @@ function MainPage() {
 }
 
 function Section1() {
+    const section1Gradient = 'linear-gradient(180deg, #FF2B2B 0%, #2B2BFF 90%, #752BB0 100%)';
     return (
         <Section
             image={section1bgimage}
+            sectionGradient={section1Gradient}
+            gradientBlendMode={'multiply'}
             altText="Section 1 Background"
             aspectRatio={0.7070}
             style={mainImageStyle}>
@@ -90,11 +94,15 @@ function Section1() {
 }
 
 function Section2() {
+    const section2Gradient = 'linear-gradient(180deg, #9750F0 0%, #9750F0 60%, #BA12F1 90%, #E050F0 100%)';
+
     return (
         <Section
             image={section2bgimage}
+            sectionGradient={section2Gradient}
+            gradientBlendMode={'multiply'}
             altText="Section 1 Background"
-            aspectRatio={0.7070}
+            aspectRatio={0.7068}
             style={mainImageStyle2}>
             <div style={contentStyle}>
                 {/*content*/}
@@ -105,9 +113,13 @@ function Section2() {
 
 
 function Section3() {
+    const section3Gradient = 'linear-gradient(180deg, rgba(212, 60, 122, 0.6) 0%, rgba(175, 60, 130, 0.7) 60%, rgba(150, 85, 140, 0.5) 80%, rgba(0, 0, 0, 1) 100%)';
+
     return (
         <Section
             image={section3bgimage}
+            sectionGradient={section3Gradient}
+            gradientBlendMode={'screen'}
             altText="Section 3 Background"
             aspectRatio={1.777}
             style={mainImageStyle3}>
@@ -119,7 +131,6 @@ function Section3() {
                     fontFamily: 'Roboto',
                     fontWeight: 'bold',
                     letterSpacing: '2px',
-
                 }}>
                 {"Cause the"}
             </span> <br/>
@@ -130,7 +141,6 @@ function Section3() {
                     fontFamily: 'Nulshock',
                     fontWeight: 'bold',
                     letterSpacing: '2px',
-
                 }}>
                 {"FEAR OF MISSING OUT"}
             </span> <br/>
@@ -163,8 +173,8 @@ function Section4() {
     return (
         <div style={{
             width: '100%',
-            minHeight: '1791',
-            height: '100vh',
+            minHeight: '3266',
+            height: '80vh',
             background: 'black',
             display: 'flex',
             flexDirection: 'column', // Stack children vertically
