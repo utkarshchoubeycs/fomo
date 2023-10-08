@@ -11,11 +11,9 @@ function LandingPage() {
         if (direction > 0) {
             setScrollValue(prev => Math.min(5, prev + SCROLL_INCREMENT[stage]));
             setStage(Math.floor(scrollValue));
-            console.log('Going down! with stage', stage);
         } else if (direction < 0 && stage < 5) {
             setScrollValue(prev => Math.max(0, prev - SCROLL_INCREMENT[stage]));
             setStage(Math.ceil(scrollValue));
-            console.log('Going up!');
         }
     };
 
@@ -32,7 +30,7 @@ function LandingPage() {
     const handleTouchMove = (e) => {
         const touchMoveY = e.touches[0].clientY;
         if (touchStartY !== null) {
-            const direction = touchMoveY - touchStartY;
+            const direction = touchStartY - touchMoveY;
             handleScroll(direction);
         }
     };
@@ -82,11 +80,11 @@ function LandingPage() {
 
     const renderStages = () => {
         switch (stage) {
-            case 0: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={0} />)}</div>
-            case 1: return <div style={{ background: getBackgroundForStage(1), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[1].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={1} />)}</div>
-            case 2: return <div style={{ background: getBackgroundForStage(2), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[2].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={2} />)}</div>
-            case 3: return <div style={{ background: getBackgroundForStage(3), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[3].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={3} />)}</div>
-            case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={4} />)}</div>
+            case 0: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', overscrollBehavior: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={0} />)}</div>
+            case 1: return <div style={{ background: getBackgroundForStage(1), height: '100vh', width: '100vw', overscrollBehavior: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[1].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={1} />)}</div>
+            case 2: return <div style={{ background: getBackgroundForStage(2), height: '100vh', width: '100vw', overscrollBehavior: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[2].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={2} />)}</div>
+            case 3: return <div style={{ background: getBackgroundForStage(3), height: '100vh', width: '100vw', overscrollBehavior: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[3].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={3} />)}</div>
+            case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', overscrollBehavior: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={4} />)}</div>
             case 5: return <MainPage />
             default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={stage} />)}</div>
         }
