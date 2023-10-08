@@ -1,35 +1,28 @@
 import React, {useRef, useState} from 'react';
 
 import section1bgimage from './assets/section1bgimage.png';
+import section1maskimage from './assets/section1maskimage.png';
 import section2bgimage from './assets/section2bgimage.png';
+import section2maskimage from './assets/section2maskimage.png';
 import section3bgimage from './assets/section3bgimage.png';
 import section4image from './assets/section4image.png';
 import logovideo from './assets/logovideo.mp4';
+import HorizontalScrollText from "./components/HorizontalScrollText";
 
 const parentStyle = {
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    width: '100%',
-    height: '100%',
-    overflow: 'hidden',
+    display: 'grid', gridTemplateColumns: '1fr', width: '100%', height: '100%', overflow: 'hidden',
 };
 
 const mainImageStyle = {
-    transform: 'scale(2)',
-    marginTop: '25%',
-    marginBottom: '50%'
+    transform: 'scale(2)', marginTop: '25%', marginBottom: '50%'
 };
 
 const mainImageStyle2 = {
-    transform: 'scale(1.6)',
-    marginTop: '63%',
-    marginBottom: '40%'
+    transform: 'scale(1.6)', marginTop: '63%', marginBottom: '40%'
 };
 
 const mainImageStyle3 = {
-    marginTop: '36%',
-    transform: 'scale(2.2)',
-    marginBottom: '30%',
+    marginTop: '36%', transform: 'scale(2.2)', marginBottom: '30%',
 };
 
 
@@ -45,7 +38,24 @@ const contentStyle = {
     alignItems: 'center',
 };
 
-function Section({ image, sectionGradient, gradientBlendMode, altText, aspectRatio, style, children }) {
+const contentStyle1 = {
+    position: 'absolute',
+    top: '26%',
+    left: '25%',
+    right: '25%',
+    bottom: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start'
+};
+
+const maskImageStyle2 = {
+    position: 'absolute', left: '18%', right: '23%', bottom: '88%', overflow: 'visible'
+
+};
+
+function Section({image, sectionGradient, gradientBlendMode, altText, aspectRatio, style, children}) {
     const sectionStyle = {
         backgroundImage: `url(${image}) , ${sectionGradient}`,
         backgroundSize: 'cover',
@@ -56,67 +66,112 @@ function Section({ image, sectionGradient, gradientBlendMode, altText, aspectRat
     };
 
 
-
-    return (
-        <div style={sectionStyle}>
+    return (<div style={sectionStyle}>
             {children}
-        </div>
-    );
+        </div>);
 }
 
 
 function MainPage() {
-    return (
-        <div style={parentStyle}>
+    return (<div style={parentStyle}>
             <Section1/>
             <Section2/>
             <Section3/>
             <Section4/>
-        </div>
-    );
+        </div>);
 }
 
 function Section1() {
     const section1Gradient = 'linear-gradient(180deg, #FF2B2B 0%, #2B2BFF 90%, #752BB0 100%)';
-    return (
-        <Section
+    return (<Section
             image={section1bgimage}
             sectionGradient={section1Gradient}
             gradientBlendMode={'multiply'}
             altText="Section 1 Background"
             aspectRatio={0.7070}
             style={mainImageStyle}>
-            <div style={contentStyle}>
-                {/*content*/}
+            <div style={contentStyle1}>
+                <HorizontalScrollText/>
+                <div style={{
+                    paddingTop: '55%',
+
+                    display: 'flex', alignItems: 'flex-start', flexDirection: 'column', justifyContent: 'flex-start',
+                }}>
+                    <span
+                        style={{
+                            paddingLeft: '10%', fontSize: '1.15vw', color: 'white',
+                        }}>
+                        {"Welcome to F.O.M.O., your ultimate guide to an ehilarating"}
+                    </span>
+
+                    <span style={{
+                        paddingLeft: '10%', fontSize: '3vw', color: 'white', fontFamily: 'Nulshock', fontWeight: 'bold'
+                    }}>
+                        {"NOTURAL ESCAPADEL"}
+                    </span>
+                    <img
+                        src={section1maskimage}
+                        height={'100%'}
+                        width={'100%'}
+                        alt={"Section 1 Mask"}
+                        style={{paddingLeft: '10%'}}
+                    />
+                    <span
+                        style={{
+                            fontSize: '1.15vw',
+                            color: 'white',
+                            paddingRight: '10%',
+                            paddingTop: '5%',
+                            justifyContent: 'flex-start',
+                            paddingLeft: '10%',
+                        }}
+                    >
+                        {"Get ready to immerse yourself in the pulsating heartbeats of Bangalore and the sun-kissed shores of Goa, as we unveil a platform that's set to redefine your"}
+
+                    </span>
+                    <span style={{
+                        paddingLeft: '10%',
+                        fontSize: '3vw',
+                        color: 'white',
+                        fontFamily: 'Nulshock',
+                        fontWeight: 'bold',
+                        paddingTop: '15%'
+                    }}>
+                        PARTY <br/>  EXPERIENCE
+                    </span>
+                </div>
+
             </div>
-        </Section>
-    )
+        </Section>)
 }
 
 function Section2() {
     const section2Gradient = 'linear-gradient(180deg, #9750F0 0%, #9750F0 60%, #BA12F1 90%, #E050F0 100%)';
 
-    return (
-        <Section
+    return (<Section
             image={section2bgimage}
             sectionGradient={section2Gradient}
             gradientBlendMode={'multiply'}
             altText="Section 1 Background"
             aspectRatio={0.7068}
             style={mainImageStyle2}>
-            <div style={contentStyle}>
+            <div style={maskImageStyle2}>
                 {/*content*/}
+                <img
+                    src={section2maskimage}
+                    height={'100%'}
+                    width={'100%'}
+                    alt={"Section 2 Mask"}
+                />
             </div>
-        </Section>
-    )
+        </Section>)
 }
 
 
 function Section3() {
     const section3Gradient = 'linear-gradient(180deg, rgba(212, 60, 122, 0.6) 0%, rgba(175, 60, 130, 0.7) 60%, rgba(150, 85, 140, 0.5) 80%, rgba(0, 0, 0, 1) 100%)';
 
-    return (
-        <Section
+    return (<Section
             image={section3bgimage}
             sectionGradient={section3Gradient}
             gradientBlendMode={'screen'}
@@ -155,8 +210,7 @@ function Section3() {
                 {"is a thing of the past."}
             </span>
             </div>
-        </Section>
-    )
+        </Section>)
 }
 
 function Section4() {
@@ -170,8 +224,7 @@ function Section4() {
         setVideoEnded(true);
     };
 
-    return (
-        <div style={{
+    return (<div style={{
             width: '100%',
             minHeight: '3266',
             height: '80vh',
@@ -182,21 +235,14 @@ function Section4() {
             alignItems: 'center',
             position: 'relative'
         }}>
-            {videoEnded ? (
-                <img src={placeholderImage} style={{
-                    width: '50%',
-                    height: '50%',
-                    objectFit: 'contain',
-                    marginBottom: '50px' // Space between image and text
-                }} alt="Placeholder"/>
-            ) : (
-                <video
+            {videoEnded ? (<img src={placeholderImage} style={{
+                    width: '50%', height: '50%', objectFit: 'contain', marginBottom: '50px' // Space between image and text
+                }} alt="Placeholder"/>) : (<video
                     ref={videoRef}
                     style={{
                         width: '100%',
                         height: '100%',
-                        objectFit: 'contain',
-                        //marginBottom: '50px' // Space between video and text
+                        objectFit: 'contain', //marginBottom: '50px' // Space between video and text
                     }}
                     poster={placeholderImage}
                     autoPlay
@@ -206,13 +252,9 @@ function Section4() {
                     <source src={videoSrc} type="video/mp4"/>
                     {/* Fallback content for browsers that don't support the video tag */}
                     <img src={placeholderImage} style={{
-                        width: '50%',
-                        height: '50%',
-                        objectFit: 'contain',
-                        marginBottom: '50px'
+                        width: '50%', height: '50%', objectFit: 'contain', marginBottom: '50px'
                     }} alt="Placeholder"/>
-                </video>
-            )}
+                </video>)}
             <span style={{
                 fontSize: '2em',
                 color: 'white',
@@ -224,8 +266,7 @@ function Section4() {
             }}>
             Coming Soon!
         </span>
-        </div>
-    );
+        </div>);
 }
 
 
