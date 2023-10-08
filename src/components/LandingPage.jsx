@@ -7,17 +7,39 @@ function LandingPage() {
     const [scrollValue, setScrollValue] = useState(0);
     const SCROLL_INCREMENT = [0.08, 0.08, 0.08, 0.08, 0.08, 0.004];
 
-	const handleWheel = (e) => {
-		if (e.deltaY > 0) {
-			setScrollValue(prev => Math.min(5, prev + SCROLL_INCREMENT[stage]))
-			setStage(Math.floor(scrollValue));
+	const handleScroll = (direction) => {
+        if (direction > 0) {
+            setScrollValue(prev => Math.min(5, prev + SCROLL_INCREMENT[stage]));
+            setStage(Math.floor(scrollValue));
             console.log('Going down! with stage', stage);
-		} else if (e.deltaY < 0 && stage < 5) {
-			setScrollValue(prev => Math.max(0, prev - SCROLL_INCREMENT[stage]));
-			setStage(Math.ceil(scrollValue));
+        } else if (direction < 0 && stage < 5) {
+            setScrollValue(prev => Math.max(0, prev - SCROLL_INCREMENT[stage]));
+            setStage(Math.ceil(scrollValue));
             console.log('Going up!');
-		}
-	};
+        }
+    };
+
+    const handleWheel = (e) => {
+        handleScroll(e.deltaY);
+    };
+
+    const [touchStartY, setTouchStartY] = useState(null);
+
+    const handleTouchStart = (e) => {
+        setTouchStartY(e.touches[0].clientY);
+    };
+
+    const handleTouchMove = (e) => {
+        const touchMoveY = e.touches[0].clientY;
+        if (touchStartY !== null) {
+            const direction = touchMoveY - touchStartY;
+            handleScroll(direction);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        setTouchStartY(null);
+    };
 
     const ringData = [
         [
@@ -71,7 +93,7 @@ function LandingPage() {
     }
 
     return (
-        <div onWheel={handleWheel}>
+        <div onWheel={handleWheel} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             {renderStages()}
         </div>
     );
