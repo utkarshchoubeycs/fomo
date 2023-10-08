@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import section1bgImage from './assets/section1bgimage.png';
+import section1bgImage from './assets/section1bgimage_2.png';
 import section2bgImage from './assets/section2bgimage.png';
 import section3bgImage from './assets/section3bgimage.png';
 import section4image from './assets/section4image.png';
@@ -7,34 +7,34 @@ import logovideo from './assets/logovideo.mp4';
 
 function Stage5() {
     return (
-        <div style={{width: '100vw', height: '100vh'}}>
-            <Section1/>
-            <Section2/>
-            <Section3/>
-            <Section4/>
+        <div style={{width: '100vw', display: 'flex', flexDirection: 'column'}}>
+            <Section1 />
+            <Section2 />
+            <Section3 />
+            <Section4 />
         </div>
     );
 }
-
 
 function Section1() {
 
     const backgroundImage = `url(${section1bgImage})`;
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
 
-    const section1css = {
-        width: '100vw',
-        minHeight: '200vw',
-        backgroundSize: '200%',
-        backgroundPosition: 'calc(50% - 100px) center',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        background: `${linearGradient}, ${backgroundImage}`
-    };
-
     return (
-        <div style={section1css}>
+        <div style={{
+          width: '100vw',
+          height: '150vw',
+          position: 'absolute',
+          transform: 'scale(1.6)',
+          left: '-30%',
+          top: '-10%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: `${linearGradient}, ${backgroundImage}`
+      }}>
         <span style={{
             fontSize: '2em',
             color: 'white',
@@ -53,9 +53,13 @@ function Section2() {
     const linearGradient = "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))";
     return (
         <div style={{
-            height: '160vw',
-            backgroundSize: '140%',
-            backgroundPosition: 'calc(50% - 100px) center',
+            width: '100vw',
+            height: '150vw',
+            position: 'absolute',
+            transform: 'scale(1.5)',
+            left: '7%',
+            top: '450%',
+            backgroundPosition: 'center',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -84,10 +88,12 @@ function Section3() {
     return (
         <div style={{
             width: '100vw',
-            height: '100vh',
-            minHeight: '4208',
-            //backgroundSize: '150%',
-            //backgroundPosition: 'calc(50% - 220px) center',
+            height: '70vw',
+            position: 'absolute',
+            transform: 'scale(1.2)',
+            left: '-10%',
+            top: '820%',
+            backgroundPosition: 'center',
             display: 'flex',
             flexDirection: 'column', // To stack the text lines vertically
             justifyContent: 'center',
@@ -113,15 +119,17 @@ function Section4() {
 
     return (
         <div style={{
-            width: '100%',
-            minHeight: '1791',
+            width: '100vw',
             height: '100vh',
+            position: 'absolute',
+            transform: 'scale(1.2)',
+            left: '-10%',
+            top: '1200%',
             background: 'black',
             display: 'flex',
             flexDirection: 'column', // Stack children vertically
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'relative'
         }}>
             {videoEnded ? (
                 <img src={placeholderImage} style={{
