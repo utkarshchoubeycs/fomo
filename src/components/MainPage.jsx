@@ -1,13 +1,13 @@
 import React, {useRef, useState} from 'react';
 
-import section1bgimage from './assets/section1bgimage.png';
-import section1maskimage from './assets/section1maskimage.png';
-import section2bgimage from './assets/section2bgimage.png';
-import section2maskimage from './assets/section2maskimage.png';
-import section3bgimage from './assets/section3bgimage.png';
-import section4image from './assets/section4image.png';
-import logovideo from './assets/logovideo.mp4';
-import HorizontalScrollText from "./components/HorizontalScrollText";
+import section1bgimage from '../assets/section1bgimage.png';
+import section1maskimage from '../assets/section1maskimage.png';
+import section2bgimage from '../assets/section2bgimage.png';
+import section2maskimage from '../assets/section2maskimage.png';
+import section3bgimage from '../assets/section3bgimage.png';
+import section4image from '../assets/section4image.png';
+import logovideo from '../assets/logovideo.mp4';
+import HorizontalScrollText from "./HorizontalScrollText";
 
 const parentStyle = {
     display: 'grid', gridTemplateColumns: '1fr', width: '100%', height: '100%', overflow: 'hidden',
@@ -34,8 +34,6 @@ const contentStyle3 = {
     bottom: '50%',
     display: 'flex',
     flexDirection: 'column',
-
-
 };
 
 const contentStyle1 = {
