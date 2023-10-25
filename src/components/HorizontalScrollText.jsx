@@ -28,9 +28,6 @@ function HorizontalScrollText() {
         setDirection((prevDir) => -prevDir);
     };
 
-
-
-
     const textStyle = {
         position: 'absolute',
         transform: 'matrix(1, -0.07, 0.07, 1, 0, 0)',

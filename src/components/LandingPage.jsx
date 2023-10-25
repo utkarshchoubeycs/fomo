@@ -5,7 +5,7 @@ function LandingPage() {
     const [stage, setStage] = useState(0);
     
     const [scrollValue, setScrollValue] = useState(0);
-    const SCROLL_INCREMENT = [0.08, 0.08, 0.08, 0.08, 0.08, 0.004];
+    const SCROLL_INCREMENT = [0.2, 0.2, 0.2, 0.2, 0.2, 0.004];
 
 	const handleScroll = (direction) => {
         if (direction > 0) {

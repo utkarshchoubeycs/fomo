@@ -1,354 +1,485 @@
-import React, {useRef, useState} from 'react';
+import React from 'react';
+import { motion} from 'framer-motion';
 
-import section1bgimage from '../assets/section1bgimage.png';
-import section1maskimage from '../assets/section1maskimage.png';
-import section2bgimage from '../assets/section2bgimage.png';
-import section2maskimage from '../assets/section2maskimage.png';
-import section3bgimage from '../assets/section3bgimage.png';
-import section4image from '../assets/section4image.png';
-import logovideo from '../assets/logovideo.mp4';
-import HorizontalScrollText from "./HorizontalScrollText";
+import FourHandsImage from '../assets/P0.webp';
+import FOMOLogo from '../assets/P2.webp';
+import mask1Image from '../assets/P3.webp';
+import mask2Image from '../assets/P4.webp';
+import mask3Image from '../assets/P5.webp';
+import cheersImage from '../assets/P6.webp';
+import mask4Image from '../assets/P7.webp';
+import backgroundImage from '../assets/BG_95KB.webp';
 
 const parentStyle = {
-    display: 'grid', gridTemplateColumns: '1fr', width: '100%', height: '100%', overflow: 'hidden',
+    width: '100vw',
+    zIndex: '2'
 };
+
 
 const mainImageStyle = {
-    transform: 'scale(2)', marginTop: '25%', marginBottom: '50%'
-};
-
-const mainImageStyle2 = {
-    transform: 'scale(1.6)', marginTop: '63%', marginBottom: '40%'
-};
-
-const mainImageStyle3 = {
-    marginTop: '36%', transform: 'scale(2.2)', marginBottom: '30%',
-};
-
-
-const contentStyle3 = {
-    position: 'absolute',
-    top: '26%',
-    left: '25%',
-    right: '25%',
-    bottom: '50%',
-    display: 'flex',
-    flexDirection: 'column',
+    width: '100vw',
+    height: '1100vh',
 };
 
 const contentStyle1 = {
     position: 'absolute',
-    top: '26%',
-    left: '25%',
-    right: '25%',
-    bottom: '50%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    flexDirection: 'column'
 };
 
-const contentStyle2 = {
+const fomoLogoStyle = {
     position: 'absolute',
-    top: '14%',
-    left: '22%',
-    right: '22%',
-    bottom: '50%',
+    height: '40vw',
+    width: '40vw',
+    top: '5vh',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start'
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '30vw',
+    marginRight: '30vw'
 };
 
-const maskImageStyle1 = {
+const fourhandsStyle = {
     position: 'absolute',
-    top: '102%',
-    width: '100%',
-    height: '100%',
+    height: '50vw',
+    width: '50vw',
+    top: '-2vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '25vw',
+    marginRight: '25vw'
+}
 
+const mask1ImageStyle = {
+    position: 'absolute',
+    height: '132vh',
+    width: '100vw',
+    top: '145vh',
+}
+
+const mask2ImageStyle = {
+    position: 'absolute',
+    height: '138vh',
+    width: '93vw',
+    top: '307vh',
+}
+
+const mask3ImageStyle = {
+    position: 'absolute',
+    height: '90vh',
+    width: '100vw',
+    top: '455vh',
+}
+
+const cheersImageStyle = {
+    position: 'absolute',
+    height: '112vh',
+    width: '50vw',
+    top: '570vh',
+    right: '3vw'
+}
+
+const mask4ImageStyle = {
+    position: 'absolute',
+    height: '85vh',
+    width: '98vw',
+    top: '690vh',
+}
+
+const fomoLogoStyle2 = {
+    position: 'absolute',
+    height: '35vw',
+    width: '35vw',
+    top: '910vh',
+    marginLeft: '32.5vw',
+    marginRight: '32.5vw'
 };
 
-const maskImageStyle2 = {
-    position: 'absolute', left: '18%', right: '23%', bottom: '88%', overflow: 'visible'
-
-};
-
-function Section({image, sectionGradient, gradientBlendMode, altText, aspectRatio, style, children}) {
+function Section({ image, style, children }) {
     const sectionStyle = {
-        backgroundImage: `url(${image}) , ${sectionGradient}`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundBlendMode: `${gradientBlendMode}`,
-        paddingTop: `${100 / aspectRatio}%`,// This will maintain the aspect ratio
+        backgroundImage: `url(${image})`,
+        backgroundSize: 'cover',  // Adjust this
+        backgroundPosition: 'center',  // Ensure image is centered
+        backgroundRepeat: 'no-repeat', // Prevent the image from repeating
+        width: '100vw',
         ...style
     };
 
-
-    return (<div style={sectionStyle}>
+    return (
+        <div style={sectionStyle}>
             {children}
-        </div>);
-}
-
-
-function MainPage() {
-    return (<div style={parentStyle}>
-            <Section1/>
-            <Section2/>
-            <Section3/>
-            <Section4/>
-        </div>);
-}
-
-function Section1() {
-    const section1Gradient = 'linear-gradient(180deg, #FF2B2B 0%, #2B2BFF 90%, #752BB0 100%)';
-    return (<Section
-            image={section1bgimage}
-            sectionGradient={section1Gradient}
-            gradientBlendMode={'multiply'}
-            altText="Section 1 Background"
-            aspectRatio={0.7070}
-            style={mainImageStyle}>
-            <div style={contentStyle1}>
-                <HorizontalScrollText/>
-                <div style={{
-                    marginTop: '50%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                }}>
-                    <span
-                        style={{
-                             fontSize: '1.5vw', color: 'white', fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'left', paddingLeft: '8%',
-                        }}>
-                        {"Welcome to F.O.M.O., your ultimate guide to an ehilarating"}
-                    </span>
-
-                    <span style={{
-                        fontSize: '5vw', color: 'white', fontFamily: 'Nulshock', fontWeight: 'bold', textAlign: 'left', marginTop: '3%', paddingLeft: '8%',
-                    }}>
-                        NOTURAL <br/> ESCAPADEL
-                    </span>
-                    <img
-                        src={section1maskimage}
-                        height={'100%'}
-                        width={'100%'}
-                        alt={"Section 1 Mask"}
-                        style={maskImageStyle1}
-
-                    />
-                    <span
-                        style={{
-                            fontSize: '1.4vw',
-                            color: 'white',
-                            fontFamily: 'Roboto',
-                            fontWeight: 'bold',
-                            textAlign: 'left',
-                            paddingRight: '8%',
-                            marginTop: '58%',
-                            paddingLeft: '8%',
-                        }}
-                    >
-                        {"Get ready to immerse yourself in the pulsating heartbeats of Bangalore and the sun-kissed shores of Goa, as we unveil a platform that's set to redefine your"}
-
-                    </span>
-                    <span style={{
-                        fontSize: '5vw',
-                        color: 'white',
-                        fontFamily: 'Nulshock',
-                        fontWeight: 'bold',
-                        paddingTop: '3%',
-                        textAlign: 'left',
-                        paddingLeft: '8%',
-                    }}>
-                        PARTY <br/>  EXPERIENCE
-                    </span>
-                </div>
-
-            </div>
-        </Section>)
-}
-
-function Section2() {
-    const section2Gradient = 'linear-gradient(180deg, #9750F0 0%, #9750F0 60%, #BA12F1 90%, #E050F0 100%)';
-
-    return (<Section
-        image={section2bgimage}
-        sectionGradient={section2Gradient}
-        gradientBlendMode={'multiply'}
-        altText="Section 1 Background"
-        aspectRatio={0.7068}
-        style={mainImageStyle2}>
-        <div style={maskImageStyle2}>
-            <img
-                src={section2maskimage}
-                height={'100%'}
-                width={'100%'}
-                alt={"Section 2 Mask"}
-            />
         </div>
-        <div style={contentStyle2}>
-            <span style={{fontFamily: 'Roboto', fontWeight: 'bold', color: 'white', fontSize: '1.72vw', textAlign: 'left'}}>
-                Picture this: <br/>
-                Vibrant parties, dynamic pubs, and buzzing clubs, all curated with a passion that only true party enthusiasts can understand. We've meticulously handpicked the hottest DJs, the most happening parties, and the trendiest spots to ensure you're always at the forefront of the action.
-            </span>
-
-
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                position: 'absolute',
-                top: '30%',
-                alignItems: 'center',
-                left: '10%',
-            }}>
-                <span style={{fontFamily: 'NulShock', color: 'white', fontSize:'1.5vw', marginBottom: '10%'}}>
-                    We're the ones
-                </span>
-                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '2.5vw', marginBottom: '10%'}}>
-                    We're the ones who
-                </span>
-                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '4.5vw', marginBottom: '10%'}}>
-                    Understand
-                </span>
-                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '4.5vw', marginBottom: '10%'}}>
-                    Your Craving
-                </span>
-                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '4.5vw', marginBottom: '10%'}}>
-                    For A Night to
-                </span>
-                <span style={{fontFamily: 'NulShock', color: 'white', fontSize: '6.2vw', marginBottom: '47%'}}>
-                    Remember!
-                </span>
-                <span
-                    style={{
-                        fontFamily: 'NulShock',
-                        fontSize: '13vw',
-                        color: 'transparent',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundImage: `url(${section3bgimage})`,
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover',
-                        display: 'inline'}}>
-                    WHY
-                </span>
-            </div>
-
-
-
-
-        </div>
-    </Section>)
+    );
 }
 
 
-function Section3() {
-    const section3Gradient = 'linear-gradient(180deg, rgba(212, 60, 122, 0.6) 0%, rgba(175, 60, 130, 0.7) 60%, rgba(150, 85, 140, 0.5) 80%, rgba(0, 0, 0, 1) 100%)';
 
-    return (<Section
-            image={section3bgimage}
-            sectionGradient={section3Gradient}
-            gradientBlendMode={'screen'}
-            altText="Section 3 Background"
-            aspectRatio={1.777}
-            style={mainImageStyle3}>
-            <div style={contentStyle3}>
-                <span style={{
-                    fontSize: '2vw',
-                    color: 'white',
-                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                    fontFamily: 'Roboto',
-                    fontWeight: 'bold',
-                    marginBottom: '2%'
-
-
-                }}>
-                {"Cause the"}
-            </span>
-                <span style={{
-                    fontSize: '2.5vw',
-                    color: 'white',
-                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                    fontFamily: 'Nulshock',
-                    fontWeight: 'bold',
-                    marginBottom: '2%'
-
-                }}>
-                {"FEAR OF MISSING OUT"}
-            </span>
-                <span style={{
-                    fontSize: '2vw',
-                    color: 'white',
-                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                    fontFamily: 'Roboto',
-                    fontWeight: 'bold',
-
-                }}>
-                {"is a thing of the past!"}
-            </span>
-            </div>
-        </Section>)
-}
-
-function Section4() {
-    const videoSrc = logovideo;
-    const placeholderImage = section4image;
-
-    const videoRef = useRef(null);
-    const [videoEnded, setVideoEnded] = useState(false);
-
-    const handleVideoEnd = () => {
-        setVideoEnded(true);
-    };
+function MainPage2() {
 
     return (
-        <div style={{
-            width: '100%',
-            height: '100%',
-            background: 'black',
-            display: 'flex',
-            flexDirection: 'column', // Stack children vertically
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingTop: '20%',
-            position: 'relative',
-
-        }}>
-            {videoEnded ? (<img src={placeholderImage} style={{
-                width: '100%', height: '100%', objectFit: 'contain', marginBottom: '10%' // Space between image and text
-            }} alt="Placeholder"/>) : (<video
-                ref={videoRef}
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    padding: '21%',
-                    objectFit: 'contain',
-                    marginBottom: '10%',
-                    borderRadius: '100%',
-                }}
-                poster={placeholderImage}
-                autoPlay
-                muted
-                onEnded={handleVideoEnd}
-            >
-                <source src={videoSrc} type="video/mp4"/>
-                {/* Fallback content for browsers that don't support the video tag */}
-                <img src={placeholderImage} style={{
-                    width: '100%', height: '100%', objectFit: 'contain', marginBottom: '10%'
-                }} alt="Placeholder"/>
-            </video>)}
-            <span style={{
-                fontSize: '2em',
-                color: 'white',
-                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-                fontFamily: 'Roboto',
-                letterSpacing: '2px',
-                paddingBottom: '40%'
-            }}>
-            Coming Soon!
-        </span>
-        </div>);
+        <motion.div style={parentStyle}>
+            <LandingInfoAreaComponent/>
+        </motion.div>
+    );
 }
 
+function LandingInfoAreaComponent() {
 
-export default MainPage;
+    return (
+        <div>
+            <Section
+                image={backgroundImage}
+                style={mainImageStyle}
+            >
+                <div 
+                    style={contentStyle1}
+                >
+                    <div style={{
+                        marginTop: '75vh',
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}>
+                        <img
+                            src={FOMOLogo}
+                            alt={"Section 1 Mask"}
+                            style={fomoLogoStyle}
+                        />
+                        <img
+                            src={FourHandsImage}
+                            alt={"Section 1 Mask"}
+                            style={fourhandsStyle}
+                        />
+                        <span style={{
+                            fontSize: '5.5vw', 
+                            color: 'white', 
+                            fontFamily: 'Nulshock', 
+                            fontWeight: 'bold', 
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            marginLeft: '13vw',
+                            marginRight: '13vw',
+                            marginTop: '15vh', 
+                        }}>
+                            FOMO COMES ALIVE
+                        </span>
+                        
+                        <span
+                            style={{
+                                fontSize: '2.4vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'left',
+                                marginTop: '18vh',
+                                marginLeft: '13vw'
+                            }}
+                        >
+                            {"FOMO's your"}
+
+                        </span>
+                        <span 
+                            style={{
+                                fontSize: '7.8vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                marginLeft: '13vw',
+                                marginTop: '1vh'
+                        }}>
+                            NOCTURNAL <br/>  NAVIGATOR
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.75vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginLeft: '13vw',
+                            }}
+                        >
+                            ready to take you on wild rides through the cities <br/> that never sleep!
+                        </span>
+                        <img
+                            src={mask1Image}
+                            alt={"Mask 1"}
+                            style={mask1ImageStyle}
+                        />
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'right',
+                                paddingRight: '8%',
+                                marginTop: '115vh',
+                                marginRight: '5vw'
+                            }}
+                        >
+                            We're diving deep into the vibrant <br/> heartbeats of Bangalore and <br/> the sun-soaked shores of Goa, <br/>plotting a party revolution you <br/> won't want to miss.
+                        </span>
+                        <img
+                            src={mask2Image}
+                            alt={"Mask 2"}
+                            style={mask2ImageStyle}
+                        />
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginTop: '110vh',
+                                marginLeft: '13vw'
+                            }}
+                        >
+                            Get ready for action-packed parties, <br/>electric pubs, and clubs that buzz <br/> louder than your morning alarm.<br/> Curated by true party enthusiasts and <br/> we've got your back!
+                        </span>
+                        <img
+                            src={mask3Image}
+                            alt={"Mask 3"}
+                            style={mask3ImageStyle}
+                        />
+                        <span
+                            style={{
+                                fontSize: '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginTop: '80vh',
+                                marginLeft: '13vw'
+                            }}
+                        >
+                            AT FOMO,
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginTop: '2vh',
+                                marginLeft: '13vw'
+                            }}
+                        >
+                            WE'VE BOTTLED <br/> THAT FEAR AND
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            turned it into a way of life
+                        </span>
+                        <img
+                            src={cheersImage}
+                            alt={"Cheers hands"}
+                            style={cheersImageStyle}
+                        />
+                        <span
+                            style={{
+                                fontSize: '7.8vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginTop: '80vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            BECAUSE
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.8vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginTop: '-2vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            the fear of missing out is the thing of the past!
+                        </span>
+                        <img
+                            src={mask4Image}
+                            alt={"Mask 4"}
+                            style={mask4ImageStyle}
+                        />
+                        <span
+                            style={{
+                                fontSize: '4vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '95vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            FASTEN YOUR SEATBELTS,
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '20vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            BANGALORE & GOA
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '7.8vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '12vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            ARE ABOUT TO
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '9.3vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '10vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            GET WILD!
+                        </span>
+                        <img
+                            src={FOMOLogo}
+                            alt={"Section 1 Mask"}
+                            style={fomoLogoStyle2}
+                        />
+                        <span
+                            style={{
+                                fontSize: '2.7vw',
+                                color: 'white',
+                                fontFamily: 'Germany Sans',
+                                fontWeight: 'normal',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '90vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            REDEFINING NIGHTLIFE EXPERIENCES
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '18vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            Follow us on Instagram
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            @thefomo.co
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginTop: '10vh',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            Contact us at
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'bold',
+                                textAlign: 'center',
+                                paddingRight: '8%',
+                                marginLeft: '14vw'
+                            }}
+                        >
+                            +91 99455 94437
+                        </span>
+                        <div
+                            style={{
+                                backgroundColor: "white",
+                                border: '0.5px black solid',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                fontSize: '2.3vw',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                padding: '2vw 1vw 2vw 1vw',
+                                marginTop: '5vh',
+                                width: '16vw',
+                                marginLeft: '43vw',
+                                marginRight: '37vw',
+                                borderRadius: '5vw',
+                                boxShadow: '0px 3px 15px #00000099'
+                            }}
+                        >
+                            <span>
+                                Join the Party
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </Section>
+        </div>
+    )
+}
+
+export default MainPage2;
