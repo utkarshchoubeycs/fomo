@@ -8,103 +8,94 @@ import mask2Image from '../assets/P4.webp';
 import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
 import mask4Image from '../assets/P7.webp';
-import backgroundImage from '../assets/BG_95KB.webp';
+import backgroundImage from '../assets/BG_1MB.webp';
 
 const parentStyle = {
     display: 'grid',
-    width: '100vw',
+    gridTemplateColumns: '1fr',
+    width: '100%',
+    height: '100%',
     overflow: 'hidden'
 };
 
 
 const mainImageStyle = {
-    width: '100vw',
-    height: '1100vh',
+    transform: 'scale(1)',
 };
 
 const contentStyle = {
     position: 'absolute',
     display: 'flex',
+    top: '0%',
+    left: '0%',
+    right: '0%',
+    bottom: '0%',
     flexDirection: 'column'
 };
 
 const fomoLogoStyle = {
     position: 'absolute',
-    height: '40vw',
     width: '40vw',
-    top: '5vh',
-    display: 'flex',
-    alignItems: 'center',
-    marginLeft: '30vw',
-    marginRight: '30vw'
+    marginLeft: '0%',
+    marginTop: '3%',
 };
 
 const fourhandsStyle = {
     position: 'absolute',
-    height: '50vw',
-    width: '50vw',
-    top: '-2vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: '25vw',
-    marginRight: '25vw'
+    width: '58vw',
+    marginTop: '-2.5%',
+    marginLeft: '25%',
+    marginRight: '25%',   
 }
 
 const mask1ImageStyle = {
     position: 'absolute',
-    height: '132vh',
-    width: '100vw',
-    top: '145vh',
+    width: '100%',
+    marginTop: '74%',
 }
 
 const mask2ImageStyle = {
     position: 'absolute',
-    height: '138vh',
-    width: '93vw',
-    top: '307vh',
+    width: '90%',
+    marginLeft: '-10%',
+    marginTop: '158%'
 }
 
 const mask3ImageStyle = {
     position: 'absolute',
-    height: '90vh',
-    width: '100vw',
-    top: '455vh',
+    width: '100%',
+    marginTop: '235%'
 }
 
 const cheersImageStyle = {
     position: 'absolute',
-    height: '112vh',
-    width: '50vw',
-    top: '570vh',
-    right: '3vw'
+    width: '50%',
+    marginTop: '291.5%',
+    marginRight: '-37%'
 }
 
 const mask4ImageStyle = {
     position: 'absolute',
-    height: '85vh',
-    width: '98vw',
-    top: '690vh',
+    width: '100%',
+    top: '0%',
+    marginTop: '354%',
 }
 
 const fomoLogoStyle2 = {
     position: 'absolute',
-    height: '35vw',
-    width: '35vw',
-    top: '910vh',
-    marginLeft: '32.5vw',
-    marginRight: '32.5vw'
+    width: '35%',
+    marginTop: '465%'
 };
 
-function Section({ image, style, children }) {
+function Section({ image, aspectRatio, style, children }) {
     const sectionStyle = {
         backgroundImage: `url(${image})`,
-        backgroundSize: 'cover',  // Adjust this
+        backgroundSize: 'cover',
         borderColor: 'black',
         borderWidth: '2px',
-        backgroundPosition: 'center',  // Ensure image is centered
-        backgroundRepeat: 'no-repeat', // Prevent the image from repeating
-        width: '100vw',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        paddingTop: `${100 / aspectRatio}%`,// This will maintain the aspect ratio
         ...style
     };
 
@@ -114,7 +105,6 @@ function Section({ image, style, children }) {
         </div>
     );
 }
-
 
 
 function MainPage() {
@@ -131,40 +121,46 @@ function LandingInfoAreaComponent() {
     return (
             <Section
                 image={backgroundImage}
-                style={{zIndex: 2, ...mainImageStyle}}
+                aspectRatio={0.1779}
+                style={{
+                    zIndex: 2,
+                    ...mainImageStyle
+                }}
             >
-                <div 
-                    style={contentStyle}
-                >
+                <div style={contentStyle}>
                     <div style={{
-                        marginTop: '75vh',
+                        top: '0%',
+                        position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
+                        alignItems: 'center',
+                        width: '100%',
+                        left: '0%',
+                        right: '0%',
                     }}>
                         <img
                             src={FOMOLogo}
-                            alt={"Section 1 Mask"}
+                            alt={"FOMO Logo"}
                             style={fomoLogoStyle}
                         />
                         <img
                             src={FourHandsImage}
-                            alt={"Section 1 Mask"}
+                            alt={"4 hands doing cheers"}
                             style={fourhandsStyle}
                         />
                         <span style={{
-                            fontSize: '5.5vw', 
+                            fontSize: '5.8vw', 
                             color: 'white', 
                             fontFamily: 'Nulshock', 
                             fontWeight: 'bold', 
                             textAlign: 'center',
                             justifyContent: 'center',
-                            marginLeft: '13vw',
-                            marginRight: '13vw',
-                            marginTop: '15vh', 
+                            marginLeft: '10%',
+                            marginRight: '10%',
+                            marginTop: '46%', 
                         }}>
-                            FOMO COMES ALIVE
+                            FOMO COMES ALIVE!
                         </span>
-                        
                         <span
                             style={{
                                 fontSize: '2.4vw',
@@ -172,8 +168,8 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
-                                marginTop: '18vh',
-                                marginLeft: '13vw'
+                                marginTop: '9%',
+                                marginLeft: '-60%'
                             }}
                         >
                             {"FOMO's your"}
@@ -186,20 +182,20 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '13vw',
-                                marginTop: '1vh'
+                                marginLeft: '-13%',
+                                marginTop: '0%',
                         }}>
                             NOCTURNAL <br/>  NAVIGATOR
                         </span>
                         <span
                             style={{
-                                fontSize: '2.75vw',
+                                fontSize: '2.7vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
                                 paddingRight: '8%',
-                                marginLeft: '13vw',
+                                marginLeft: '-10%'
                             }}
                         >
                             ready to take you on wild rides through the cities <br/> that never sleep!
@@ -211,14 +207,14 @@ function LandingInfoAreaComponent() {
                         />
                         <span
                             style={{
-                                fontSize: '2.5vw',
+                                fontSize: '2.7vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'right',
                                 paddingRight: '8%',
-                                marginTop: '115vh',
-                                marginRight: '5vw'
+                                marginTop: '60%',
+                                marginRight: '-40%'
                             }}
                         >
                             We're diving deep into the vibrant <br/> heartbeats of Bangalore and <br/> the sun-soaked shores of Goa, <br/>plotting a party revolution you <br/> won't want to miss.
@@ -235,9 +231,8 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
-                                paddingRight: '8%',
-                                marginTop: '110vh',
-                                marginLeft: '13vw'
+                                marginTop: '55%',
+                                marginLeft: '-35%'
                             }}
                         >
                             Get ready for action-packed parties, <br/>electric pubs, and clubs that buzz <br/> louder than your morning alarm.<br/> Curated by true party enthusiasts and <br/> we've got your back!
@@ -254,9 +249,8 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                paddingRight: '8%',
-                                marginTop: '80vh',
-                                marginLeft: '13vw'
+                                marginTop: '39%',
+                                marginLeft: '-37%'
                             }}
                         >
                             AT FOMO,
@@ -268,44 +262,11 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                paddingRight: '8%',
-                                marginTop: '2vh',
-                                marginLeft: '13vw'
+                                marginTop: '1%',
+                                marginLeft: '-12%'
                             }}
                         >
                             WE'VE BOTTLED <br/> THAT FEAR AND
-                        </span>
-                        <span
-                            style={{
-                                fontSize: '2.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: 'normal',
-                                textAlign: 'left',
-                                paddingRight: '8%',
-                                marginLeft: '14vw'
-                            }}
-                        >
-                            turned it into a way of life
-                        </span>
-                        <img
-                            src={cheersImage}
-                            alt={"Cheers hands"}
-                            style={cheersImageStyle}
-                        />
-                        <span
-                            style={{
-                                fontSize: '7.8vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                paddingRight: '8%',
-                                marginTop: '80vh',
-                                marginLeft: '14vw'
-                            }}
-                        >
-                            BECAUSE
                         </span>
                         <span
                             style={{
@@ -314,9 +275,39 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
+                                marginLeft: '-44%'
+                            }}
+                        >
+                            turned it into a way of life.
+                        </span>
+                        <img
+                            src={cheersImage}
+                            alt={"Cheers hands"}
+                            style={cheersImageStyle}
+                        />
+                        <span
+                            style={{
+                                fontSize: '7.7vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
                                 paddingRight: '8%',
-                                marginTop: '-2vh',
-                                marginLeft: '14vw'
+                                marginTop: '40%',
+                                marginLeft: '-22%'
+                            }}
+                        >
+                            BECAUSE
+                        </span>
+                        <span
+                            style={{
+                                fontSize: '2.9vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'normal',
+                                textAlign: 'left',
+                                paddingRight: '8%',
+                                marginLeft: '-13%'
                             }}
                         >
                             the fear of missing out is the thing of the past!
@@ -334,8 +325,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '95vh',
-                                marginLeft: '14vw'
+                                marginTop: '50%',
+                                marginLeft: '14%'
                             }}
                         >
                             FASTEN YOUR SEATBELTS,
@@ -348,8 +339,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '20vh',
-                                marginLeft: '14vw'
+                                marginTop: '8%',
+                                marginLeft: '14%'
                             }}
                         >
                             BANGALORE & GOA
@@ -362,8 +353,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '12vh',
-                                marginLeft: '14vw'
+                                marginTop: '5%',
+                                marginLeft: '14%'
                             }}
                         >
                             ARE ABOUT TO
@@ -376,8 +367,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '10vh',
-                                marginLeft: '14vw'
+                                marginTop: '6%',
+                                marginLeft: '9%'
                             }}
                         >
                             GET WILD!
@@ -389,14 +380,13 @@ function LandingInfoAreaComponent() {
                         />
                         <span
                             style={{
-                                fontSize: '2.7vw',
+                                fontSize: '3vw',
                                 color: 'white',
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: '90vh',
-                                marginLeft: '14vw'
+                                marginTop: '45%',
+                                marginLeft: '1%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
@@ -408,9 +398,8 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: '18vh',
-                                marginLeft: '14vw'
+                                marginTop: '7%',
+                                marginLeft: '1%'
                             }}
                         >
                             Follow us on Instagram
@@ -422,8 +411,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
-                                paddingRight: '8%',
-                                marginLeft: '14vw'
+                                marginLeft: '1%'
                             }}
                         >
                             @thefomo.co
@@ -435,9 +423,8 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: '10vh',
-                                marginLeft: '14vw'
+                                marginTop: '10%',
+                                marginLeft: '1%'
                             }}
                         >
                             Contact us at
@@ -449,8 +436,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
-                                paddingRight: '8%',
-                                marginLeft: '14vw'
+                                marginLeft: '1%'
                             }}
                         >
                             +91 99455 94437
@@ -463,13 +449,11 @@ function LandingInfoAreaComponent() {
                                 justifyContent: 'center',
                                 fontSize: '2.3vw',
                                 fontFamily: 'Roboto',
-                                fontWeight: 'normal',
-                                padding: '2vw 1vw 2vw 1vw',
-                                marginTop: '5vh',
-                                width: '16vw',
-                                marginLeft: '43vw',
-                                marginRight: '37vw',
-                                borderRadius: '5vw',
+                                fontWeight: 'medium',
+                                padding: '2% 1% 2% 1%',
+                                marginTop: '5%',
+                                width: '16%',
+                                borderRadius: '50px',
                                 boxShadow: '0px 3px 15px #00000099'
                             }}
                         >
@@ -478,7 +462,7 @@ function LandingInfoAreaComponent() {
                             </span>
                         </div>
                     </div>
-                </div>
+                        </div>
             </Section>
     )
 }
