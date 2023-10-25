@@ -18,11 +18,7 @@ const HeroComponent = () => {
 			else if(value <= 2 * viewportHeight) setStage(1);
 			else if(value <= 3 * viewportHeight) setStage(2);
 			else if(value <= 4 * viewportHeight) setStage(3);
-			else if(value <= 5 * viewportHeight) setStage(4);
-			/*else if(value <= 6* viewportHeight) setStage(5);
-			else if(value <= 7* viewportHeight) setStage(6);
-			else if(value <= 8* viewportHeight) setStage(7);
-			else setStage(8);*/
+			else setStage(4);
 		})
 
 		return () => {
@@ -83,7 +79,7 @@ const HeroComponent = () => {
 	}
 
 	return (
-		<div style={{ height: '100vh', position: 'fixed' }}>
+		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'relative' }}>
 			{renderStages()}
 		</div>
 	);
@@ -91,7 +87,7 @@ const HeroComponent = () => {
 
 const LandingPageComponent = () => {
 	return (
-		<div style={{ height: '600vh' }}>
+		<div style={{ height: '500vh' }}>
 			<HeroComponent />
 		</div>
 	)

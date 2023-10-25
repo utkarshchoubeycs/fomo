@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion} from 'framer-motion';
+import {motion} from 'framer-motion'
 
 import FourHandsImage from '../assets/P0.webp';
 import FOMOLogo from '../assets/P2.webp';
@@ -11,8 +11,9 @@ import mask4Image from '../assets/P7.webp';
 import backgroundImage from '../assets/BG_95KB.webp';
 
 const parentStyle = {
+    display: 'grid',
     width: '100vw',
-    zIndex: '2'
+    overflow: 'hidden'
 };
 
 
@@ -21,8 +22,9 @@ const mainImageStyle = {
     height: '1100vh',
 };
 
-const contentStyle1 = {
+const contentStyle = {
     position: 'absolute',
+    display: 'flex',
     flexDirection: 'column'
 };
 
@@ -32,7 +34,6 @@ const fomoLogoStyle = {
     width: '40vw',
     top: '5vh',
     display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
     marginLeft: '30vw',
     marginRight: '30vw'
@@ -99,6 +100,8 @@ function Section({ image, style, children }) {
     const sectionStyle = {
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',  // Adjust this
+        borderColor: 'black',
+        borderWidth: '2px',
         backgroundPosition: 'center',  // Ensure image is centered
         backgroundRepeat: 'no-repeat', // Prevent the image from repeating
         width: '100vw',
@@ -114,7 +117,7 @@ function Section({ image, style, children }) {
 
 
 
-function MainPage2() {
+function MainPage() {
 
     return (
         <motion.div style={parentStyle}>
@@ -126,13 +129,12 @@ function MainPage2() {
 function LandingInfoAreaComponent() {
 
     return (
-        <div>
             <Section
                 image={backgroundImage}
-                style={mainImageStyle}
+                style={{zIndex: 2, ...mainImageStyle}}
             >
                 <div 
-                    style={contentStyle1}
+                    style={contentStyle}
                 >
                     <div style={{
                         marginTop: '75vh',
@@ -478,8 +480,7 @@ function LandingInfoAreaComponent() {
                     </div>
                 </div>
             </Section>
-        </div>
     )
 }
 
-export default MainPage2;
+export default MainPage;
