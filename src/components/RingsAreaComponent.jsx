@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { motion, useScroll } from 'framer-motion';
 import { useEffect } from "react";
-import MainPage from "./MainPage";
-import MainPage2 from "./MainPage";
 
 const HeroComponent = () => {
 	const [stage, setStage] = useState(0);
