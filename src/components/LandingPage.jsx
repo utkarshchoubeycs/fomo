@@ -112,6 +112,13 @@ const RingComponent = ({ size, borderColor, stage }) => {
         fontFamily: 'NulShock'
     };
 
+    const textBase = {
+        color: 'white',
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        letterSpacing: '2px'
+    }
+
     return (
         <div style={{
             ...ringBase,
@@ -127,19 +134,19 @@ const RingComponent = ({ size, borderColor, stage }) => {
                     MUSIC
                 </span>)}
             {(stage === 1) && (
-                <span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                <span style={textBase}>
                     MUSIC, <span style={{ color: 'rgba(254, 0, 0, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px' }}>DRINKS</span>
                 </span>)}
             {(stage === 2) && (
-                <span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                <span style={textBase}>
                     MUSIC, DRINKS,<br /> <span style={{ color: 'rgba(1, 255, 255, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px' }}>LIGHTS</span>
                 </span>)}
             {(stage === 3) && (
-                <span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                <span style={textBase}>
                     MUSIC, DRINKS,<br /> LIGHTS <span style={{ color: 'rgba(0, 255, 1, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: "3px" }}>& ACTION</span>
                 </span>)}
             {(stage === 4) &&
-                (<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                (<span style={textBase}>
                     MUSIC, DRINKS,<br /> LIGHTS & ACTION
                 </span>)}
         </div>
