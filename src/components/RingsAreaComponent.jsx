@@ -14,10 +14,10 @@ const HeroComponent = () => {
 
 		const unsubScrollYProgress = scrollY.on("change", value => {
 			console.log(stage, value/viewportHeight);
-			if(value <= viewportHeight) setStage(0);
-			else if(value <= 2 * viewportHeight) setStage(1);
-			else if(value <= 3 * viewportHeight) setStage(2);
-			else if(value <= 4 * viewportHeight) setStage(3);
+			if(value <= 0.5 * viewportHeight) setStage(0);
+			else if(value <= 1 * viewportHeight) setStage(1);
+			else if(value <= 1.5 * viewportHeight) setStage(2);
+			else if(value <= 2 *  viewportHeight) setStage(3);
 			else setStage(4);
 		})
 
@@ -87,7 +87,7 @@ const HeroComponent = () => {
 
 const LandingPageComponent = () => {
 	return (
-		<div style={{ height: '500vh' }}>
+		<div style={{ height: '300vh' }}>
 			<HeroComponent />
 		</div>
 	)

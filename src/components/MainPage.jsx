@@ -8,7 +8,7 @@ import mask2Image from '../assets/P4.webp';
 import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
 import mask4Image from '../assets/P7.webp';
-import backgroundImage from '../assets/BG_1MB.webp';
+import backgroundImage from '../assets/BG_95KB.webp';
 
 const parentStyle = {
     display: 'grid',
