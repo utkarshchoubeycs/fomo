@@ -538,14 +538,14 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '7.8vw',
+                                fontSize: '7.5vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
                                 marginTop: '5%',
-                                marginLeft: '14%'
+                                marginLeft: '11%'
                             }}
                             initial="hidden"
                             whileInView="stamp"
@@ -563,7 +563,7 @@ function LandingInfoAreaComponent() {
                                 textAlign: 'center',
                                 paddingRight: '8%',
                                 marginTop: '6%',
-                                marginLeft: '10%'
+                                marginLeft: '8%'
                             }}
                             initial="hidden"
                             whileInView="stamp"
