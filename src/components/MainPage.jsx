@@ -71,7 +71,7 @@ const mask3ImageStyle = {
 
 const cheersImageStyle = {
     position: 'absolute',
-    width: '50%',
+    width: '48vw',
     marginTop: '238%',
     marginRight: '-39%'
 }
@@ -435,7 +435,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.25 }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
                             WE'VE BOTTLED <br/> THAT FEAR AND
                         </motion.span>
@@ -450,7 +450,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.25 }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
                             turned it into a way of life.
                         </motion.span>
