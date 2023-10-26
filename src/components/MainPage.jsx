@@ -10,7 +10,7 @@ import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
 import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
-import backgroundImage from '../assets/BG_95KB.webp';
+import backgroundImage from '../assets/BG_1MB.webp';
 
 const parentStyle = {
     display: 'grid',
@@ -66,13 +66,13 @@ const mask2ImageStyle = {
 const mask3ImageStyle = {
     position: 'absolute',
     width: '100%',
-    marginTop: '180%'
+    marginTop: '179%'
 }
 
 const cheersImageStyle = {
     position: 'absolute',
     width: '50%',
-    marginTop: '238%',
+    marginTop: '236%',
     marginRight: '-37%'
 }
 
@@ -80,7 +80,7 @@ const mask4ImageStyle = {
     position: 'absolute',
     width: '100%',
     top: '0%',
-    marginTop: '300%',
+    marginTop: '298%',
 }
 
 const fomoLogoStyle2 = {
@@ -213,8 +213,8 @@ function LandingInfoAreaComponent() {
                             marginLeft: '11%',
                             marginRight: '10%',
                             marginTop: '4%', 
-                            transform: isSunsetInView ? 'transformY(-20vh)' : 'none',
-                            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                            transform: isSunsetInView ? 'transformY(50%)' : 'none',
+                            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isSunsetInView ? 0 : 1
                         }}>
                             AS THE SUN <br/> GOES DOWN
@@ -222,10 +222,10 @@ function LandingInfoAreaComponent() {
                         <img
                             
                             src={sunsetLogo}
-                            alt={"FOMO Logo"}
+                            alt={"Sunset Logo"}
                             style={{
-                                transform: isSunsetInView ? "translateY(-50%)" : "none",
-                                transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                transform: isSunsetInView ? "translateY(15%)" : "none",
+                                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                                 opacity: isSunsetInView ? 0: 1,
                                 ...sunsetLogoStyle
                         }}
@@ -234,8 +234,8 @@ function LandingInfoAreaComponent() {
                             src={FOMOLogo}
                             alt={"FOMO Logo"}
                             style={{
-                                transform: isSunsetInView ? "translateY(7%)" : "none",
-                                transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                transform: isSunsetInView ? "none" : "translateY(15%)",
+                                transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
                                 opacity: isSunsetInView ? 1 : 0,
                                 ...fomoLogoStyle}}
                         />
@@ -243,8 +243,8 @@ function LandingInfoAreaComponent() {
                             src={FourHandsImage}
                             alt={"4 hands doing cheers"}
                             style={{
-                                transform: isSunsetInView ? "rotate(900deg)" : "translateY(25vh)",
-                                transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                transform: isSunsetInView ? "rotate(180deg)" : "translateY(25%)",
+                                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                                 ...fourhandsStyle}}
                         />
                         <span 
@@ -260,7 +260,7 @@ function LandingInfoAreaComponent() {
                             marginRight: '10%',
                             marginTop: '35%', 
                             transform: isSunsetInView ? "none" : "translateY(5vh)",
-                            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isSunsetInView ? 1: 0,
                         }}>
                             FOMO COMES ALIVE!
@@ -339,8 +339,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'normal',
                                 textAlign: 'right',
                                 paddingRight: '8%',
-                                marginTop: '60%',
-                                marginRight: '-40%'
+                                marginTop: '58%',
+                                marginRight: '-45%'
                             }}
                         >
                             {rightAlignedParagraph.map((line, index) => (
@@ -354,8 +354,8 @@ function LandingInfoAreaComponent() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ 
                                         type: "spring", 
-                                        stiffness: 150, 
-                                        damping: 5, 
+                                        stiffness: 100, 
+                                        damping: 10, 
                                         delay: index * 0.2 // increasing delay for each line
                                     }}
                                 >
@@ -390,8 +390,8 @@ function LandingInfoAreaComponent() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ 
                                         type: "spring", 
-                                        stiffness: 150, 
-                                        damping: 5, 
+                                        stiffness: 100, 
+                                        damping: 10, 
                                         delay: index * 0.2 // increasing delay for each line
                                     }}
                                 >
@@ -422,7 +422,7 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '6vw',
+                                fontSize: '6.2vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
@@ -443,7 +443,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
-                                marginLeft: '-44%'
+                                marginLeft: '-45%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -484,10 +484,11 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'normal',
                                 textAlign: 'left',
                                 paddingRight: '8%',
-                                marginLeft: '-13%'
+                                marginLeft: '-13%',
+                                marginTop: '-1%'
                             }}
-                            initial={{ opacity: 0, x: '-30vh'}}
-                            whileInView={{ opacity: 1, x: '0'}}
+                            initial={{ opacity: 0, y: '-30vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
                             transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.5 }}
                         >
                             the fear of missing out is the thing of the past!
