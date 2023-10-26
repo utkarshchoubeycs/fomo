@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useScroll } from 'framer-motion';
-import { useEffect } from "react";
 
 const HeroComponent = () => {
 	const [stage, setStage] = useState(0);
@@ -15,7 +14,7 @@ const HeroComponent = () => {
 			if(value <= 0.5 * viewportHeight) setStage(0);
 			else if(value <= 1 * viewportHeight) setStage(1);
 			else if(value <= 1.5 * viewportHeight) setStage(2);
-			else if(value <= 2 *  viewportHeight) setStage(3);
+			else if(value <= 2 * viewportHeight) setStage(3);
 			else setStage(4);
 		})
 
@@ -70,14 +69,12 @@ const HeroComponent = () => {
 			case 2: return <div style={{ background: getBackgroundForStage(2), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[2].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={2} />)}</div>
 			case 3: return <div style={{ background: getBackgroundForStage(3), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[3].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={3} />)}</div>
 			case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={4} />)}</div>
-			/*case 6: return <div style={{ height: '100vh', overflow: 'hidden' }}><MainPage /></div>
-			case 7: return <div><MainPage /></div>*/
 			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={stage} />)}</div>
 		}
 	}
 
 	return (
-		<div style={{ height: '100vh', position: 'fixed'}}>
+		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
 			{renderStages()}
 		</div>
 	);

@@ -1,12 +1,14 @@
-import React from 'react';
-import {motion} from 'framer-motion'
+import React, { useRef } from 'react';
+import {motion, useInView} from 'framer-motion'
 
 import FourHandsImage from '../assets/P0.webp';
 import FOMOLogo from '../assets/P2.webp';
+
 import mask1Image from '../assets/P3.webp';
 import mask2Image from '../assets/P4.webp';
 import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
+import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
 import backgroundImage from '../assets/BG_95KB.webp';
 
@@ -51,26 +53,26 @@ const fourhandsStyle = {
 const mask1ImageStyle = {
     position: 'absolute',
     width: '100%',
-    marginTop: '74%',
+    marginTop: '20%',
 }
 
 const mask2ImageStyle = {
     position: 'absolute',
     width: '90%',
     marginLeft: '-10%',
-    marginTop: '158%'
+    marginTop: '103%'
 }
 
 const mask3ImageStyle = {
     position: 'absolute',
     width: '100%',
-    marginTop: '235%'
+    marginTop: '180%'
 }
 
 const cheersImageStyle = {
     position: 'absolute',
     width: '50%',
-    marginTop: '291.5%',
+    marginTop: '238%',
     marginRight: '-37%'
 }
 
@@ -78,14 +80,21 @@ const mask4ImageStyle = {
     position: 'absolute',
     width: '100%',
     top: '0%',
-    marginTop: '354%',
+    marginTop: '300%',
 }
 
 const fomoLogoStyle2 = {
     position: 'absolute',
     width: '35%',
-    marginTop: '465%'
+    marginTop: '408%'
 };
+
+const sunsetLogoStyle = {
+    position: 'absolute',
+    width: '30vw',
+    marginLeft: '0%',
+    marginTop: '20%',
+}
 
 function Section({ image, aspectRatio, style, children }) {
     const sectionStyle = {
@@ -95,7 +104,7 @@ function Section({ image, aspectRatio, style, children }) {
         borderWidth: '2px',
         backgroundRepeat: 'no-repeat',
         width: '100%',
-        paddingTop: `${100 / aspectRatio}%`,// This will maintain the aspect ratio
+        paddingTop: `${100 / aspectRatio}%`,
         ...style
     };
 
@@ -118,6 +127,61 @@ function MainPage() {
 
 function LandingInfoAreaComponent() {
 
+    const sunsetViewRef = useRef();
+    const isSunsetInView = useInView(sunsetViewRef, { 
+        amount : 0
+    });
+
+    // Last section animation variant
+    const stampVariants = {
+        hidden: { scale: 0.8, opacity: 0 },
+        stamp: {
+            scale: [0.8, 1.5, 1],
+            opacity: [0, 0.9, 1],
+            transition: {
+                duration: 0.5,
+                ease: [0.17, 0.55, 0.55, 1],
+                delay: 0.3
+            },
+        },
+    };
+
+    const cheersImageVariants = {
+        hidden: { 
+            x: '60%',
+            y: '40%',
+            rotate: 0,
+            opacity: 0,
+        },
+        visible: {
+            x : '0',
+            y: '0',
+            opacity: 1,
+            rotate: [-20, 20, -5, 5, 0],
+            transition: {
+                x: { type: "spring", stiffness: 50, damping: 10 },
+                y: { type: "spring", stiffness: 50, damping: 10 },
+                rotate: { times: [0, 0.6, 0.8, 1], duration: 1.5 },
+            }
+        }
+    };
+
+    const rightAlignedParagraph = [
+        "We're diving deep into the vibrant",
+        "heartbeats of Bangalore and",
+        "the sun-soaked shores of Goa",
+        "plotting a party revolution you",
+        "won't want to miss."    
+    ]
+
+    const leftAlignedParagraph = [
+        "Get ready for action-packed parties,",
+        "electric pubs, and clubs that buzz", 
+        "louder than your morning alarm.", 
+        "Curated by true party enthusiasts and", 
+        "we've got your back!"
+    ]
+    
     return (
             <Section
                 image={backgroundImage}
@@ -126,9 +190,10 @@ function LandingInfoAreaComponent() {
                     zIndex: 2,
                     ...mainImageStyle
                 }}
-            >
+            >   
                 <div style={contentStyle}>
-                    <div style={{
+                    <div 
+                        style={{
                         top: '0%',
                         position: 'absolute',
                         display: 'flex',
@@ -137,18 +202,54 @@ function LandingInfoAreaComponent() {
                         width: '100%',
                         left: '0%',
                         right: '0%',
-                    }}>
+                    }}>    
+                        <span style={{
+                            fontSize: '3.5vw', 
+                            color: 'white', 
+                            fontFamily: 'Nulshock', 
+                            fontWeight: 'bold', 
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            marginLeft: '11%',
+                            marginRight: '10%',
+                            marginTop: '4%', 
+                            transform: isSunsetInView ? 'transformY(-20vh)' : 'none',
+                            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                            opacity: isSunsetInView ? 0 : 1
+                        }}>
+                            AS THE SUN <br/> GOES DOWN
+                        </span>
+                        <img
+                            
+                            src={sunsetLogo}
+                            alt={"FOMO Logo"}
+                            style={{
+                                transform: isSunsetInView ? "translateY(-50%)" : "none",
+                                transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                opacity: isSunsetInView ? 0: 1,
+                                ...sunsetLogoStyle
+                        }}
+                        />
                         <img
                             src={FOMOLogo}
                             alt={"FOMO Logo"}
-                            style={fomoLogoStyle}
+                            style={{
+                                transform: isSunsetInView ? "translateY(7%)" : "none",
+                                transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                opacity: isSunsetInView ? 1 : 0,
+                                ...fomoLogoStyle}}
                         />
                         <img
                             src={FourHandsImage}
                             alt={"4 hands doing cheers"}
-                            style={fourhandsStyle}
+                            style={{
+                                transform: isSunsetInView ? "rotate(900deg)" : "translateY(25vh)",
+                                transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                ...fourhandsStyle}}
                         />
-                        <span style={{
+                        <span 
+                        ref={sunsetViewRef}
+                        style={{
                             fontSize: '5.8vw', 
                             color: 'white', 
                             fontFamily: 'Nulshock', 
@@ -157,11 +258,26 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             marginLeft: '10%',
                             marginRight: '10%',
-                            marginTop: '46%', 
+                            marginTop: '35%', 
+                            transform: isSunsetInView ? "none" : "translateY(5vh)",
+                            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                            opacity: isSunsetInView ? 1: 0,
                         }}>
                             FOMO COMES ALIVE!
                         </span>
-                        <span
+                    </div>
+                    <div style={{
+                        top: '0%',
+                        marginTop: '55%',
+                        position: 'absolute',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        width: '100%',
+                        left: '0%',
+                        right: '0%'}} 
+                    >
+                        <motion.span
                             style={{
                                 fontSize: '2.4vw',
                                 color: 'white',
@@ -169,13 +285,16 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'normal',
                                 textAlign: 'left',
                                 marginTop: '9%',
-                                marginLeft: '-60%'
+                                marginLeft: '-60%',
                             }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
                         >
                             {"FOMO's your"}
 
-                        </span>
-                        <span 
+                        </motion.span>
+                        <motion.span 
                             style={{
                                 fontSize: '7.8vw',
                                 color: 'white',
@@ -184,10 +303,14 @@ function LandingInfoAreaComponent() {
                                 textAlign: 'left',
                                 marginLeft: '-13%',
                                 marginTop: '0%',
-                        }}>
+                            }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
+                        >
                             NOCTURNAL <br/>  NAVIGATOR
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '2.7vw',
                                 color: 'white',
@@ -197,15 +320,18 @@ function LandingInfoAreaComponent() {
                                 paddingRight: '8%',
                                 marginLeft: '-10%'
                             }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 }}
                         >
                             ready to take you on wild rides through the cities <br/> that never sleep!
-                        </span>
+                        </motion.span>
                         <img
                             src={mask1Image}
                             alt={"Mask 1"}
                             style={mask1ImageStyle}
                         />
-                        <span
+                        <div
                             style={{
                                 fontSize: '2.7vw',
                                 color: 'white',
@@ -217,14 +343,32 @@ function LandingInfoAreaComponent() {
                                 marginRight: '-40%'
                             }}
                         >
-                            We're diving deep into the vibrant <br/> heartbeats of Bangalore and <br/> the sun-soaked shores of Goa, <br/>plotting a party revolution you <br/> won't want to miss.
-                        </span>
+                            {rightAlignedParagraph.map((line, index) => (
+                                <motion.span 
+                                    style={{
+                                        textAlign: 'right',
+                                        display: 'block'
+                                    }}
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ 
+                                        type: "spring", 
+                                        stiffness: 150, 
+                                        damping: 5, 
+                                        delay: index * 0.2 // increasing delay for each line
+                                    }}
+                                >
+                                    {line}
+                                </motion.span>
+                            ))}
+                        </div>
                         <img
                             src={mask2Image}
                             alt={"Mask 2"}
                             style={mask2ImageStyle}
                         />
-                        <span
+                        <div
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
@@ -235,14 +379,32 @@ function LandingInfoAreaComponent() {
                                 marginLeft: '-35%'
                             }}
                         >
-                            Get ready for action-packed parties, <br/>electric pubs, and clubs that buzz <br/> louder than your morning alarm.<br/> Curated by true party enthusiasts and <br/> we've got your back!
-                        </span>
+                            {leftAlignedParagraph.map((line, index) => (
+                                <motion.span 
+                                    style={{
+                                        textAlign: 'left',
+                                        display: 'block'
+                                    }}
+                                    key={index}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ 
+                                        type: "spring", 
+                                        stiffness: 150, 
+                                        damping: 5, 
+                                        delay: index * 0.2 // increasing delay for each line
+                                    }}
+                                >
+                                    {line}
+                                </motion.span>
+                            ))}
+                        </div>
                         <img
                             src={mask3Image}
                             alt={"Mask 3"}
                             style={mask3ImageStyle}
                         />
-                        <span
+                        <motion.span
                             style={{
                                 fontSize: '6vw',
                                 color: 'white',
@@ -252,10 +414,13 @@ function LandingInfoAreaComponent() {
                                 marginTop: '39%',
                                 marginLeft: '-37%'
                             }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
                         >
                             AT FOMO,
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '6vw',
                                 color: 'white',
@@ -265,10 +430,13 @@ function LandingInfoAreaComponent() {
                                 marginTop: '1%',
                                 marginLeft: '-12%'
                             }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.25 }}
                         >
                             WE'VE BOTTLED <br/> THAT FEAR AND
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '2.8vw',
                                 color: 'white',
@@ -277,15 +445,21 @@ function LandingInfoAreaComponent() {
                                 textAlign: 'left',
                                 marginLeft: '-44%'
                             }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
                         >
                             turned it into a way of life.
-                        </span>
-                        <img
+                        </motion.span>
+                        <motion.img
                             src={cheersImage}
                             alt={"Cheers hands"}
                             style={cheersImageStyle}
+                            initial="hidden"
+                            whileInView="visible"
+                            variants={cheersImageVariants}
                         />
-                        <span
+                        <motion.span
                             style={{
                                 fontSize: '7.7vw',
                                 color: 'white',
@@ -296,10 +470,13 @@ function LandingInfoAreaComponent() {
                                 marginTop: '40%',
                                 marginLeft: '-22%'
                             }}
+                            initial="hidden"
+                            whileInView="stamp"
+                            variants={stampVariants}
                         >
                             BECAUSE
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '2.9vw',
                                 color: 'white',
@@ -309,15 +486,18 @@ function LandingInfoAreaComponent() {
                                 paddingRight: '8%',
                                 marginLeft: '-13%'
                             }}
+                            initial={{ opacity: 0, x: '-30vh'}}
+                            whileInView={{ opacity: 1, x: '0'}}
+                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.5 }}
                         >
                             the fear of missing out is the thing of the past!
-                        </span>
+                        </motion.span>
                         <img
                             src={mask4Image}
                             alt={"Mask 4"}
                             style={mask4ImageStyle}
                         />
-                        <span
+                        <motion.span
                             style={{
                                 fontSize: '4vw',
                                 color: 'white',
@@ -326,12 +506,15 @@ function LandingInfoAreaComponent() {
                                 textAlign: 'center',
                                 paddingRight: '8%',
                                 marginTop: '50%',
-                                marginLeft: '14%'
+                                marginLeft: '14%',
                             }}
+                            initial="hidden"
+                            whileInView="stamp"
+                            variants={stampVariants}
                         >
                             FASTEN YOUR SEATBELTS,
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '6vw',
                                 color: 'white',
@@ -342,10 +525,14 @@ function LandingInfoAreaComponent() {
                                 marginTop: '8%',
                                 marginLeft: '14%'
                             }}
+                            initial="hidden"
+                            whileInView="stamp"
+                            variants={stampVariants}
+                            transition={{ delay: 0.5 }}
                         >
                             BANGALORE & GOA
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '7.8vw',
                                 color: 'white',
@@ -356,10 +543,14 @@ function LandingInfoAreaComponent() {
                                 marginTop: '5%',
                                 marginLeft: '14%'
                             }}
+                            initial="hidden"
+                            whileInView="stamp"
+                            variants={stampVariants}
+                            transition={{ delay: 0.75 }}
                         >
                             ARE ABOUT TO
-                        </span>
-                        <span
+                        </motion.span>
+                        <motion.span
                             style={{
                                 fontSize: '9.3vw',
                                 color: 'white',
@@ -370,9 +561,13 @@ function LandingInfoAreaComponent() {
                                 marginTop: '6%',
                                 marginLeft: '9%'
                             }}
+                            initial="hidden"
+                            whileInView="stamp"
+                            variants={stampVariants}
+                            transition={{ delay: 1 }}
                         >
                             GET WILD!
-                        </span>
+                        </motion.span>
                         <img
                             src={FOMOLogo}
                             alt={"Section 1 Mask"}
