@@ -526,7 +526,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '8%',
+                                marginTop: '6%',
                                 marginLeft: '14%'
                             }}
                             initial="hidden"
@@ -563,7 +563,7 @@ function LandingInfoAreaComponent() {
                                 textAlign: 'center',
                                 paddingRight: '8%',
                                 marginTop: '6%',
-                                marginLeft: '9%'
+                                marginLeft: '10%'
                             }}
                             initial="hidden"
                             whileInView="stamp"
@@ -584,7 +584,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '47%',
+                                marginTop: '49%',
                                 marginLeft: '1%'
                             }}
                         >
