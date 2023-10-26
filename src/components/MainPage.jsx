@@ -37,7 +37,7 @@ const contentStyle = {
 
 const fomoLogoStyle = {
     position: 'absolute',
-    width: '40vw',
+    width: '39.5vw',
     marginLeft: '0%',
     marginTop: '3%',
 };
@@ -60,33 +60,34 @@ const mask2ImageStyle = {
     position: 'absolute',
     width: '90%',
     marginLeft: '-10%',
-    marginTop: '103%'
+    marginTop: '104%'
 }
 
 const mask3ImageStyle = {
     position: 'absolute',
     width: '100%',
-    marginTop: '179%'
+    marginTop: '179.5%'
 }
 
 const cheersImageStyle = {
     position: 'absolute',
     width: '50%',
-    marginTop: '236%',
-    marginRight: '-37%'
+    marginTop: '238%',
+    marginRight: '-39%'
 }
 
 const mask4ImageStyle = {
     position: 'absolute',
-    width: '100%',
+    width: '99%',
     top: '0%',
-    marginTop: '298%',
+    marginLeft: '-1%',
+    marginTop: '301%',
 }
 
 const fomoLogoStyle2 = {
     position: 'absolute',
     width: '35%',
-    marginTop: '408%'
+    marginTop: '411%'
 };
 
 const sunsetLogoStyle = {
@@ -134,14 +135,15 @@ function LandingInfoAreaComponent() {
 
     // Last section animation variant
     const stampVariants = {
-        hidden: { scale: 0.8, opacity: 0 },
+        hidden: { scale: 0.8, opacity: 0, y: '10vh' },
         stamp: {
+            y: '0',
             scale: [0.8, 1.5, 1],
             opacity: [0, 0.9, 1],
             transition: {
                 duration: 0.5,
                 ease: [0.17, 0.55, 0.55, 1],
-                delay: 0.3
+                delay: 0.1
             },
         },
     };
@@ -258,7 +260,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             marginLeft: '10%',
                             marginRight: '10%',
-                            marginTop: '35%', 
+                            marginTop: '33.5%', 
                             transform: isSunsetInView ? "none" : "translateY(5vh)",
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isSunsetInView ? 1: 0,
@@ -268,7 +270,7 @@ function LandingInfoAreaComponent() {
                     </div>
                     <div style={{
                         top: '0%',
-                        marginTop: '55%',
+                        marginTop: '54%',
                         position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
@@ -279,13 +281,13 @@ function LandingInfoAreaComponent() {
                     >
                         <motion.span
                             style={{
-                                fontSize: '2.4vw',
+                                fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto Medium',
+                                fontWeight: 'medium',
                                 textAlign: 'left',
-                                marginTop: '9%',
-                                marginLeft: '-60%',
+                                marginTop: '8%',
+                                marginLeft: '-59.5%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -301,7 +303,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '-13%',
+                                marginLeft: '-13.5%',
                                 marginTop: '0%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -312,13 +314,14 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '2.7vw',
+                                fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: 'bold',
+                                fontFamily: 'Roboto Medium',
+                                fontWeight: 'normal',
                                 textAlign: 'left',
                                 paddingRight: '8%',
-                                marginLeft: '-10%'
+                                marginTop: '-0.5%',
+                                marginLeft: '-11%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -333,14 +336,14 @@ function LandingInfoAreaComponent() {
                         />
                         <div
                             style={{
-                                fontSize: '2.7vw',
+                                fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'normal',
                                 textAlign: 'right',
                                 paddingRight: '8%',
-                                marginTop: '58%',
-                                marginRight: '-45%'
+                                marginTop: '60%',
+                                marginRight: '-44%'
                             }}
                         >
                             {rightAlignedParagraph.map((line, index) => (
@@ -370,13 +373,13 @@ function LandingInfoAreaComponent() {
                         />
                         <div
                             style={{
-                                fontSize: '2.5vw',
+                                fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
-                                marginTop: '55%',
-                                marginLeft: '-35%'
+                                marginTop: '54%',
+                                marginLeft: '-31%'
                             }}
                         >
                             {leftAlignedParagraph.map((line, index) => (
@@ -428,7 +431,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'left',
                                 marginTop: '1%',
-                                marginLeft: '-12%'
+                                marginLeft: '-11%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -438,16 +441,16 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '2.8vw',
+                                fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
-                                marginLeft: '-45%'
+                                marginLeft: '-43%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.25 }}
                         >
                             turned it into a way of life.
                         </motion.span>
@@ -461,14 +464,14 @@ function LandingInfoAreaComponent() {
                         />
                         <motion.span
                             style={{
-                                fontSize: '7.7vw',
+                                fontSize: '7.6vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
                                 paddingRight: '8%',
-                                marginTop: '40%',
-                                marginLeft: '-22%'
+                                marginTop: '39%',
+                                marginLeft: '-21%'
                             }}
                             initial="hidden"
                             whileInView="stamp"
@@ -478,18 +481,18 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '2.9vw',
+                                fontSize: '2.55vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'normal',
                                 textAlign: 'left',
                                 paddingRight: '8%',
                                 marginLeft: '-13%',
                                 marginTop: '-1%'
                             }}
-                            initial={{ opacity: 0, y: '-30vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.5 }}
+                            initial="hidden"
+                            whileInView="stamp"
+                            variants={stampVariants}
                         >
                             the fear of missing out is the thing of the past!
                         </motion.span>
@@ -500,9 +503,9 @@ function LandingInfoAreaComponent() {
                         />
                         <motion.span
                             style={{
+                                fontFamily: 'Nulshock',
                                 fontSize: '4vw',
                                 color: 'white',
-                                fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
@@ -529,7 +532,7 @@ function LandingInfoAreaComponent() {
                             initial="hidden"
                             whileInView="stamp"
                             variants={stampVariants}
-                            transition={{ delay: 0.5 }}
+                            transition={{ delay: 2 }}
                         >
                             BANGALORE & GOA
                         </motion.span>
@@ -547,7 +550,7 @@ function LandingInfoAreaComponent() {
                             initial="hidden"
                             whileInView="stamp"
                             variants={stampVariants}
-                            transition={{ delay: 0.75 }}
+                            transition={{ delay: 3 }}
                         >
                             ARE ABOUT TO
                         </motion.span>
@@ -565,7 +568,7 @@ function LandingInfoAreaComponent() {
                             initial="hidden"
                             whileInView="stamp"
                             variants={stampVariants}
-                            transition={{ delay: 1 }}
+                            transition={{ delay: 4 }}
                         >
                             GET WILD!
                         </motion.span>
@@ -581,7 +584,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '45%',
+                                marginTop: '47%',
                                 marginLeft: '1%'
                             }}
                         >
@@ -591,7 +594,7 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
                                 marginTop: '7%',
@@ -604,7 +607,7 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 marginLeft: '1%'
@@ -616,7 +619,7 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
                                 marginTop: '10%',
@@ -629,7 +632,7 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 marginLeft: '1%'
@@ -644,7 +647,7 @@ function LandingInfoAreaComponent() {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 fontSize: '2.3vw',
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Roboto Medium',
                                 fontWeight: 'medium',
                                 padding: '2% 1% 2% 1%',
                                 marginTop: '5%',

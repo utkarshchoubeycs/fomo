@@ -10,7 +10,6 @@ const HeroComponent = () => {
 	useEffect(() => {
 
 		const unsubScrollYProgress = scrollY.on("change", value => {
-			console.log(stage, value/viewportHeight);
 			if(value <= 0.5 * viewportHeight) setStage(0);
 			else if(value <= 1 * viewportHeight) setStage(1);
 			else if(value <= 1.5 * viewportHeight) setStage(2);
