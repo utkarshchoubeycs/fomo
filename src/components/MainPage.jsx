@@ -271,20 +271,21 @@ function LandingInfoAreaComponent() {
                             exit={{ opacity: '0'}}
                         />
                         <span 
-                        style={{
-                            fontSize: '5.8vw', 
-                            color: 'white', 
-                            fontFamily: 'Nulshock', 
-                            fontWeight: 'bold', 
-                            textAlign: 'center',
-                            justifyContent: 'center',
-                            marginLeft: '10%',
-                            marginRight: '10%',
-                            marginTop: '43%', 
-                            transform: isFomoVisible ? "none" : "translateY(5vh)",
-                            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                            opacity: isFomoVisible ? 1: 0,
-                        }}>
+                            style={{
+                                fontSize: '5.8vw', 
+                                color: 'white', 
+                                fontFamily: 'Nulshock', 
+                                fontWeight: 'bold', 
+                                textAlign: 'center',
+                                justifyContent: 'center',
+                                marginLeft: '10%',
+                                marginRight: '10%',
+                                marginTop: '43%', 
+                                transform: isFomoVisible ? "none" : "translateY(5vh)",
+                                transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                opacity: isFomoVisible ? 1: 0,
+                            }}
+                        >
                             COMES ALIVE!
                         </span>
                     </div>
