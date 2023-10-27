@@ -37,9 +37,9 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
         ref={overlayRef}
         style={{
             position: 'fixed', /* Fixed position */
-            bottom: '50%',
+            bottom: '10%',
             left: '50%',
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-50%, -5%)',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -47,7 +47,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
             <div style={{
                 display: 'flex',
                 position: 'fixed',
-                height: '70vh',
+                height: '50vh',
                 width: '70vw',
                 backgroundColor: 'rgb(255,255,255, 0.5)',
                 backdropFilter: 'blur(0.5vw)',
@@ -63,9 +63,9 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                 <span style={{ fontFamily: 'Roboto Normal', fontSize: '1.5vw', paddingTop: '2vh' }}>Book the best villas and venues for party in Bangalore & Goa!</span>
                 <div style={{ flex: 1, flexDirection: 'row', margin: '5vh 5vw 0 5vw'}}>
                     <input style={{ width: '58vw', padding: '1vh 0 1vh 1vw', margin: '0 1.5vw 0 1.5vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formName} placeholder='Name' onChange={setFormName} />
-                    <input style={{ width: '23vw', padding: '1vh 0 1vh 1vw', margin: '2vh 0.5vw 0 0vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formPhoneNumber} placeholder='Phone' onChange={setFormPhoneNumber} />
-                    <input style={{ width: '34vw', padding: '1vh 0 1vh 1vw', margin: '0 0vw 0 0.5vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formEmail} placeholder='Email' onChange={setFormEmail} />
-                    <motion.div 
+                    <input style={{ width: '23vw', padding: '1vh 0 1vh 2vw', margin: '1.5vh 0vw 0 0vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formPhoneNumber} placeholder='Phone' onChange={setFormPhoneNumber} />
+                    <input style={{ width: '32vw', padding: '1vh -2vw 1vh 0.5vw', margin: '0 0vw 0 0.5vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formEmail} placeholder='Email' onChange={setFormEmail} />
+                    <motion.div
                         onClick={handleFormSubmit} 
                         style={{ 
                             textAlign: 'center', 
@@ -76,7 +76,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                             fontWeight: 'medium',
                             background: 'transparent linear-gradient(107deg, #4B1FC2 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
                             borderRadius: '5vw',
-                            marginLeft: '50vw', 
+                            marginLeft: '44vw', 
                             marginRight: '0vw',
                             opacity: '0.76',
                             cursor: 'pointer',
