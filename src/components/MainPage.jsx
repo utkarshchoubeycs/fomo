@@ -304,8 +304,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'medium',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'left',
                                 marginTop: '8%',
                                 marginLeft: '-59.5%',
@@ -337,8 +337,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'left',
                                 paddingRight: '8%',
                                 marginTop: '-0.5%',
@@ -359,8 +359,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'right',
                                 paddingRight: '8%',
                                 marginTop: '60%',
@@ -396,8 +396,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'left',
                                 marginTop: '54%',
                                 marginLeft: '-31%'
@@ -464,8 +464,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.6vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: 'medium',
                                 textAlign: 'left',
                                 marginLeft: '-43%'
                             }}
@@ -504,8 +504,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.55vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'left',
                                 paddingRight: '8%',
                                 marginLeft: '-13%',
@@ -615,8 +615,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'center',
                                 marginTop: '7%',
                                 marginLeft: '1%'
@@ -634,8 +634,8 @@ function LandingInfoAreaComponent() {
                                 style={{
                                     fontSize: '2.5vw',
                                     color: 'white',
-                                    fontFamily: 'Roboto Medium',
-                                    fontWeight: 'bold',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '800',
                                     textAlign: 'center',
                                     marginLeft: '1%'
                                 }}
@@ -647,8 +647,8 @@ function LandingInfoAreaComponent() {
                             style={{
                                 fontSize: '2.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'normal',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'center',
                                 marginTop: '10%',
                                 marginLeft: '1%'
@@ -664,8 +664,8 @@ function LandingInfoAreaComponent() {
                                 style={{
                                     fontSize: '2.5vw',
                                     color: 'white',
-                                    fontFamily: 'Roboto Medium',
-                                    fontWeight: 'bold',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '800',
                                     textAlign: 'center',
                                     marginLeft: '0%'
                                 }}
@@ -680,8 +680,8 @@ function LandingInfoAreaComponent() {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 fontSize: '2.3vw',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'medium',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 padding: '2% 1% 2% 1%',
                                 marginTop: '5%',
                                 width: '16%',

@@ -58,9 +58,9 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                 zIndex: 3,
                 flex: 1,
             }}>
-                <span style={{ fontFamily: 'Roboto Medium', fontSize: '2.7vw', paddingTop: '1vh' }}>Get on the guest list!</span>
+                <span style={{ fontFamily: 'Roboto', fontWeight: '500', fontSize: '2.7vw', paddingTop: '1vh' }}>Get on the guest list!</span>
                 <span style={{ fontFamily: 'Nulshock', fontSize: '2.7vw' }}>NO FOMO ALLOWED!</span>
-                <span style={{ fontFamily: 'Roboto Normal', fontSize: '1.5vw', paddingTop: '2vh' }}>Book the best villas and venues for party in Bangalore & Goa!</span>
+                <span style={{ fontFamily: 'Roboto', fontWeight: '400', fontSize: '1.5vw', paddingTop: '2vh' }}>Book the best villas and venues for party in Bangalore & Goa!</span>
                 <div style={{ flex: 1, flexDirection: 'row', margin: '5vh 5vw 0 5vw'}}>
                     <input style={{ width: '58vw', padding: '1vh 0 1vh 1vw', margin: '0 1.5vw 0 1.5vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formName} placeholder='Name' onChange={setFormName} />
                     <input style={{ width: '23vw', padding: '1vh 0 1vh 1vw', margin: '2vh 0.5vw 0 0vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formPhoneNumber} placeholder='Phone' onChange={setFormPhoneNumber} />
@@ -70,7 +70,8 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                         style={{ 
                             textAlign: 'center', 
                             margin: '4vh 0 -5vh 0', 
-                            fontFamily: 'Roboto Normal',
+                            fontFamily: 'Roboto',
+                            fontWeight: '400',
                             fontSize: '2vw',
                             padding: '2.5vh 0 2.5vh 0',
                             fontWeight: 'medium',
