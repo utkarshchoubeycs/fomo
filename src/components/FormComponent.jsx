@@ -74,7 +74,6 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                             fontWeight: '400',
                             fontSize: '2vw',
                             padding: '2.5vh 0 2.5vh 0',
-                            fontWeight: 'medium',
                             background: 'transparent linear-gradient(107deg, #4B1FC2 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
                             borderRadius: '5vw',
                             marginLeft: '50vw', 
