@@ -655,18 +655,23 @@ function LandingInfoAreaComponent() {
                         >
                             Contact us at
                         </span>
-                        <span
-                            style={{
-                                fontSize: '2.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'bold',
-                                textAlign: 'center',
-                                marginLeft: '1%'
-                            }}
+                        <a
+                            href="tel:+919945594437"
+                            style={{ textDecoration: 'none' }}  // This will remove the underline typically associated with links
                         >
-                            +91 99455 94437
-                        </span>
+                            <span
+                                style={{
+                                    fontSize: '2.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto Medium',
+                                    fontWeight: 'bold',
+                                    textAlign: 'center',
+                                    marginLeft: '0%'
+                                }}
+                            >
+                                +91 99455 94437
+                            </span>
+                        </a>
                         <motion.div
                             style={{
                                 backgroundColor: "white",
