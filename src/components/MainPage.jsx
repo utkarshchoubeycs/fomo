@@ -38,15 +38,22 @@ const contentStyle = {
 
 const fomoLogoStyle = {
     position: 'absolute',
-    width: '39.5vw',
+    width: '41vw',
     marginLeft: '0%',
-    marginTop: '3%',
+    marginTop: '7%',
 };
+
+const sunsetLogoStyle = {
+    position: 'absolute',
+    width: '35vw',
+    marginLeft: '0%',
+    marginTop: '10%',
+}
 
 const fourhandsStyle = {
     position: 'absolute',
     width: '58vw',
-    marginTop: '-2.5%',
+    marginTop: '1%',
     marginLeft: '25%',
     marginRight: '25%',   
 }
@@ -91,13 +98,6 @@ const fomoLogoStyle2 = {
     marginTop: '411%'
 };
 
-const sunsetLogoStyle = {
-    position: 'absolute',
-    width: '30vw',
-    marginLeft: '0%',
-    marginTop: '15%',
-}
-
 function Section({ image, aspectRatio, style, children }) {
     const sectionStyle = {
         backgroundImage: `url(${image})`,
@@ -140,7 +140,7 @@ function LandingInfoAreaComponent() {
 
     useEffect(() => {
         const unsubScrollYProgress = scrollYProgress.on("change", value => {
-            if(value <= 0.85) setIsFomoVisible(false);
+            if(value <= 0.95) setIsFomoVisible(false);
             else setIsFomoVisible(true);
         })
 
@@ -233,21 +233,21 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             marginLeft: '11%',
                             marginRight: '10%',
-                            marginTop: '4%', 
+                            marginTop: '2%', 
                             transform: isFomoVisible ? 'transformY(50%)' : 'none',
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isFomoVisible ? 0 : 1
                         }}>
-                            AS THE SUN <br/> GOES DOWN
+                            AS THE SUN GOES DOWN
                         </span>
                         <img
                             
                             src={sunsetLogo}
                             alt={"Sunset Logo"}
                             style={{
-                                transform: isFomoVisible ? "translateY(10%)" : "none",
-                                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                                opacity: isFomoVisible ? 0: 1,
+                                //transform: isFomoVisible ? "translateY(10%)" : "none",
+                                //transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                //opacity: isFomoVisible ? 0: 1,
                                 ...sunsetLogoStyle
                             }}
                         />
@@ -255,8 +255,8 @@ function LandingInfoAreaComponent() {
                             src={FOMOLogo}
                             alt={"FOMO Logo"}
                             style={{
-                                transform: isFomoVisible ? "none" : "translateY(15%)",
-                                transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
+                                transform: isFomoVisible ? "none" : "translateX(25%) translateY(10%)",
+                                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
                                 opacity: isFomoVisible ? 1 : 0,
                                 ...fomoLogoStyle}}
                         />
@@ -264,7 +264,7 @@ function LandingInfoAreaComponent() {
                             src={FourHandsImage}
                             alt={"4 hands doing cheers"}
                             style={{
-                                transform: isFomoVisible ? "rotate(180deg)" : "translateY(25%)",
+                                transform: isFomoVisible ? "rotate(180deg)" : "none",
                                 transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                                 ...fourhandsStyle
                             }}
@@ -280,7 +280,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             marginLeft: '10%',
                             marginRight: '10%',
-                            marginTop: '33.5%', 
+                            marginTop: '43%', 
                             transform: isFomoVisible ? "none" : "translateY(5vh)",
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isFomoVisible ? 1: 0,
