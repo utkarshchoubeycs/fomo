@@ -623,18 +623,25 @@ function LandingInfoAreaComponent() {
                         >
                             Follow us on Instagram
                         </span>
-                        <span
-                            style={{
-                                fontSize: '2.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto Medium',
-                                fontWeight: 'bold',
-                                textAlign: 'center',
-                                marginLeft: '1%'
-                            }}
+                        <a
+                            href="https://www.instagram.com/thefomo.co/"
+                            target="_blank"  // This will open the link in a new tab
+                            rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
+                            style={{ textDecoration: 'none' }}  // This will remove the underline typically associated with links
                         >
-                            @thefomo.co
-                        </span>
+                            <span
+                                style={{
+                                    fontSize: '2.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto Medium',
+                                    fontWeight: 'bold',
+                                    textAlign: 'center',
+                                    marginLeft: '1%'
+                                }}
+                            >
+                                @thefomo.co
+                            </span>
+                        </a>
                         <span
                             style={{
                                 fontSize: '2.5vw',
