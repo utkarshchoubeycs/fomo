@@ -82,7 +82,7 @@ const HeroComponent = () => {
 	}
 
 	return (
-		<div onClick={handleClick} style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
+		<div onClick={handleClick} onTouchEnd={handleClick} style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
 			{renderStages()}
 		</div>
 	);
