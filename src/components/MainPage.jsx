@@ -285,7 +285,7 @@ function LandingInfoAreaComponent() {
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isFomoVisible ? 1: 0,
                         }}>
-                            FOMO COMES ALIVE!
+                            COMES ALIVE!
                         </span>
                     </div>
                     <div style={{
