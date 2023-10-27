@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {motion, useInView} from 'framer-motion'
 
 import FourHandsImage from '../assets/P0.webp';
@@ -10,7 +10,8 @@ import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
 import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
-import backgroundImage from '../assets/BG_95KB.webp';
+import backgroundImage from '../assets/BG_1MB.webp';
+import FormComponent from './FormComponent';
 
 const parentStyle = {
     display: 'grid',
@@ -129,6 +130,8 @@ function MainPage() {
 function LandingInfoAreaComponent() {
 
     const sunsetViewRef = useRef();
+    const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
+
     const isSunsetInView = useInView(sunsetViewRef, { 
         amount : 0
     });
@@ -183,6 +186,10 @@ function LandingInfoAreaComponent() {
         "Curated by true party enthusiasts and", 
         "we've got your back!"
     ]
+
+    const handleFormOpenClick = () => {
+        setIsUserInterestFormEnabled(true);
+    }
     
     return (
             <Section
@@ -640,7 +647,7 @@ function LandingInfoAreaComponent() {
                         >
                             +91 99455 94437
                         </span>
-                        <div
+                        <motion.div
                             style={{
                                 backgroundColor: "white",
                                 border: '0.5px black solid',
@@ -653,13 +660,19 @@ function LandingInfoAreaComponent() {
                                 marginTop: '5%',
                                 width: '16%',
                                 borderRadius: '50px',
-                                boxShadow: '0px 3px 15px #00000099'
+                                boxShadow: '0px 3px 15px #00000099',
+                                cursor: 'pointer',
+                                userSelect: 'none'
                             }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale : 0.95 }}
+                            onTap={handleFormOpenClick}
                         >
                             <span>
                                 Join the Party
                             </span>
-                        </div>
+                        </motion.div>
+                        { isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} /> }
                     </div>
                         </div>
             </Section>

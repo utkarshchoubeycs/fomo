@@ -51,3 +51,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Roboto Normal'; /* You can name it whatever you want */
+  src: url("../public/Roboto-Regular.ttf") format('truetype'); /* Use the correct path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* For modern browsers */
+input::placeholder {
+  color: #cccccc;  /* Your desired color */
+}
+

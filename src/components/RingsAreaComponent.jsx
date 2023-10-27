@@ -99,7 +99,7 @@ const RingComponent = ({ size, borderColor, stage }) => {
 		alignItems: 'center',
 		fontSize: '5vw',
 		border: '1px solid white',
-		fontFamily: 'NulShock'
+		fontFamily: 'NulShock',
 	};
 
 	return (
