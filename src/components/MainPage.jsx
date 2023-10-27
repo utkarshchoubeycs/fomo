@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import {motion, useInView} from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll } from 'framer-motion'
 
 import FourHandsImage from '../assets/P0.webp';
 import FOMOLogo from '../assets/P2.webp';
@@ -95,7 +95,7 @@ const sunsetLogoStyle = {
     position: 'absolute',
     width: '30vw',
     marginLeft: '0%',
-    marginTop: '20%',
+    marginTop: '15%',
 }
 
 function Section({ image, aspectRatio, style, children }) {
@@ -131,10 +131,21 @@ function LandingInfoAreaComponent() {
 
     const sunsetViewRef = useRef();
     const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
+    const [isFomoVisible, setIsFomoVisible] = useState(false);
 
-    const isSunsetInView = useInView(sunsetViewRef, { 
-        amount : 0
+    const { scrollYProgress } = useScroll({
+        target: sunsetViewRef,
+        offset: ["start end", "end end"]
     });
+
+    useEffect(() => {
+        const unsubScrollYProgress = scrollYProgress.on("change", value => {
+            if(value <= 0.85) setIsFomoVisible(false);
+            else setIsFomoVisible(true);
+        })
+
+        return () => unsubScrollYProgress();
+    }, [scrollYProgress]);
 
     // Last section animation variant
     const stampVariants = {
@@ -202,6 +213,7 @@ function LandingInfoAreaComponent() {
             >   
                 <div style={contentStyle}>
                     <div 
+                        ref={sunsetViewRef}
                         style={{
                         top: '0%',
                         position: 'absolute',
@@ -222,9 +234,9 @@ function LandingInfoAreaComponent() {
                             marginLeft: '11%',
                             marginRight: '10%',
                             marginTop: '4%', 
-                            transform: isSunsetInView ? 'transformY(50%)' : 'none',
+                            transform: isFomoVisible ? 'transformY(50%)' : 'none',
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                            opacity: isSunsetInView ? 0 : 1
+                            opacity: isFomoVisible ? 0 : 1
                         }}>
                             AS THE SUN <br/> GOES DOWN
                         </span>
@@ -233,31 +245,32 @@ function LandingInfoAreaComponent() {
                             src={sunsetLogo}
                             alt={"Sunset Logo"}
                             style={{
-                                transform: isSunsetInView ? "translateY(15%)" : "none",
+                                transform: isFomoVisible ? "translateY(10%)" : "none",
                                 transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                                opacity: isSunsetInView ? 0: 1,
+                                opacity: isFomoVisible ? 0: 1,
                                 ...sunsetLogoStyle
-                        }}
+                            }}
                         />
                         <img
                             src={FOMOLogo}
                             alt={"FOMO Logo"}
                             style={{
-                                transform: isSunsetInView ? "none" : "translateY(15%)",
+                                transform: isFomoVisible ? "none" : "translateY(15%)",
                                 transition: "all 0.3s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
-                                opacity: isSunsetInView ? 1 : 0,
+                                opacity: isFomoVisible ? 1 : 0,
                                 ...fomoLogoStyle}}
                         />
                         <img
                             src={FourHandsImage}
                             alt={"4 hands doing cheers"}
                             style={{
-                                transform: isSunsetInView ? "rotate(180deg)" : "translateY(25%)",
+                                transform: isFomoVisible ? "rotate(180deg)" : "translateY(25%)",
                                 transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                                ...fourhandsStyle}}
+                                ...fourhandsStyle
+                            }}
+                            exit={{ opacity: '0'}}
                         />
                         <span 
-                        ref={sunsetViewRef}
                         style={{
                             fontSize: '5.8vw', 
                             color: 'white', 
@@ -268,9 +281,9 @@ function LandingInfoAreaComponent() {
                             marginLeft: '10%',
                             marginRight: '10%',
                             marginTop: '33.5%', 
-                            transform: isSunsetInView ? "none" : "translateY(5vh)",
+                            transform: isFomoVisible ? "none" : "translateY(5vh)",
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                            opacity: isSunsetInView ? 1: 0,
+                            opacity: isFomoVisible ? 1: 0,
                         }}>
                             FOMO COMES ALIVE!
                         </span>
