@@ -244,12 +244,7 @@ function LandingInfoAreaComponent() {
                             
                             src={sunsetLogo}
                             alt={"Sunset Logo"}
-                            style={{
-                                //transform: isFomoVisible ? "translateY(10%)" : "none",
-                                //transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                                //opacity: isFomoVisible ? 0: 1,
-                                ...sunsetLogoStyle
-                            }}
+                            style={sunsetLogoStyle}
                         />
                         <img
                             src={FOMOLogo}
@@ -266,6 +261,7 @@ function LandingInfoAreaComponent() {
                             style={{
                                 transform: isFomoVisible ? "rotate(180deg)" : "none",
                                 transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                opacity: isFomoVisible ? 0 : 1,
                                 ...fourhandsStyle
                             }}
                             exit={{ opacity: '0'}}
