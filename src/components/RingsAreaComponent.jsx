@@ -10,10 +10,10 @@ const HeroComponent = () => {
 	useEffect(() => {
 
 		const unsubScrollYProgress = scrollY.on("change", value => {
-			if(value <= 0.5 * viewportHeight) setStage(0);
-			else if(value <= 1 * viewportHeight) setStage(1);
-			else if(value <= 1.5 * viewportHeight) setStage(2);
-			else if(value <= 2 * viewportHeight) setStage(3);
+			if(value < 0.5 * viewportHeight) setStage(0);
+			else if(value < 1 * viewportHeight) setStage(1);
+			else if(value < 1.5 * viewportHeight) setStage(2);
+			else if(value < 2 * viewportHeight) setStage(3);
 			else setStage(4);
 		})
 
@@ -21,6 +21,15 @@ const HeroComponent = () => {
 			unsubScrollYProgress();
 		}
 	}, [scrollY, viewportHeight, stage]);
+
+	const handleClick = () => {
+		if(stage < 4){
+			window.scrollTo({top: ((stage+1) * 0.5 * viewportHeight), behavior: 'instant'});
+		}
+		else{
+			window.scrollTo({top: 2.25 * viewportHeight, behavior: 'smooth'});
+		}
+	}
 
 	const ringData = [
 		[
@@ -73,7 +82,7 @@ const HeroComponent = () => {
 	}
 
 	return (
-		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
+		<div onClick={handleClick} style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
 			{renderStages()}
 		</div>
 	);
@@ -110,6 +119,8 @@ const RingComponent = ({ size, borderColor, stage }) => {
 			borderRadius: '50%',
 			borderColor: borderColor,
 			whiteSpace: 'nowrap',
+			cursor: 'pointer',
+			userSelect: 'none',
 			transition: 'width 0.3s ease-out, height 0.3s ease-out, backgroundColor 0.3s ease-out'
 		}}
 		>
