@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const HeroComponent = () => {
 	const [stage, setStage] = useState(0);
-	const { scrollY } = useScroll();
+	//const { scrollY } = useScroll();
 
-	const viewportHeight = window.innerHeight;
+	//const viewportHeight = window.innerHeight;
 
-	useEffect(() => {
+	/*useEffect(() => {
 
 		const unsubScrollYProgress = scrollY.on("change", value => {
 			if(value < 0.5 * viewportHeight) setStage(0);
@@ -20,16 +20,27 @@ const HeroComponent = () => {
 		return () => {
 			unsubScrollYProgress();
 		}
-	}, [scrollY, viewportHeight, stage]);
+	}, [scrollY, viewportHeight, stage]);*/
 
-	const handleClick = () => {
+	/*const handleClick = () => {
 		if(stage < 4){
 			window.scrollTo({top: ((stage+1) * 0.5 * viewportHeight), behavior: 'instant'});
 		}
 		else{
 			window.scrollTo({top: 2.25 * viewportHeight, behavior: 'smooth'});
 		}
-	}
+	}*/
+
+	useEffect(() => {
+
+		if (stage < 4) {
+		  const timer = setTimeout(() => {
+			setStage(prevStage => prevStage + 1);
+		  }, 1000);
+	
+		  return () => clearTimeout(timer);
+		}
+	  }, [stage]);
 
 	const ringData = [
 		[
@@ -82,7 +93,7 @@ const HeroComponent = () => {
 	}
 
 	return (
-		<div onClick={handleClick} style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
+		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
 			{renderStages()}
 		</div>
 	);
@@ -90,7 +101,7 @@ const HeroComponent = () => {
 
 const LandingPageComponent = () => {
 	return (
-		<div style={{ height: '300vh' }}>
+		<div style={{ height: '100vh' }}>
 			<HeroComponent />
 		</div>
 	)
