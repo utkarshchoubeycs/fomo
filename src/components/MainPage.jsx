@@ -484,6 +484,7 @@ function LandingInfoAreaComponent() {
                             style={cheersImageStyle}
                             initial="hidden"
                             whileInView="visible"
+                            viewport={{ once: true }}
                             variants={cheersImageVariants}
                         />
                         <motion.span
