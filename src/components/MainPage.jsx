@@ -244,13 +244,16 @@ function LandingInfoAreaComponent() {
                             
                             src={sunsetLogo}
                             alt={"Sunset Logo"}
-                            style={sunsetLogoStyle}
+                            style={{
+                                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+                                opacity: isFomoVisible ? 0 : 1,
+                                ...sunsetLogoStyle}}
                         />
                         <img
                             src={FOMOLogo}
                             alt={"FOMO Logo"}
                             style={{
-                                transform: isFomoVisible ? "none" : "translateX(25%) translateY(10%)",
+                                transform: isFomoVisible ? "none" : "translateY(10%)",
                                 transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
                                 opacity: isFomoVisible ? 1 : 0,
                                 ...fomoLogoStyle}}
@@ -498,10 +501,10 @@ function LandingInfoAreaComponent() {
                                 marginTop: '39%',
                                 marginLeft: '-21%'
                             }}
-                            initial="hidden"
-                            whileInView="stamp"
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
                             viewport={{ once: true }}
-                            variants={stampVariants}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
                             BECAUSE
                         </motion.span>
@@ -516,10 +519,10 @@ function LandingInfoAreaComponent() {
                                 marginLeft: '-13%',
                                 marginTop: '-1%'
                             }}
-                            initial="hidden"
-                            whileInView="stamp"
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
                             viewport={{ once: true }}
-                            variants={stampVariants}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
                             the fear of missing out is the thing of the past!
                         </motion.span>
