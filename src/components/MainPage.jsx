@@ -173,10 +173,10 @@ function LandingInfoAreaComponent() {
             x : '0',
             y: '0',
             opacity: 1,
-            rotate: [-20, 20, -5, 5, 0],
+            rotate: [-30, 30, -10, 10, 0],
             transition: {
-                x: { type: "spring", stiffness: 50, damping: 10 },
-                y: { type: "spring", stiffness: 50, damping: 10 },
+                x: { type: "spring", stiffness: 50, damping: 8 },
+                y: { type: "spring", stiffness: 50, damping: 8 },
                 rotate: { times: [0, 0.6, 0.8, 1], duration: 1.5 },
             }
         }
@@ -309,9 +309,9 @@ function LandingInfoAreaComponent() {
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
+                            viewport={{ once: true }}
                         >
                             {"FOMO's your"}
-
                         </motion.span>
                         <motion.span 
                             style={{
@@ -325,6 +325,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
                         >
                             NOCTURNAL <br/>  NAVIGATOR
@@ -342,6 +343,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 }}
                         >
                             ready to take you on wild rides through the cities <br/> that never sleep!
@@ -372,6 +374,7 @@ function LandingInfoAreaComponent() {
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
                                     transition={{ 
                                         type: "spring", 
                                         stiffness: 100, 
@@ -408,6 +411,7 @@ function LandingInfoAreaComponent() {
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
                                     transition={{ 
                                         type: "spring", 
                                         stiffness: 100, 
@@ -436,6 +440,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
                         >
                             AT FOMO,
@@ -452,6 +457,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
                             WE'VE BOTTLED <br/> THAT FEAR AND
@@ -467,6 +473,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
                             turned it into a way of life.
@@ -492,6 +499,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial="hidden"
                             whileInView="stamp"
+                            viewport={{ once: true }}
                             variants={stampVariants}
                         >
                             BECAUSE
@@ -509,6 +517,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial="hidden"
                             whileInView="stamp"
+                            viewport={{ once: true }}
                             variants={stampVariants}
                         >
                             the fear of missing out is the thing of the past!
@@ -531,6 +540,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial="hidden"
                             whileInView="stamp"
+                            viewport={{ once: true }}
                             variants={stampVariants}
                         >
                             FASTEN YOUR SEATBELTS,
@@ -548,6 +558,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial="hidden"
                             whileInView="stamp"
+                            viewport={{ once: true }}
                             variants={stampVariants}
                             transition={{ delay: 2 }}
                         >
@@ -566,6 +577,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial="hidden"
                             whileInView="stamp"
+                            viewport={{ once: true }}
                             variants={stampVariants}
                             transition={{ delay: 3 }}
                         >
@@ -584,6 +596,7 @@ function LandingInfoAreaComponent() {
                             }}
                             initial="hidden"
                             whileInView="stamp"
+                            viewport={{ once: true }}
                             variants={stampVariants}
                             transition={{ delay: 4 }}
                         >
