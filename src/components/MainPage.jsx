@@ -719,6 +719,7 @@ function LandingInfoAreaComponent() {
                         >
                             <img 
                                 src={discoverTileImage} 
+                                alt="discover tile"
                                 style={{
                                     width: '80%',
                                     justifyContent: 'center',
@@ -766,6 +767,7 @@ function LandingInfoAreaComponent() {
                         >
                             <img 
                                 src={partyPackageTileImage} 
+                                alt="party package"
                                 style={{
                                     width: '80%',
                                     justifyContent: 'center',
@@ -816,6 +818,7 @@ function LandingInfoAreaComponent() {
                         >
                             <img 
                                 src={fomoTipsTileImage} 
+                                alt="fomo tips tile"
                                 style={{
                                     width: '80%',
                                     justifyContent: 'center',
@@ -866,6 +869,7 @@ function LandingInfoAreaComponent() {
                         >
                             <img 
                                 src={contentTileImage} 
+                                alt="content tile"
                                 style={{
                                     width: '80%',
                                     justifyContent: 'center',
@@ -915,6 +919,7 @@ function LandingInfoAreaComponent() {
                         >
                             <img 
                                 src={dealsTileImage} 
+                                alt="deals tile"
                                 style={{
                                     width: '80%',
                                     justifyContent: 'center',
@@ -964,6 +969,7 @@ function LandingInfoAreaComponent() {
                         >
                             <img 
                                 src={loyaltyTileImage} 
+                                alt="loyalty tile"
                                 style={{
                                     width: '80%',
                                     justifyContent: 'center',
@@ -1096,7 +1102,7 @@ function LandingInfoAreaComponent() {
                                 Join the Party
                             </span>
                         </motion.div>
-                        { isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} /> }
+                        {isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} />}
                     </div>
                 </div>
         </Section>
