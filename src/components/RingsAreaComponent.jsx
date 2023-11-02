@@ -93,7 +93,7 @@ const HeroComponent = () => {
 	}
 
 	return (
-		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'absolute'}}>
+		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
 			{renderStages()}
 		</div>
 	);

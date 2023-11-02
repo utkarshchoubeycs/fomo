@@ -10,14 +10,22 @@ import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
 import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
-import backgroundImage from '../assets/BG_1MB.webp';
+import backgroundImage from '../assets/BG.webp';
+
+import discoverTileImage from '../assets/Coming Soon/Group 77.webp';
+import partyPackageTileImage from '../assets/Coming Soon/Group 78.webp';
+import fomoTipsTileImage from '../assets/Coming Soon/Group 79.webp';
+import contentTileImage from '../assets/Coming Soon/Group 80.webp';
+import dealsTileImage from '../assets/Coming Soon/Group 81.webp';
+import loyaltyTileImage from '../assets/Coming Soon/Group 82.webp';
+
 import FormComponent from './FormComponent';
 
 const parentStyle = {
     display: 'grid',
-    gridTemplateColumns: '1fr',
     width: '100%',
     height: '100%',
+    backgroundSize: 'cover',
     overflow: 'hidden'
 };
 
@@ -40,7 +48,7 @@ const fomoLogoStyle = {
     position: 'absolute',
     width: '41vw',
     marginLeft: '0%',
-    marginTop: '7%',
+    marginTop: '-1%',
 };
 
 const sunsetLogoStyle = {
@@ -61,41 +69,46 @@ const fourhandsStyle = {
 const mask1ImageStyle = {
     position: 'absolute',
     width: '100%',
-    marginTop: '20%',
+    height: '10%',
+    marginTop: '25%',
 }
 
 const mask2ImageStyle = {
     position: 'absolute',
     width: '90%',
+    height: '8%',
     marginLeft: '-10%',
-    marginTop: '104%'
+    marginTop: '110%'
 }
 
 const mask3ImageStyle = {
     position: 'absolute',
-    width: '100%',
-    marginTop: '179.5%'
+    width: '98%',
+    marginRight: '-2%',
+    height: '6%',
+    marginTop: '188%'
 }
 
 const cheersImageStyle = {
     position: 'absolute',
-    width: '48vw',
-    marginTop: '238%',
-    marginRight: '-39%'
+    width: '40vw',
+    marginTop: '245%',
+    marginRight: '-32%'
 }
 
 const mask4ImageStyle = {
     position: 'absolute',
     width: '99%',
     top: '0%',
+    height: '6%',
     marginLeft: '-1%',
-    marginTop: '301%',
+    marginTop: '307%',
 }
 
 const fomoLogoStyle2 = {
     position: 'absolute',
-    width: '35%',
-    marginTop: '411%'
+    width: '40%',
+    marginTop: '535%'
 };
 
 function Section({ image, aspectRatio, style, children }) {
@@ -107,6 +120,7 @@ function Section({ image, aspectRatio, style, children }) {
         backgroundRepeat: 'no-repeat',
         width: '100%',
         paddingTop: `${100 / aspectRatio}%`,
+        zIndex: 5,
         ...style
     };
 
@@ -130,8 +144,12 @@ function MainPage() {
 function LandingInfoAreaComponent() {
 
     const sunsetViewRef = useRef();
-    const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
     const [isFomoVisible, setIsFomoVisible] = useState(false);
+    const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
+
+    const handleFormOpenClick = () => {
+        setIsUserInterestFormEnabled(true);
+    }
 
     const { scrollYProgress } = useScroll({
         target: sunsetViewRef,
@@ -140,7 +158,7 @@ function LandingInfoAreaComponent() {
 
     useEffect(() => {
         const unsubScrollYProgress = scrollYProgress.on("change", value => {
-            if(value <= 0.95) setIsFomoVisible(false);
+            if(value <= 0.9) setIsFomoVisible(false);
             else setIsFomoVisible(true);
         })
 
@@ -185,27 +203,23 @@ function LandingInfoAreaComponent() {
     const rightAlignedParagraph = [
         "We're diving deep into the vibrant",
         "heartbeats of Bangalore and",
-        "the sun-soaked shores of Goa",
-        "plotting a party revolution you",
-        "won't want to miss."    
+        "the sun-soaked shores of Goa.",
+        "We will bring you the insider scoop" ,
+        "of the happening parties in town."  
     ]
 
     const leftAlignedParagraph = [
         "Get ready for action-packed parties,",
         "electric pubs, and clubs that buzz", 
         "louder than your morning alarm.", 
-        "Curated by true party enthusiasts and", 
-        "we've got your back!"
+        "Curated by true party enthusiasts.", 
+        "We've got your back!"
     ]
-
-    const handleFormOpenClick = () => {
-        setIsUserInterestFormEnabled(true);
-    }
     
     return (
             <Section
                 image={backgroundImage}
-                aspectRatio={0.1779}
+                aspectRatio={0.14692378}
                 style={{
                     zIndex: 2,
                     ...mainImageStyle
@@ -253,7 +267,7 @@ function LandingInfoAreaComponent() {
                             src={FOMOLogo}
                             alt={"FOMO Logo"}
                             style={{
-                                transform: isFomoVisible ? "none" : "translateY(10%)",
+                                transform: isFomoVisible ? "none" : "translateY(20%)",
                                 transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
                                 opacity: isFomoVisible ? 1 : 0,
                                 ...fomoLogoStyle}}
@@ -279,9 +293,9 @@ function LandingInfoAreaComponent() {
                                 justifyContent: 'center',
                                 marginLeft: '10%',
                                 marginRight: '10%',
-                                marginTop: '43%', 
+                                marginTop: '30%', 
                                 transform: isFomoVisible ? "none" : "translateY(5vh)",
-                                transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                                transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
                                 opacity: isFomoVisible ? 1: 0,
                             }}
                         >
@@ -290,7 +304,7 @@ function LandingInfoAreaComponent() {
                     </div>
                     <div style={{
                         top: '0%',
-                        marginTop: '54%',
+                        marginTop: '40%',
                         position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
@@ -301,48 +315,65 @@ function LandingInfoAreaComponent() {
                     >
                         <motion.span
                             style={{
-                                fontSize: '2.6vw',
+                                fontSize: '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 textAlign: 'left',
-                                marginTop: '8%',
-                                marginLeft: '-59.5%',
+                                marginTop: '7%',
+                                marginLeft: '-52%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
                             viewport={{ once: true }}
                         >
-                            {"FOMO's your"}
+                            FOMO is your
                         </motion.span>
                         <motion.span 
                             style={{
-                                fontSize: '7.8vw',
+                                fontSize: '7.5vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '-13.5%',
-                                marginTop: '0%',
+                                marginLeft: '-15%',
+                                marginTop: '-2.5%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
                         >
-                            NOCTURNAL <br/>  NAVIGATOR
+                            NOCTURNAL
+                        </motion.span>
+                        <motion.span 
+                            style={{
+                                fontSize: '7.5vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                marginLeft: '-21%',
+                                marginTop: '-4%',
+                            }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
+                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
+                        >
+                            NAVIGATOR
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '2.5vw',
+                                fontSize: '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 textAlign: 'left',
                                 paddingRight: '8%',
-                                marginTop: '-0.5%',
-                                marginLeft: '-11%'
+                                marginTop: '-2.5%',
+                                marginLeft: '10.5%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -358,21 +389,22 @@ function LandingInfoAreaComponent() {
                         />
                         <div
                             style={{
-                                fontSize: '2.6vw',
+                                fontSize: '3.2vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 textAlign: 'right',
                                 paddingRight: '8%',
-                                marginTop: '60%',
-                                marginRight: '-44%'
+                                marginTop: '59%',
+                                marginRight: '-30%'
                             }}
                         >
                             {rightAlignedParagraph.map((line, index) => (
                                 <motion.span 
                                     style={{
                                         textAlign: 'right',
-                                        display: 'block'
+                                        display: 'block',
+                                        marginTop: '-2.8%'
                                     }}
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
@@ -396,20 +428,21 @@ function LandingInfoAreaComponent() {
                         />
                         <div
                             style={{
-                                fontSize: '2.6vw',
+                                fontSize: '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 textAlign: 'left',
-                                marginTop: '54%',
-                                marginLeft: '-31%'
+                                marginTop: '52%',
+                                marginLeft: '-16%'
                             }}
                         >
                             {leftAlignedParagraph.map((line, index) => (
                                 <motion.span 
                                     style={{
                                         textAlign: 'left',
-                                        display: 'block'
+                                        display: 'block',
+                                        marginTop: '-2.7%'
                                     }}
                                     key={index}
                                     initial={{ opacity: 0, y: 20 }}
@@ -438,7 +471,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginTop: '39%',
+                                marginTop: '37%',
                                 marginLeft: '-37%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -450,12 +483,12 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '6.2vw',
+                                fontSize: '6vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginTop: '1%',
+                                marginTop: '-2%',
                                 marginLeft: '-11%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -463,16 +496,34 @@ function LandingInfoAreaComponent() {
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
-                            WE'VE BOTTLED <br/> THAT FEAR AND
+                            WE'VE BOTTLED
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '2.6vw',
+                                fontSize: '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                marginTop: '-2%',
+                                marginLeft: '-21%'
+                            }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                        >
+                            THAT FEAR &
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
-                                fontWeight: 'medium',
+                                fontWeight: '500',
                                 textAlign: 'left',
-                                marginLeft: '-43%'
+                                marginLeft: '-31%',
+                                marginTop: '-2%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -492,31 +543,64 @@ function LandingInfoAreaComponent() {
                         />
                         <motion.span
                             style={{
-                                fontSize: '7.6vw',
+                                fontSize: '3.5vw',
                                 color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
+                                fontFamily: 'Roboto',
+                                fontWeight: '500',
                                 textAlign: 'left',
-                                paddingRight: '8%',
-                                marginTop: '39%',
-                                marginLeft: '-21%'
+                                marginLeft: '-59%',
+                                marginTop: '35%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
-                            BECAUSE
+                            because
                         </motion.span>
                         <motion.span
                             style={{
-                                fontSize: '2.55vw',
+                                fontSize: '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                marginLeft: '-21.5%',
+                                marginTop: '-2%'
+                            }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                        >
+                            THE FEAR OF
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                textAlign: 'left',
+                                marginLeft: '-23%',
+                                marginTop: '-2%'
+                            }}
+                            initial={{ opacity: 0, y: '20vh'}}
+                            whileInView={{ opacity: 1, y: '0'}}
+                            viewport={{ once: true }}
+                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                        >
+                            MISSING OUT
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 textAlign: 'left',
                                 paddingRight: '8%',
-                                marginLeft: '-13%',
+                                marginLeft: '-27.5%',
                                 marginTop: '-1%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -524,7 +608,7 @@ function LandingInfoAreaComponent() {
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
                         >
-                            the fear of missing out is the thing of the past!
+                            is the thing of the past!
                         </motion.span>
                         <img
                             src={mask4Image}
@@ -539,8 +623,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '50%',
-                                marginLeft: '14%',
+                                marginTop: '41%',
+                                marginLeft: '12%',
                             }}
                             initial="hidden"
                             whileInView="stamp"
@@ -557,8 +641,8 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '6%',
-                                marginLeft: '14%'
+                                marginTop: '3.5%',
+                                marginLeft: '12%'
                             }}
                             initial="hidden"
                             whileInView="stamp"
@@ -576,7 +660,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '5%',
+                                marginTop: '3.5%',
                                 marginLeft: '11%'
                             }}
                             initial="hidden"
@@ -595,7 +679,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '6%',
+                                marginTop: '2.5%',
                                 marginLeft: '8%'
                             }}
                             initial="hidden"
@@ -606,6 +690,313 @@ function LandingInfoAreaComponent() {
                         >
                             GET WILD!
                         </motion.span>
+                        <span
+                            style={{
+                                fontSize: '3.5vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'normal',
+                                textAlign: 'center',
+                                marginTop: '8%'
+                            }}
+                        >
+                            COMING SOON!
+                        </span>
+                        <motion.div 
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginTop: '3%',
+                            color: '#FFF',
+                            userSelect: 'none',
+                            cursor: 'pointer'
+                        }}
+                        whileHover={{scale: 1.02}}
+                        whileTap={{scale: 0.98}}
+                        >
+                            <img 
+                                src={discoverTileImage} 
+                                style={{
+                                    width: '80%',
+                                    justifyContent: 'center',
+                                    marginLeft: '10%'
+                                }}
+                                />
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    marginLeft: '17%',
+                                    marginTop: '3%',
+                                    fontSize: '3.5vw',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold'
+                                }}
+                            >DISCOVER</span>
+                            <p
+                                style={{
+                                    position: 'absolute',
+                                    marginLeft: '17%',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: '1.5vw',
+                                    textAlign: 'left',
+                                    marginTop: '7%'
+                                }}
+                            >Explore the city's coolest bars and most exciting <br/> events that match your vibe!</p>
+                        </motion.div>
+                        <motion.div 
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginTop: '3%',
+                            color: '#FFF',
+                            userSelect: 'none',
+                            cursor: 'pointer'
+                        }}
+                        whileHover={{scale: 1.02}}
+                        whileTap={{scale: 0.98}}
+                        >
+                            <img 
+                                src={partyPackageTileImage} 
+                                style={{
+                                    width: '80%',
+                                    justifyContent: 'center',
+                                    marginLeft: '10%',
+                                    
+                                }}/>
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    marginLeft: '17%',
+                                    marginTop: '3%',
+                                    fontSize: '3.5vw',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold'
+                                }}
+                            >PARTY PACKAGE</span>
+                            <p
+                                style={{
+                                    position: 'absolute',
+                                    marginLeft: '17%',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: '1.5vw',
+                                    textAlign: 'left',
+                                    marginTop: '7%'
+                                }}
+                            >
+                                Perfect for large group bookings for private and corporate events. We help you find and book <br/>
+                                the ideal party venue and the best party packages that suit your budget.
+                            </p>
+                        </motion.div>
+                        <motion.div 
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginTop: '3%',
+                            color: '#FFF',
+                            userSelect: 'none',
+                            cursor: 'pointer'
+                        }}
+                        whileHover={{scale: 1.02}}
+                        whileTap={{scale: 0.98}}
+                        >
+                            <img 
+                                src={fomoTipsTileImage} 
+                                style={{
+                                    width: '80%',
+                                    justifyContent: 'center',
+                                    marginLeft: '10%',
+                                    
+                                }}/>
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    marginLeft: '17%',
+                                    marginTop: '3%',
+                                    fontSize: '3.5vw',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold'
+                                }}
+                            >FOMO TIPS</span>
+                            <p
+                                style={{
+                                    position: 'absolute',
+                                    marginLeft: '17%',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: '1.5vw',
+                                    textAlign: 'left',
+                                    marginTop: '7%'
+                                }}
+                            >
+                                Get FOMO-verified recommendations for the town's top parties, ensuring you never miss <br/>
+                                out again!
+                            </p>
+                        </motion.div>
+                        <motion.div 
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginTop: '3%',
+                            color: '#FFF',
+                            userSelect: 'none',
+                            cursor: 'pointer'
+                        }}
+                        whileHover={{scale: 1.02}}
+                        whileTap={{scale: 0.98}}
+                        >
+                            <img 
+                                src={contentTileImage} 
+                                style={{
+                                    width: '80%',
+                                    justifyContent: 'center',
+                                    marginLeft: '10%',
+                                    
+                                }}/>
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    marginLeft: '17%',
+                                    marginTop: '3%',
+                                    fontSize: '3.5vw',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold'
+                                }}
+                            >CONTENT</span>
+                            <p
+                                style={{
+                                    position: 'absolute',
+                                    marginLeft: '17%',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: '1.5vw',
+                                    textAlign: 'left',
+                                    marginTop: '7%'
+                                }}
+                            >
+                                Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
+                            </p>
+                        </motion.div>
+                        <motion.div 
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginTop: '3%',
+                            color: '#FFF',
+                            userSelect: 'none',
+                            cursor: 'pointer'
+                        }}
+                        whileHover={{scale: 1.02}}
+                        whileTap={{scale: 0.98}}
+                        >
+                            <img 
+                                src={dealsTileImage} 
+                                style={{
+                                    width: '80%',
+                                    justifyContent: 'center',
+                                    marginLeft: '10%',
+                                    
+                                }}/>
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    marginLeft: '17%',
+                                    marginTop: '3%',
+                                    fontSize: '3.5vw',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold'
+                                }}
+                            >DEALS</span>
+                            <p
+                                style={{
+                                    position: 'absolute',
+                                    marginLeft: '17%',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: '1.5vw',
+                                    textAlign: 'left',
+                                    marginTop: '7%'
+                                }}
+                            >
+                                Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
+                            </p>
+                        </motion.div>
+                        <motion.div 
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            position: 'relative',
+                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginTop: '3%',
+                            color: '#FFF',
+                            userSelect: 'none',
+                            cursor: 'pointer'
+                        }}
+                        whileHover={{scale: 1.02}}
+                        whileTap={{scale: 0.98}}
+                        >
+                            <img 
+                                src={loyaltyTileImage} 
+                                style={{
+                                    width: '80%',
+                                    justifyContent: 'center',
+                                    marginLeft: '10%',
+                                    
+                                }}/>
+                            <span
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    top: 0,
+                                    marginLeft: '17%',
+                                    marginTop: '3%',
+                                    fontSize: '3.5vw',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold'
+                                }}
+                            >LOYALTY & REFERRAL</span>
+                            <p
+                                style={{
+                                    position: 'absolute',
+                                    marginLeft: '17%',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: '1.5vw',
+                                    textAlign: 'left',
+                                    marginTop: '7%'
+                                }}
+                            >
+                                Create and share party content, review your favourite outlets and refer FOMO to your friends <br/>
+                                to earn points, goodies and freebies
+                            </p>
+                        </motion.div>
                         <img
                             src={FOMOLogo}
                             alt={"Section 1 Mask"}
@@ -613,13 +1004,12 @@ function LandingInfoAreaComponent() {
                         />
                         <span
                             style={{
-                                fontSize: '3vw',
+                                fontSize: '5.7vw',
                                 color: 'white',
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '49%',
-                                marginLeft: '1%'
+                                marginTop: '45%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
@@ -629,12 +1019,11 @@ function LandingInfoAreaComponent() {
                                 fontSize: '2.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
-                                fontWeight: '500',
+                                fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: '7%',
-                                marginLeft: '1%'
+                                marginTop: '10%'
                             }}
-                        >
+                        >   
                             Follow us on Instagram
                         </span>
                         <a
@@ -649,8 +1038,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
-                                    textAlign: 'center',
-                                    marginLeft: '1%'
+                                    textAlign: 'center'
                                 }}
                             >
                                 @thefomo.co
@@ -661,10 +1049,9 @@ function LandingInfoAreaComponent() {
                                 fontSize: '2.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
-                                fontWeight: '500',
+                                fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: '10%',
-                                marginLeft: '1%'
+                                marginTop: '8%'
                             }}
                         >
                             Contact us at
@@ -679,8 +1066,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
-                                    textAlign: 'center',
-                                    marginLeft: '0%'
+                                    textAlign: 'center'
                                 }}
                             >
                                 +91 99455 94437
@@ -688,16 +1074,15 @@ function LandingInfoAreaComponent() {
                         </a>
                         <motion.div
                             style={{
-                                backgroundColor: "white",
-                                border: '0.5px black solid',
-                                display: 'flex',
+                                background: '#FFFFFF 0% 0% no-repeat padding-box',
+                                border: '1px solid #707070',
                                 justifyContent: 'center',
                                 fontSize: '2.3vw',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
-                                padding: '2% 1% 2% 1%',
-                                marginTop: '5%',
-                                width: '16%',
+                                padding: '1.5% 1% 1.5% 1%',
+                                marginTop: '15%',
+                                width: '25%',
                                 borderRadius: '50px',
                                 boxShadow: '0px 3px 15px #00000099',
                                 cursor: 'pointer',
@@ -713,8 +1098,8 @@ function LandingInfoAreaComponent() {
                         </motion.div>
                         { isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} /> }
                     </div>
-                        </div>
-            </Section>
+                </div>
+        </Section>
     )
 }
 

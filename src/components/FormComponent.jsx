@@ -1,93 +1,70 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import '../App.css';
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
-const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}) => {
+import FormBackgroundImage from '../assets/Group66.png';
+
+const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEnabled}) => {
 
     const [formName, setFormName] = useState('')
-    const [formPhoneNumber, setFormPhoneNumber] = useState('');
     const [formEmail, setFormEmail] = useState('');
+
+    const [formPhoneNumber, setFormPhoneNumber] = useState('');
+
     const overlayRef = useRef(null);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-        if (overlayRef.current && !overlayRef.current.contains(event.target)) {
-            setIsUserInterestFormEnabled(false);
-        }
+            if (overlayRef.current && !overlayRef.current.contains(event.target)) {
+                setIsUserInterestFormEnabled(false);
+            }
         };
 
-        // Attach the click event listener
         document.addEventListener('mousedown', handleClickOutside);
-
-        // Cleanup the event listener on component unmount
         return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('mousedown', handleClickOutside);
         };
     });
 
     if (!isUserInterestFormEnabled) return null;
-
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
     }
 
     return (
-        <div
-        ref={overlayRef}
-        style={{
-            position: 'fixed', /* Fixed position */
-            bottom: '5%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}>
-            <div style={{
-                display: 'flex',
-                position: 'fixed',
-                height: '70vh',
-                width: '70vw',
-                backgroundColor: 'rgb(255,255,255, 0.5)',
-                backdropFilter: 'blur(0.5vw)',
-                flexDirection: 'column',
-                boxShadow: '0px 3px 15px #00000099',
-                borderRadius: '4vw',
-                color: '#fff',
-                zIndex: 3,
-                flex: 1,
-            }}>
-                <span style={{ fontFamily: 'Roboto', fontWeight: '500', fontSize: '2.7vw', paddingTop: '1vh' }}>Get on the guest list!</span>
-                <span style={{ fontFamily: 'Nulshock', fontSize: '2.7vw' }}>NO FOMO ALLOWED!</span>
-                <span style={{ fontFamily: 'Roboto', fontWeight: '400', fontSize: '1.5vw', paddingTop: '2vh' }}>Book the best villas and venues for party in Bangalore & Goa!</span>
-                <div style={{ flex: 1, flexDirection: 'row', margin: '5vh 5vw 0 5vw'}}>
-                    <input style={{ width: '58vw', padding: '1vh 0 1vh 1vw', margin: '0 1.5vw 0 1.5vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formName} placeholder='Name' onChange={setFormName} />
-                    <input style={{ width: '23vw', padding: '1vh 0 1vh 1vw', margin: '2vh 0.5vw 0 0vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formPhoneNumber} placeholder='Phone' onChange={setFormPhoneNumber} />
-                    <input style={{ width: '34vw', padding: '1vh 0 1vh 1vw', margin: '0 0vw 0 0.5vw', fontSize: '2vw', borderRadius: '1vw', border: '0.05vw grey solid' }} text={formEmail} placeholder='Email' onChange={setFormEmail} />
-                    <motion.div 
-                        onClick={handleFormSubmit} 
-                        style={{ 
-                            textAlign: 'center', 
-                            margin: '4vh 0 -5vh 0', 
-                            fontFamily: 'Roboto',
-                            fontWeight: '400',
-                            fontSize: '2vw',
-                            padding: '2.5vh 0 2.5vh 0',
-                            background: 'transparent linear-gradient(107deg, #4B1FC2 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
-                            borderRadius: '5vw',
-                            marginLeft: '50vw', 
-                            marginRight: '0vw',
-                            opacity: '0.76',
-                            cursor: 'pointer',
-                            userSelect: 'none'
-                        }}
-                        whileTap={{ scale: 0.95 }}
-                        >
-                        Submit
-                    </motion.div>
+        <div 
+            ref={overlayRef}
+            className="mx-4"
+            style={{ 
+                backgroundImage: `url(${FormBackgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                border: '1px black solid'
+            }}
+        >   
+            <div className='flex flex-col justify-center m-5'>
+                <div className='flex flex-col justify-center p-5'>
+                    <div className="flex justify-center w-1 m-5" style={{ fontFamily: ''}}>Shoot Your Queries</div>
+                    <div className="flex justify-center w-1 m-5">'CUZ NO FOMO ALLOWED</div>
+                    <div className="flex justify-center m-5">Cutomized party packages, venues & villas in Bangalore & Goa!</div>
                 </div>
-                
+                <div>
+                    <div className="mb-4">
+                        <input type="text" id="name" name="name" placeholder="Name" className="w-full border rounded-md p-2" />
+                    </div>
+
+                    <div className="flex gap-4 mb-4 md:flex">
+                        <div className="w-1/2">
+                            <input type="email" id="email" name="email" placeholder="Email" className="w-full border rounded-md p-2" />
+                        </div>
+                        <div className="w-1/2">
+                            <input type="tel" id="telephone" name="Phone" placeholder="Phone" className="w-full border rounded-md p-2" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
