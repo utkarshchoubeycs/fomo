@@ -311,7 +311,8 @@ function LandingInfoAreaComponent() {
                         alignItems: 'center',
                         width: '100%',
                         left: '0%',
-                        right: '0%'}} 
+                        right: '0%'
+                    }} 
                     >
                         <motion.span
                             style={{
