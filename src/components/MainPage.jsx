@@ -498,7 +498,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'left',
                                 marginTop: '-2%',
-                                marginLeft: '-11%'
+                                marginLeft: '-11.5%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -515,7 +515,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'left',
                                 marginTop: '-2%',
-                                marginLeft: '-21%'
+                                marginLeft: '-22%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -1025,7 +1025,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '39%'
+                                marginTop: '40.5%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
