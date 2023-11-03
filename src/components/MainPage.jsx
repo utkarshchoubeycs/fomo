@@ -343,7 +343,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '-15%',
+                                marginLeft: '-13%',
                                 marginTop: '-2.5%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -360,7 +360,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '-21%',
+                                marginLeft: '-19%',
                                 marginTop: '-4%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -574,7 +574,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '-21.5%',
+                                marginLeft: '-20%',
                                 marginTop: '-2%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -591,7 +591,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: '-23%',
+                                marginLeft: '-21%',
                                 marginTop: '-2.5%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}

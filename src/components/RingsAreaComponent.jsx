@@ -50,7 +50,7 @@ const HeroComponent = () => {
 		],
 		[
 			{ size: isMobileScreen ? '75vw' : '33vw', borderColor: 'rgba(254, 0, 0, 1)', opacity: 1 },
-			{ size: isMobileScreen ? '45vw' : '25vw', borderColor: '#fff', opacity: 0.5 }
+			{ size: isMobileScreen ? '45vw' : '25vw', borderColor: '#fff', opacity: 0.2 }
 		],
 		[
 			{ size: isMobileScreen ? '85vw' : '43vw', borderColor: 'rgba(1, 255, 255, 1)', opacity: 1 },
@@ -66,9 +66,9 @@ const HeroComponent = () => {
 		[
 			{ size: isMobileScreen ? '120vw' : '47vw', borderColor: '#fff', opacity: 1 },
 			{ size: isMobileScreen ? '85vw' : '36vw', borderColor: '#fff', opacity: 0.25 },
-			{ size: '23vw', borderColor: '#fff', opacity: 0.2 },
-			{ size: '21vw', borderColor: '#fff', opacity: 0.1 },
-			{ size: '14vw', borderColor: '#fff', opacity: 0.1 }
+			{ size: isMobileScreen ? '50vw' : '23vw', borderColor: '#fff', opacity: 0.05 },
+			{ size: '21vw', borderColor: '#fff', opacity: 0.05 },
+			{ size: '14vw', borderColor: '#fff', opacity: 0.05 }
 		],
 	];
 
