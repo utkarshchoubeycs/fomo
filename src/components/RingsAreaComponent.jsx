@@ -92,18 +92,12 @@ const HeroComponent = () => {
 			case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={4} isMobileScreen={isMobileScreen} />)}</div>
 			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 				{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={stage} isMobileScreen={isMobileScreen} />)}
-				<motion.button
-					style={{ border: '1px white solid', cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock' }}
-					className="fixed mb-10 right-0 mx-6 md:mb-8 lg:mb-4 bottom-0 md:right-8 bg-transparent text-xs sm:text-sm md:text-base text-white py-3 px-12 rounded-full"
-				>
-					Scroll to the world of FOMO
-				</motion.button>
 			</div>
 		}
 	}
 
 	return (
-		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
+		<div style={{ height: '100vh', justifyContent: 'center', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
 			{renderStages()}
 		</div>
 	);
@@ -125,6 +119,7 @@ const RingComponent = ({ size, borderColor, opacity, stage, isMobileScreen }) =>
 		left: '50%',
 		transform: 'translate(-50%, -50%)',
 		display: 'flex',
+		flexDirection: 'col',
 		justifyContent: 'center',
 		alignItems: 'center',
 		fontSize: isMobileScreen ? '12vw' : '5vw',
@@ -132,6 +127,24 @@ const RingComponent = ({ size, borderColor, opacity, stage, isMobileScreen }) =>
 		fontFamily: 'NulShock',
 		fontWeight: '300'
 	};
+
+	const renderScrollPrompt = () => {
+		if (stage === 4) {
+		  return (
+			<motion.div
+				style={{ cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock' }}
+				className="mt-4 bg-transparent text-xs sm:text-sm md:text-xl text-white py-3 px-2 rounded-full"
+				onClick={() => { /* scroll function here */ }}
+				initial={{ y: 20 }}
+  				animate={{y: 0 }}
+				transition={{ type: "spring", stiffness: 50, damping: 2, duration: 5, delay: 1, repeat:Infinity }}
+			>
+			  Scroll to enter website!
+			</motion.div>
+		  );
+		}
+		return null;
+	  };
 
 	return (
 		<motion.div style={{
@@ -175,14 +188,18 @@ const RingComponent = ({ size, borderColor, opacity, stage, isMobileScreen }) =>
 				</span>)}
 			{(stage === 4) &&
 				(
-				<span style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '2px', fontSize: (isMobileScreen ? '9vw' : '5vw') }}>
-					MUSIC, 
-					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
-					DRINKS,
-					<br /> LIGHTS
-					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
-					& ACTION
-				</span>
+				<div className="text-center">
+					<span style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '2px', fontSize: (isMobileScreen ? '9vw' : '5vw') }}>
+						MUSIC, 
+						{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+						DRINKS,
+						<br /> LIGHTS
+						{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+						& ACTION
+						<br/>
+					</span>
+					{renderScrollPrompt()}
+				</div>
 				)}
 		</motion.div>
 	)
