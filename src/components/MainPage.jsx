@@ -111,7 +111,7 @@ const mask4ImageStyle = {
 const fomoLogoStyle2 = {
     position: 'absolute',
     width: '40%',
-    marginTop: '530%'
+    marginTop: '526%'
 };
 
 function Section({ image, aspectRatio, style, children }) {
@@ -1035,7 +1035,7 @@ function LandingInfoAreaComponent() {
                             alt="insta small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '578%' : '586%'
+                                marginTop: isMobileScreen ? '576%' : '586%'
                             }}
                         />
                         <span
@@ -1054,7 +1054,7 @@ function LandingInfoAreaComponent() {
                             href="https://www.instagram.com/thefomo.co/"
                             target="_blank"  // This will open the link in a new tab
                             rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
-                            style={{ textDecoration: 'none' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2.5%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
@@ -1062,7 +1062,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
                                 }}
                             >
                                 @thefomo.co
@@ -1073,7 +1073,7 @@ function LandingInfoAreaComponent() {
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '602%' : '607%'
+                                marginTop: isMobileScreen ? '600%' : '606%'
                             }}
                         />
                         <span
@@ -1083,14 +1083,14 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: '14%'
+                                marginTop: isMobileScreen ? '16.5%' : '14%'
                             }}
                         >
                             Contact us at
                         </span>
                         <a
                             href="tel:+919945594437"
-                            style={{ textDecoration: 'none' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2.5%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
