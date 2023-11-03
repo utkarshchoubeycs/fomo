@@ -343,7 +343,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: isMobileScreen ? '-13.5%' : '-15%',
+                                marginLeft: isMobileScreen ? '-12.5%' : '-15%',
                                 marginTop: '-2.5%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
@@ -360,7 +360,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
                                 textAlign: 'left',
-                                marginLeft: isMobileScreen ? '-20%' : '-21.5%',
+                                marginLeft: isMobileScreen ? '-19%' : '-21.5%',
                                 marginTop: '-4%',
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
