@@ -5,7 +5,7 @@ const HeroComponent = () => {
 	const [stage, setStage] = useState(0);
 	//const { scrollY } = useScroll();
 
-	//const viewportHeight = window.innerHeight;
+	const viewportHeight = window.innerHeight;
 
 	/*useEffect(() => {
 
@@ -22,14 +22,15 @@ const HeroComponent = () => {
 		}
 	}, [scrollY, viewportHeight, stage]);*/
 
-	/*const handleClick = () => {
+	const handleClick = () => {
+		console.log('Reached here!');
 		if(stage < 4){
 			window.scrollTo({top: ((stage+1) * 0.5 * viewportHeight), behavior: 'instant'});
 		}
 		else{
-			window.scrollTo({top: 2.25 * viewportHeight, behavior: 'smooth'});
+			window.scrollTo({top: 3.5 * viewportHeight, behavior: 'smooth'});
 		}
-	}*/
+	}
 
 	useEffect(() => {
 
@@ -92,9 +93,32 @@ const HeroComponent = () => {
 		}
 	}
 
+	const renderButtonForStage4 = () => {
+		if (stage === 4) {
+		  return (
+			<motion.div 
+				style={{ border: '1px white solid', cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock' }}
+				className="fixed bottom-8 right-16 bg-transparent text-xl text-white py-3 px-12 rounded-full"
+				>
+			  Enter website
+			</motion.div>
+		  );
+		}
+		return null;
+	  };
+
 	return (
 		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
 			{renderStages()}
+			{	stage === 4 
+				&& (
+				<motion.button 
+					style={{ border: '1px white solid', cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock', zIndex: 1 }}
+					className="fixed mb-10 right-0 mx-6 md:mb-8 lg:mb-4 bottom-0 md:right-8 bg-transparent text-xs sm:text-sm md:text-base text-white py-3 px-12 rounded-full"
+				>
+					Scroll to the world of FOMO
+				</motion.button>
+			)}
 		</div>
 	);
 };
@@ -152,9 +176,11 @@ const RingComponent = ({ size, borderColor, stage }) => {
 					MUSIC, DRINKS,<br /> LIGHTS <span style={{ color: 'rgba(0, 255, 1, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: "3px" }}>& ACTION</span>
 				</span>)}
 			{(stage === 4) &&
-				(<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
+				(
+				<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
 					MUSIC, DRINKS,<br /> LIGHTS & ACTION
-				</span>)}
+				</span>
+				)}
 		</motion.div>
 	)
 }

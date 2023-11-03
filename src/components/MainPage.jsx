@@ -70,7 +70,7 @@ const mask1ImageStyle = {
     position: 'absolute',
     width: '100%',
     height: '10%',
-    marginTop: '25%',
+    marginTop: '25%'
 }
 
 const mask2ImageStyle = {
@@ -383,10 +383,11 @@ function LandingInfoAreaComponent() {
                         >
                             ready to take you on wild rides through the cities <br/> that never sleep!
                         </motion.span>
-                        <img
+                        <motion.img
                             src={mask1Image}
                             alt={"Mask 1"}
                             style={mask1ImageStyle}
+                            whileHover={{ transform: 'translateY(4%)' }}
                         />
                         <div
                             style={{
@@ -422,10 +423,11 @@ function LandingInfoAreaComponent() {
                                 </motion.span>
                             ))}
                         </div>
-                        <img
+                        <motion.img
                             src={mask2Image}
                             alt={"Mask 2"}
                             style={mask2ImageStyle}
+                            whileHover={{ transform: 'translateY(4%)' }}
                         />
                         <div
                             style={{
@@ -460,10 +462,11 @@ function LandingInfoAreaComponent() {
                                 </motion.span>
                             ))}
                         </div>
-                        <img
+                        <motion.img
                             src={mask3Image}
                             alt={"Mask 3"}
                             style={mask3ImageStyle}
+                            whileHover={{ transform: 'translateY(4%)' }}
                         />
                         <motion.span
                             style={{
@@ -584,7 +587,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'left',
                                 marginLeft: '-23%',
-                                marginTop: '-2%'
+                                marginTop: '-2.5%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -602,7 +605,7 @@ function LandingInfoAreaComponent() {
                                 textAlign: 'left',
                                 paddingRight: '8%',
                                 marginLeft: '-27.5%',
-                                marginTop: '-1%'
+                                marginTop: '-2%'
                             }}
                             initial={{ opacity: 0, y: '20vh'}}
                             whileInView={{ opacity: 1, y: '0'}}
@@ -611,10 +614,11 @@ function LandingInfoAreaComponent() {
                         >
                             is the thing of the past!
                         </motion.span>
-                        <img
+                        <motion.img
                             src={mask4Image}
                             alt={"Mask 4"}
                             style={mask4ImageStyle}
+                            whileHover={{ transform: 'translateY(4%)' }}
                         />
                         <motion.span
                             style={{
