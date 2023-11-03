@@ -19,6 +19,11 @@ import contentTileImage from '../assets/Coming Soon/Group 80.webp';
 import dealsTileImage from '../assets/Coming Soon/Group 81.webp';
 import loyaltyTileImage from '../assets/Coming Soon/Group 82.webp';
 
+import whatsapp from '../assets/whatsapp.png';
+import whatsappxs from '../assets/whatsappSmall.png';
+import insta from '../assets/insta.png';
+import instaxs from '../assets/instaSmall.png';
+
 import FormComponent from './FormComponent';
 
 const parentStyle = {
@@ -108,7 +113,7 @@ const mask4ImageStyle = {
 const fomoLogoStyle2 = {
     position: 'absolute',
     width: '40%',
-    marginTop: '535%'
+    marginTop: '530%'
 };
 
 function Section({ image, aspectRatio, style, children }) {
@@ -156,6 +161,8 @@ function LandingInfoAreaComponent() {
         offset: ["start end", "end end"]
     });
 
+    const isMobileScreen = window.innerWidth < 768;
+
     useEffect(() => {
         const unsubScrollYProgress = scrollYProgress.on("change", value => {
             if(value <= 0.9) setIsFomoVisible(false);
@@ -163,7 +170,7 @@ function LandingInfoAreaComponent() {
         })
 
         return () => unsubScrollYProgress();
-    }, [scrollYProgress]);
+    }, [scrollYProgress, isMobileScreen]);
 
     // Last section animation variant
     const stampVariants = {
@@ -204,8 +211,8 @@ function LandingInfoAreaComponent() {
         "We're diving deep into the vibrant",
         "heartbeats of Bangalore and",
         "the sun-soaked shores of Goa.",
-        "We will bring you the insider scoop" ,
-        "of the happening parties in town."  
+        "We are bringing you the insider scoops" ,
+        "on the happening parties in town."  
     ]
 
     const leftAlignedParagraph = [
@@ -1010,7 +1017,7 @@ function LandingInfoAreaComponent() {
                         </motion.div>
                         <img
                             src={FOMOLogo}
-                            alt={"Section 1 Mask"}
+                            alt={"FOMO logo footer"}
                             style={fomoLogoStyle2}
                         />
                         <span
@@ -1020,11 +1027,18 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '45%'
+                                marginTop: '42%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
                         </span>
+                        <img
+                            src={instaxs}
+                            style={{
+                                position: 'absolute',
+                                marginTop: isMobileScreen ? '578%' : '586%'
+                            }}
+                        />
                         <span
                             style={{
                                 fontSize: '2.5vw',
@@ -1032,7 +1046,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: '10%'
+                                marginTop: '12%'
                             }}
                         >   
                             Follow us on Instagram
@@ -1055,6 +1069,13 @@ function LandingInfoAreaComponent() {
                                 @thefomo.co
                             </span>
                         </a>
+                        <img
+                            src={whatsappxs}
+                            style={{
+                                position: 'absolute',
+                                marginTop: isMobileScreen ? '602%' : '607%'
+                            }}
+                        />
                         <span
                             style={{
                                 fontSize: '2.5vw',
@@ -1062,7 +1083,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: '8%'
+                                marginTop: '14%'
                             }}
                         >
                             Contact us at
@@ -1092,7 +1113,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 padding: '1.5% 1% 1.5% 1%',
-                                marginTop: '15%',
+                                marginTop: '10%',
                                 width: '25%',
                                 borderRadius: '50px',
                                 boxShadow: '0px 3px 15px #00000099',

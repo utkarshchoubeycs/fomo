@@ -31,6 +31,8 @@ const HeroComponent = () => {
 		}
 	}*/
 
+	const isMobileScreen = window.innerWidth < 768;
+
 	useEffect(() => {
 
 		if (stage < 4) {
@@ -40,10 +42,7 @@ const HeroComponent = () => {
 	
 		  return () => clearTimeout(timer);
 		}
-	  }, [stage]);
-
-	const isMobileScreen = window.innerWidth < 768;
-	console.log(isMobileScreen)
+	  }, [stage, isMobileScreen]);
 
 	const ringData = [
 		[
@@ -91,22 +90,21 @@ const HeroComponent = () => {
 			case 2: return <div style={{ background: getBackgroundForStage(2), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[2].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={2} isMobileScreen={isMobileScreen} />)}</div>
 			case 3: return <div style={{ background: getBackgroundForStage(3), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[3].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={3} isMobileScreen={isMobileScreen} />)}</div>
 			case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={4} isMobileScreen={isMobileScreen} />)}</div>
-			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={stage} isMobileScreen={isMobileScreen} />)}</div>
+			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+				{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={stage} isMobileScreen={isMobileScreen} />)}
+				<motion.button
+					style={{ border: '1px white solid', cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock' }}
+					className="fixed mb-10 right-0 mx-6 md:mb-8 lg:mb-4 bottom-0 md:right-8 bg-transparent text-xs sm:text-sm md:text-base text-white py-3 px-12 rounded-full"
+				>
+					Scroll to the world of FOMO
+				</motion.button>
+			</div>
 		}
 	}
 
 	return (
 		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
 			{renderStages()}
-			{	stage === 4 
-				&& (
-				<motion.button 
-					style={{ border: '1px white solid', cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock', zIndex: 1 }}
-					className="fixed mb-10 right-0 mx-6 md:mb-8 lg:mb-4 bottom-0 md:right-8 bg-transparent text-xs sm:text-sm md:text-base text-white py-3 px-12 rounded-full"
-				>
-					Scroll to the world of FOMO
-				</motion.button>
-			)}
 		</div>
 	);
 };
