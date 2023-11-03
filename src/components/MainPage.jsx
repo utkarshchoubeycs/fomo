@@ -1025,7 +1025,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '42%'
+                                marginTop: '39%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
@@ -1035,7 +1035,7 @@ function LandingInfoAreaComponent() {
                             alt="insta small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '576%' : '586%'
+                                marginTop: isMobileScreen ? '576%' : '585%'
                             }}
                         />
                         <span
@@ -1045,7 +1045,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: '12%'
+                                marginTop: isMobileScreen ? '18%' : '15%' 
                             }}
                         >   
                             Follow us on Instagram
@@ -1054,7 +1054,7 @@ function LandingInfoAreaComponent() {
                             href="https://www.instagram.com/thefomo.co/"
                             target="_blank"  // This will open the link in a new tab
                             rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2.5%' : '-1%' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
@@ -1073,7 +1073,7 @@ function LandingInfoAreaComponent() {
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '600%' : '606%'
+                                marginTop: isMobileScreen ? '602%' : '605%'
                             }}
                         />
                         <span
@@ -1083,14 +1083,14 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '16.5%' : '14%'
+                                marginTop: isMobileScreen ? '16.5%' : '13%'
                             }}
                         >
                             Contact us at
                         </span>
                         <a
                             href="tel:+919945594437"
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2.5%' : '-1%' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
