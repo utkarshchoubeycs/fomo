@@ -23,7 +23,6 @@ const HeroComponent = () => {
 	}, [scrollY, viewportHeight, stage]);*/
 
 	/*const handleClick = () => {
-		console.log('Reached here!');
 		if(stage < 4){
 			window.scrollTo({top: ((stage+1) * 0.5 * viewportHeight), behavior: 'instant'});
 		}
@@ -43,31 +42,34 @@ const HeroComponent = () => {
 		}
 	  }, [stage]);
 
+	const isMobileScreen = window.innerWidth < 768;
+	console.log(isMobileScreen)
+
 	const ringData = [
 		[
-			{ size: '25vw', borderColor: '#C800FF' }
+			{ size: isMobileScreen ? '70vw' : '25vw', borderColor: '#C800FF', opacity: 1 }
 		],
 		[
-			{ size: '33vw', borderColor: 'rgba(254, 0, 0, 1)' },
-			{ size: '25vw', borderColor: '#fff' }
+			{ size: isMobileScreen ? '75vw' : '33vw', borderColor: 'rgba(254, 0, 0, 1)', opacity: 1 },
+			{ size: isMobileScreen ? '45vw' : '25vw', borderColor: '#fff', opacity: 0.5 }
 		],
 		[
-			{ size: '43vw', borderColor: 'rgba(1, 255, 255, 1)' },
-			{ size: '23vw', borderColor: '#fff' },
-			{ size: '14vw', borderColor: '#fff' }
+			{ size: isMobileScreen ? '85vw' : '43vw', borderColor: 'rgba(1, 255, 255, 1)', opacity: 1 },
+			{ size: isMobileScreen ? '60vw' : '23vw', borderColor: '#fff', opacity: 0.2 },
+			{ size: isMobileScreen ? '45vw' : '14vw', borderColor: '#fff', opacity: 0.2 }
 		],
 		[
-			{ size: '47vw', borderColor: 'rgba(0, 255, 1, 1)' },
-			{ size: '23vw', borderColor: '#fff' },
-			{ size: '21vw', borderColor: '#fff' },
-			{ size: '14vw', borderColor: '#fff' },
+			{ size: isMobileScreen ? '110vw' : '47vw', borderColor: 'rgba(0, 255, 1, 1)', opacity: 1 },
+			{ size: isMobileScreen ? '85vw' : '23vw', borderColor: '#fff', opacity: 0.3 },
+			{ size: isMobileScreen ? '55vw' : '21vw', borderColor: '#fff', opacity: 0.15 },
+			{ size: '14vw', borderColor: '#fff', opacity: 0.1 },
 		],
 		[
-			{ size: '47vw', borderColor: '#fff' },
-			{ size: '36vw', borderColor: '#fff' },
-			{ size: '23vw', borderColor: '#fff' },
-			{ size: '21vw', borderColor: '#fff' },
-			{ size: '14vw', borderColor: '#fff' }
+			{ size: isMobileScreen ? '120vw' : '47vw', borderColor: '#fff', opacity: 1 },
+			{ size: isMobileScreen ? '85vw' : '36vw', borderColor: '#fff', opacity: 0.25 },
+			{ size: '23vw', borderColor: '#fff', opacity: 0.2 },
+			{ size: '21vw', borderColor: '#fff', opacity: 0.1 },
+			{ size: '14vw', borderColor: '#fff', opacity: 0.1 }
 		],
 	];
 
@@ -84,12 +86,12 @@ const HeroComponent = () => {
 
 	const renderStages = () => {
 		switch (stage) {
-			case 0: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={0} />)}</div>
-			case 1: return <div style={{ background: getBackgroundForStage(1), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[1].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={1} />)}</div>
-			case 2: return <div style={{ background: getBackgroundForStage(2), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[2].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={2} />)}</div>
-			case 3: return <div style={{ background: getBackgroundForStage(3), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[3].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={3} />)}</div>
-			case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={4} />)}</div>
-			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={stage} />)}</div>
+			case 0: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={0} isMobileScreen={isMobileScreen} />)}</div>
+			case 1: return <div style={{ background: getBackgroundForStage(1), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[1].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={1} isMobileScreen={isMobileScreen} />)}</div>
+			case 2: return <div style={{ background: getBackgroundForStage(2), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[2].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={2} isMobileScreen={isMobileScreen} />)}</div>
+			case 3: return <div style={{ background: getBackgroundForStage(3), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[3].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={3} isMobileScreen={isMobileScreen} />)}</div>
+			case 4: return <div style={{ background: getBackgroundForStage(4), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[4].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={4} isMobileScreen={isMobileScreen} />)}</div>
+			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} opacity={ringMetadata.opacity} stage={stage} isMobileScreen={isMobileScreen} />)}</div>
 		}
 	}
 
@@ -117,7 +119,7 @@ const LandingPageComponent = () => {
 	)
 }
 
-const RingComponent = ({ size, borderColor, stage }) => {
+const RingComponent = ({ size, borderColor, opacity, stage, isMobileScreen }) => {
 	const ringBase = {
 		position: 'absolute',
 		borderRadius: '50%',
@@ -127,9 +129,10 @@ const RingComponent = ({ size, borderColor, stage }) => {
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-		fontSize: '5vw',
+		fontSize: isMobileScreen ? '12vw' : '5vw',
 		border: '1px solid white',
 		fontFamily: 'NulShock',
+		fontWeight: '300'
 	};
 
 	return (
@@ -142,29 +145,45 @@ const RingComponent = ({ size, borderColor, stage }) => {
 			whiteSpace: 'nowrap',
 			cursor: 'pointer',
 			userSelect: 'none',
-			transition: 'width 0.3s ease-out, height 0.3s ease-out, backgroundColor 0.3s ease-out'
+			transition: 'width 0.3s ease-out, height 0.3s ease-out, backgroundColor 0.3s ease-out',
+			opacity: opacity
 		}}
 		>
 			{(stage === 0) && (
-				<span style={{ color: '#E75CFF', fontWeight: 'bold', letterSpacing: '2px', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px', transition: 'width 0.5s, height 0.5s, backgroundColor 0.5s' }}>
+				<span style={{ color: '#E75CFF', letterSpacing: '2px', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px', transition: 'width 0.5s, height 0.5s, backgroundColor 0.5s' }}>
 					MUSIC
 				</span>)}
 			{(stage === 1) && (
-				<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
-					MUSIC, <span style={{ color: 'rgba(254, 0, 0, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px' }}>DRINKS</span>
+				<span style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '2px' }}>
+					MUSIC, 
+					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+					<span style={{ color: 'rgba(254, 0, 0, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px' }}>DRINKS</span>
 				</span>)}
 			{(stage === 2) && (
-				<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
-					MUSIC, DRINKS,<br /> <span style={{ color: 'rgba(1, 255, 255, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px' }}>LIGHTS</span>
+				<span style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '2px' }}>
+					MUSIC,
+					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+					DRINKS,<br /> <span style={{ color: 'rgba(1, 255, 255, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: '3px' }}>LIGHTS</span>
 				</span>)}
 			{(stage === 3) && (
-				<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
-					MUSIC, DRINKS,<br /> LIGHTS <span style={{ color: 'rgba(0, 255, 1, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: "3px" }}>& ACTION</span>
+				<span style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '2px', fontSize: isMobileScreen ? '10vw' : '5vw' }}>
+					MUSIC, 
+					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+					DRINKS,
+					<br /> 
+					LIGHTS 
+					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+					<span style={{ color: 'rgba(0, 255, 1, 1)', WebkitTextFillColor: 'transparent', WebkitTextStrokeWidth: "3px" }}>& ACTION</span>
 				</span>)}
 			{(stage === 4) &&
 				(
-				<span style={{ color: 'white', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '2px' }}>
-					MUSIC, DRINKS,<br /> LIGHTS & ACTION
+				<span style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '2px', fontSize: (isMobileScreen ? '9vw' : '5vw') }}>
+					MUSIC, 
+					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+					DRINKS,
+					<br /> LIGHTS
+					{isMobileScreen ? <br/> : <span>&nbsp;</span>}
+					& ACTION
 				</span>
 				)}
 		</motion.div>

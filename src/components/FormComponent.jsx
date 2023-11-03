@@ -54,7 +54,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                     <span style={{ fontFamily: 'Roboto', fontWeight: '200' }}>Customised party packages, venues & villas in Bangalore and Goa!</span>
                 </div>
 
-                <div className='flex flex-col my-5 mt-8 space-y-4 mx-10 md:mx-56' style={{color: '#000', fontFamily: 'Roboto', fontWeight: '400'}}>
+                <div className='flex flex-col my-5 mt-8 space-y-4 mx-10 md:mx-32 lg:mx-56' style={{color: '#000', fontFamily: 'Roboto', fontWeight: '400'}}>
                     <div className='flex flex-col md:flex-row items-center mx-0 md:mx-0'>
                         <input 
                             text={formName} 
@@ -84,7 +84,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                         </div>
                     </div>
                 </div>
-                <div className='mt-16 mb-10 mr-10 md:mr-56 md:mt-2 flex justify-end items-end'>
+                <div className='mt-16 mb-10 mr-10 md:mr-32 lg:mr-56 md:mt-2 flex justify-end items-end'>
                     <motion.button 
                         style={{
                             background: 'transparent linear-gradient(107deg, #000000 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
