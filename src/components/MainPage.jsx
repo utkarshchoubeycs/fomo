@@ -1035,7 +1035,7 @@ function LandingInfoAreaComponent() {
                             alt="insta small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '575%' : '585%'
+                                marginTop: isMobileScreen ? '579%' : '585%'
                             }}
                         />
                         <span
@@ -1045,7 +1045,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '18%' : '15%' 
+                                marginTop: isMobileScreen ? '19%' : '17%' 
                             }}
                         >   
                             Follow us on Instagram
@@ -1073,7 +1073,7 @@ function LandingInfoAreaComponent() {
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '600%' : '605%'
+                                marginTop: isMobileScreen ? '603%' : '605%'
                             }}
                         />
                         <span
@@ -1083,7 +1083,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '16.5%' : '13%'
+                                marginTop: isMobileScreen ? '16%' : '13%'
                             }}
                         >
                             Contact us at
