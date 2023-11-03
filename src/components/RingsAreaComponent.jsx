@@ -5,7 +5,7 @@ const HeroComponent = () => {
 	const [stage, setStage] = useState(0);
 	//const { scrollY } = useScroll();
 
-	const viewportHeight = window.innerHeight;
+	// const viewportHeight = window.innerHeight;
 
 	/*useEffect(() => {
 
@@ -22,7 +22,7 @@ const HeroComponent = () => {
 		}
 	}, [scrollY, viewportHeight, stage]);*/
 
-	const handleClick = () => {
+	/*const handleClick = () => {
 		console.log('Reached here!');
 		if(stage < 4){
 			window.scrollTo({top: ((stage+1) * 0.5 * viewportHeight), behavior: 'instant'});
@@ -30,7 +30,7 @@ const HeroComponent = () => {
 		else{
 			window.scrollTo({top: 3.5 * viewportHeight, behavior: 'smooth'});
 		}
-	}
+	}*/
 
 	useEffect(() => {
 
@@ -92,20 +92,6 @@ const HeroComponent = () => {
 			default: return <div style={{ background: getBackgroundForStage(0), height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{ringData[0].map((ringMetadata, index) => <RingComponent key={index} size={ringMetadata.size} borderColor={ringMetadata.borderColor} stage={stage} />)}</div>
 		}
 	}
-
-	const renderButtonForStage4 = () => {
-		if (stage === 4) {
-		  return (
-			<motion.div 
-				style={{ border: '1px white solid', cursor: 'pointer', userSelect: 'none', fontFamily: 'Nulshock' }}
-				className="fixed bottom-8 right-16 bg-transparent text-xl text-white py-3 px-12 rounded-full"
-				>
-			  Enter website
-			</motion.div>
-		  );
-		}
-		return null;
-	  };
 
 	return (
 		<div style={{ height: '100vh', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
