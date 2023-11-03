@@ -1035,7 +1035,7 @@ function LandingInfoAreaComponent() {
                             alt="insta small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '576%' : '585%'
+                                marginTop: isMobileScreen ? '574%' : '585%'
                             }}
                         />
                         <span
@@ -1073,7 +1073,7 @@ function LandingInfoAreaComponent() {
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '602%' : '605%'
+                                marginTop: isMobileScreen ? '600%' : '605%'
                             }}
                         />
                         <span
