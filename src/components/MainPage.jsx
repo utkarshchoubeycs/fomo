@@ -19,9 +19,7 @@ import contentTileImage from '../assets/Coming Soon/Group 80.webp';
 import dealsTileImage from '../assets/Coming Soon/Group 81.webp';
 import loyaltyTileImage from '../assets/Coming Soon/Group 82.webp';
 
-import whatsapp from '../assets/whatsapp.png';
 import whatsappxs from '../assets/whatsappSmall.png';
-import insta from '../assets/insta.png';
 import instaxs from '../assets/instaSmall.png';
 
 import FormComponent from './FormComponent';
@@ -1034,6 +1032,7 @@ function LandingInfoAreaComponent() {
                         </span>
                         <img
                             src={instaxs}
+                            alt="insta small logo"
                             style={{
                                 position: 'absolute',
                                 marginTop: isMobileScreen ? '578%' : '586%'
@@ -1071,6 +1070,7 @@ function LandingInfoAreaComponent() {
                         </a>
                         <img
                             src={whatsappxs}
+                            alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
                                 marginTop: isMobileScreen ? '602%' : '607%'
