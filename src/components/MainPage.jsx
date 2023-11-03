@@ -1035,7 +1035,7 @@ function LandingInfoAreaComponent() {
                             alt="insta small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '574%' : '585%'
+                                marginTop: isMobileScreen ? '575%' : '585%'
                             }}
                         />
                         <span
