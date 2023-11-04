@@ -208,14 +208,30 @@ function LandingInfoAreaComponent() {
         }
     };
 
-    const maskImageVariants = {
+    const maskImageVariantsRight = {
         hidden: {
-            y: '25%'
+            x: '10%'
         },
         visible: {
-            y: '0',
+            x: '0',
             transition: {
-                y: {
+                x: {
+                    type: 'spring',
+                    stiffness: 300, // Adjust stiffness for the speed of the shake
+                    damping: 10 // Adjust damping for the amount of "bounce"
+                }
+            }
+        }
+    };
+
+    const maskImageVariantsLeft = {
+        hidden: {
+            x: '-10%'
+        },
+        visible: {
+            x: '0',
+            transition: {
+                x: {
                     type: 'spring',
                     stiffness: 300, // Adjust stiffness for the speed of the shake
                     damping: 10 // Adjust damping for the amount of "bounce"
@@ -410,10 +426,10 @@ function LandingInfoAreaComponent() {
                             src={mask1Image}
                             alt={"Mask 1"}
                             style={mask1ImageStyle}
-                            variants={maskImageVariants}
+                            variants={maskImageVariantsRight}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: 0.7 }}
+                            viewport={{ once: true, amount: 0.5 }}
                         />
                         <div
                             style={{
@@ -453,10 +469,10 @@ function LandingInfoAreaComponent() {
                             src={mask2Image}
                             alt={"Mask 2"}
                             style={mask2ImageStyle}
-                            variants={maskImageVariants}
+                            variants={maskImageVariantsLeft}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: 0.7 }}
+                            viewport={{ once: true, amount: 0.5 }}
                         />
                         <div
                             style={{
@@ -495,7 +511,7 @@ function LandingInfoAreaComponent() {
                             src={mask3Image}
                             alt={"Mask 3"}
                             style={mask3ImageStyle}
-                            variants={maskImageVariants}
+                            variants={maskImageVariantsRight}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.7 }}
@@ -650,7 +666,7 @@ function LandingInfoAreaComponent() {
                             src={mask4Image}
                             alt={"Mask 4"}
                             style={mask4ImageStyle}
-                            variants={maskImageVariants}
+                            variants={maskImageVariantsLeft}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.7 }}
