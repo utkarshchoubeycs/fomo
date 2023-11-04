@@ -148,6 +148,7 @@ function MainPage() {
 function LandingInfoAreaComponent() {
 
     const sunsetViewRef = useRef();
+    const [ isMobileScreen, setIsMobileScreen ] = useState(window.innerWidth < 768);
     const [isFomoVisible, setIsFomoVisible] = useState(false);
     const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
 
@@ -160,13 +161,14 @@ function LandingInfoAreaComponent() {
         offset: ["start end", "end end"]
     });
 
-    const isMobileScreen = window.innerWidth < 768;
-
     useEffect(() => {
         const unsubScrollYProgress = scrollYProgress.on("change", value => {
             if(value <= 0.9) setIsFomoVisible(false);
             else setIsFomoVisible(true);
         })
+
+        if(window.innerWidth < 768) setIsMobileScreen(true);
+        else setIsMobileScreen(false);
 
         return () => unsubScrollYProgress();
     }, [scrollYProgress, isMobileScreen]);
