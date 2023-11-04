@@ -29,21 +29,6 @@
   color: #61dafb;
 }
 
-
-@font-face {
-  font-family: 'NulShock'; /* You can name it whatever you want */
-  src: url("../public/nulshock_bd.ttf") format('truetype'); /* Use the correct path to your font file */
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Germany Sans'; /* You can name it whatever you want */
-  src: url("../public/GermanySans.ttf") format('truetype'); /* Use the correct path to your font file */
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* For modern browsers */
 input::placeholder {
   color: #cccccc;  /* Your desired color */
