@@ -230,7 +230,7 @@ function LandingInfoAreaComponent() {
                     ...mainImageStyle
                 }}
             >   
-                <div style={{ filter: isUserInterestFormEnabled ? 'blur(8px)' : '', ...contentStyle}}>
+                <div style={{ filter: isUserInterestFormEnabled ? 'blur(12px)' : '', ...contentStyle}}>
                     <div 
                         ref={sunsetViewRef}
                         style={{
