@@ -413,7 +413,7 @@ function LandingInfoAreaComponent() {
                             variants={maskImageVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.7 }}
                         />
                         <div
                             style={{
@@ -456,7 +456,7 @@ function LandingInfoAreaComponent() {
                             variants={maskImageVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.7 }}
                         />
                         <div
                             style={{
@@ -498,7 +498,7 @@ function LandingInfoAreaComponent() {
                             variants={maskImageVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.7 }}
                         />
                         <motion.span
                             style={{
@@ -653,7 +653,7 @@ function LandingInfoAreaComponent() {
                             variants={maskImageVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.7 }}
                         />
                         <motion.span
                             style={{
