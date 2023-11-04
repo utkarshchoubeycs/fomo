@@ -3,37 +3,12 @@ import { motion } from 'framer-motion';
 
 const HeroComponent = () => {
 	const [stage, setStage] = useState(0);
-	//const { scrollY } = useScroll();
-
-	// const viewportHeight = window.innerHeight;
-
-	/*useEffect(() => {
-
-		const unsubScrollYProgress = scrollY.on("change", value => {
-			if(value < 0.5 * viewportHeight) setStage(0);
-			else if(value < 1 * viewportHeight) setStage(1);
-			else if(value < 1.5 * viewportHeight) setStage(2);
-			else if(value < 2 * viewportHeight) setStage(3);
-			else setStage(4);
-		})
-
-		return () => {
-			unsubScrollYProgress();
-		}
-	}, [scrollY, viewportHeight, stage]);*/
-
-	/*const handleClick = () => {
-		if(stage < 4){
-			window.scrollTo({top: ((stage+1) * 0.5 * viewportHeight), behavior: 'instant'});
-		}
-		else{
-			window.scrollTo({top: 3.5 * viewportHeight, behavior: 'smooth'});
-		}
-	}*/
-
-	const isMobileScreen = window.innerWidth < 768;
+	const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
 
 	useEffect(() => {
+
+		if(window.innerWidth < 768) setIsMobileScreen(true);
+		else setIsMobileScreen(false);
 
 		if (stage < 4) {
 		  const timer = setTimeout(() => {
@@ -42,7 +17,7 @@ const HeroComponent = () => {
 	
 		  return () => clearTimeout(timer);
 		}
-	  }, [stage, isMobileScreen]);
+	  }, [stage, isMobileScreen, window.innerWidth]);
 
 	const ringData = [
 		[

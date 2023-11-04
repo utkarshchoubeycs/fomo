@@ -171,7 +171,7 @@ function LandingInfoAreaComponent() {
         else setIsMobileScreen(false);
 
         return () => unsubScrollYProgress();
-    }, [scrollYProgress, isMobileScreen]);
+    }, [scrollYProgress, isMobileScreen, window.innerWidth]);
 
     // Last section animation variant
     const stampVariants = {
