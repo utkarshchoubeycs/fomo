@@ -208,6 +208,22 @@ function LandingInfoAreaComponent() {
         }
     };
 
+    const maskImageVariants = {
+        hidden: {
+            y: '25%'
+        },
+        visible: {
+            y: '0',
+            transition: {
+                y: {
+                    type: 'spring',
+                    stiffness: 300, // Adjust stiffness for the speed of the shake
+                    damping: 10 // Adjust damping for the amount of "bounce"
+                }
+            }
+        }
+    };
+
     const rightAlignedParagraph = [
         "We're diving deep into the vibrant",
         "heartbeats of Bangalore and",
@@ -394,7 +410,10 @@ function LandingInfoAreaComponent() {
                             src={mask1Image}
                             alt={"Mask 1"}
                             style={mask1ImageStyle}
-                            whileHover={{ transform: 'translateY(4%)' }}
+                            variants={maskImageVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         />
                         <div
                             style={{
@@ -434,7 +453,10 @@ function LandingInfoAreaComponent() {
                             src={mask2Image}
                             alt={"Mask 2"}
                             style={mask2ImageStyle}
-                            whileHover={{ transform: 'translateY(4%)' }}
+                            variants={maskImageVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         />
                         <div
                             style={{
@@ -473,7 +495,10 @@ function LandingInfoAreaComponent() {
                             src={mask3Image}
                             alt={"Mask 3"}
                             style={mask3ImageStyle}
-                            whileHover={{ transform: 'translateY(4%)' }}
+                            variants={maskImageVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         />
                         <motion.span
                             style={{
@@ -625,7 +650,10 @@ function LandingInfoAreaComponent() {
                             src={mask4Image}
                             alt={"Mask 4"}
                             style={mask4ImageStyle}
-                            whileHover={{ transform: 'translateY(4%)' }}
+                            variants={maskImageVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
                         />
                         <motion.span
                             style={{
