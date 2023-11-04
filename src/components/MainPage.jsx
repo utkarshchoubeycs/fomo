@@ -594,75 +594,75 @@ function LandingInfoAreaComponent() {
                             viewport={{ once: true }}
                             variants={cheersImageVariants}
                         />
-                        <motion.span
-                            style={{
-                                fontSize: '3.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '500',
-                                textAlign: 'left',
-                                marginLeft: '-59%',
-                                marginTop: '35%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            because
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '6vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginLeft: isMobileScreen ? '-20.5%' : '-22%',
-                                marginTop: '-2%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            THE FEAR OF
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '6vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginLeft: isMobileScreen ? '-21.5%' : '-23%',
-                                marginTop: '-2.5%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            MISSING OUT
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '3.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '500',
-                                textAlign: 'left',
-                                paddingRight: '8%',
-                                marginLeft: '-27.5%',
-                                marginTop: '-2%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            is the thing of the past!
-                        </motion.span>
+                        <div style={{
+                            position: 'relative',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            textAlign: 'left',
+                            marginLeft: '-25%',
+                            marginTop: '15%'
+                        }}>
+                            <motion.span
+                                style={{
+                                    fontSize: '3.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '500',
+                                    marginTop: '35%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                because
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '6vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '-2%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                THE FEAR OF
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '6vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '-3%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                MISSING OUT
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '3.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '500',
+                                    marginTop: '-2%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                is the thing of the past!
+                            </motion.span>
+                        </div>
                         <motion.img
                             src={mask4Image}
                             alt={"Mask 4"}
