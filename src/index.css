@@ -12,7 +12,7 @@
   
 @font-face {
     font-family: 'Germany Sans'; /* You can name it whatever you want */
-    src: url("../public/GermanySans.ttf") format('truetype'); /* Use the correct path to your font file */
+    src: url("../public/GermanySans.woff") format('truetype'); /* Use the correct path to your font file */
     font-weight: normal;
     font-style: normal;
     font-display: 'swap';
