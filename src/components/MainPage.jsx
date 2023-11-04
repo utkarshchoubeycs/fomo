@@ -1101,50 +1101,73 @@ function LandingInfoAreaComponent() {
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
                         </span>
-                        <img
-                            src={instaxs}
-                            alt="insta small logo"
+                        <div
                             style={{
-                                position: 'absolute',
-                                marginTop: isMobileScreen ? '579%' : '585%'
+                                position: 'relative',
+                                marginTop: '12%',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center'
                             }}
-                        />
-                        <span
-                            style={{
-                                fontSize: '2.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '300',
-                                textAlign: 'center',
-                                marginTop: isMobileScreen ? '19%' : '17%' 
-                            }}
-                        >   
-                            Follow us on Instagram
-                        </span>
-                        <a
-                            href="https://www.instagram.com/thefomo.co/"
-                            target="_blank"  // This will open the link in a new tab
-                            rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
+                            <img
+                                src={instaxs}
+                                alt="insta small logo"
+                                style={{
+                                    position: 'absolute',
+                                    marginTop: '1%',
+                                    marginBottom: isMobileScreen ? '70%' : '35%'
+                                }}
+                            />
                             <span
                                 style={{
                                     fontSize: '2.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
-                                    fontWeight: '800',
+                                    fontWeight: '300',
                                     textAlign: 'center',
+                                    marginTop: '5%'
+                                    //marginTop: isMobileScreen ? '19%' : '17%' 
                                 }}
-                            >
-                                @thefomo.co
+                            >   
+                                Follow us on Instagram
                             </span>
-                        </a>
-                        <img
+                            <a
+                                href="https://www.instagram.com/thefomo.co/"
+                                target="_blank"  // This will open the link in a new tab
+                                rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
+                                style={{ textDecoration: 'none', 
+                                marginTop: '-5%'
+                            }}  // This will remove the underline typically associated with links
+                            >
+                                <span
+                                    style={{
+                                        fontSize: '2.5vw',
+                                        color: 'white',
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '800',
+                                        textAlign: 'center',
+                                    }}
+                                >
+                                    @thefomo.co
+                                </span>
+                            </a>
+                        </div>
+                        <div style={{
+                            position: 'relative',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginTop: '10%'
+                        }}>
+                            <img
                             src={whatsappxs}
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                marginTop: isMobileScreen ? '603%' : '605%'
+                                paddingBottom: isMobileScreen ? '75%' : '45%'
                             }}
                         />
                         <span
@@ -1175,6 +1198,7 @@ function LandingInfoAreaComponent() {
                                 +91 99455 94437
                             </span>
                         </a>
+                        </div>
                         <motion.div
                             style={{
                                 background: '#FFFFFF 0% 0% no-repeat padding-box',
