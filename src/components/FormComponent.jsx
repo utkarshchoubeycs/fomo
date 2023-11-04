@@ -12,21 +12,16 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
     const [formEmail, setFormEmail] = useState('');
     const overlayRef = useRef(null);
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
+    const handleClickOutside = useCallback((event) => {
         if (overlayRef.current && !overlayRef.current.contains(event.target)) {
             setIsUserInterestFormEnabled(false);
         }
-        };
+    }, [setIsUserInterestFormEnabled]);
 
-        // Attach the click event listener
+    useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
-
-        // Cleanup the event listener on component unmount
-        return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-        };
-    });
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [handleClickOutside]);
 
     if (!isUserInterestFormEnabled) return null;
 
