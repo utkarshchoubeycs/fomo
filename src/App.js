@@ -5,13 +5,13 @@ import RingsAreaComponent from './components/RingsAreaComponent';
 import MainPage from './components/MainPage';
 
 function App() {
-  return (
-    <div className='App'>
-      <RingsAreaComponent />
-      <MainPage />
-    </div>
-      
-  );
+    return (
+        <div className='App'>
+            <RingsAreaComponent/>
+            <MainPage/>
+        </div>
+
+    );
 }
 
 export default App;
