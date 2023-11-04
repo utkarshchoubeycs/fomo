@@ -38,11 +38,13 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
         <div
         ref={overlayRef}
         style={{
+            position: 'fixed',
             background: `url(${landscapeFormBg}) no-repeat center center`,
             backgroundPosition: 'cover',
-            color: '#000'
+            color: '#000',
+            zIndex: 10
         }}
-        className="absolute bottom-0 w-5/6 rounded-3xl"
+        className="absolute bottom-8 md:bottom-12 mx-9 md:mx-20 lg:mx-28 w-5/6 rounded-3xl"
         >
             <div className="flex justify-center -mt-8 md:-mt-16"> {/* Negative margin to pull the logo half way up */}
                 <img src={logoImage} alt="Logo" className="w-24 h-24 md:w-40 md:h-40" />
@@ -100,6 +102,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
 
             </div>
         </div>
+        
     )
 }
 

@@ -122,6 +122,7 @@ function Section({ image, aspectRatio, style, children }) {
         borderWidth: '2px',
         backgroundRepeat: 'no-repeat',
         width: '100%',
+        alignItems: 'center',
         paddingTop: `${100 / aspectRatio}%`,
         zIndex: 5,
         ...style
@@ -226,11 +227,10 @@ function LandingInfoAreaComponent() {
                 image={backgroundImage}
                 aspectRatio={0.14692378}
                 style={{
-                    zIndex: 2,
                     ...mainImageStyle
                 }}
             >   
-                <div style={contentStyle}>
+                <div style={{ filter: isUserInterestFormEnabled ? 'blur(8px)' : '', ...contentStyle}}>
                     <div 
                         ref={sunsetViewRef}
                         style={{
@@ -238,7 +238,6 @@ function LandingInfoAreaComponent() {
                         position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center',
                         width: '100%',
                         left: '0%',
                         right: '0%',
@@ -724,8 +723,13 @@ function LandingInfoAreaComponent() {
                             userSelect: 'none',
                             cursor: 'pointer'
                         }}
+
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
+                        initial={{ opacity: 0, y: '10vh' }}
+                        whileInView={{ opacity: 1, y: '0' }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
                                 src={discoverTileImage} 
@@ -774,6 +778,10 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
+                        initial={{ opacity: 0, y: '10vh' }}
+                        whileInView={{ opacity: 1, y: '0' }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
                                 src={partyPackageTileImage} 
@@ -825,6 +833,10 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
+                        initial={{ opacity: 0, y: '10vh' }}
+                        whileInView={{ opacity: 1, y: '0' }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
                                 src={fomoTipsTileImage} 
@@ -876,6 +888,10 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
+                        initial={{ opacity: 0, y: '10vh' }}
+                        whileInView={{ opacity: 1, y: '0' }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
                                 src={contentTileImage} 
@@ -926,6 +942,10 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
+                        initial={{ opacity: 0, y: '10vh' }}
+                        whileInView={{ opacity: 1, y: '0' }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
                                 src={dealsTileImage} 
@@ -976,6 +996,10 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
+                        initial={{ opacity: 0, y: '10vh' }}
+                        whileInView={{ opacity: 1, y: '0' }}
+                        viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
                                 src={loyaltyTileImage} 
@@ -1128,9 +1152,9 @@ function LandingInfoAreaComponent() {
                                 Join the Party
                             </span>
                         </motion.div>
-                        {isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} />}
                     </div>
                 </div>
+                {isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} />}
         </Section>
     )
 }
