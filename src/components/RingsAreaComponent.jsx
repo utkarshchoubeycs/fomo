@@ -38,7 +38,9 @@ const HeroComponent = () => {
 		if (stage < 4) {
 		  const timer = setTimeout(() => {
 			setStage(prevStage => prevStage + 1);
-		  }, 1000);
+		  },
+		isMobileScreen ? 700 : 1000
+		);
 	
 		  return () => clearTimeout(timer);
 		}
