@@ -352,76 +352,76 @@ function LandingInfoAreaComponent() {
                         left: '0%',
                         right: '0%'
                     }} 
-                    >
-                        <motion.span
-                            style={{
-                                fontSize: '3.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '500',
-                                textAlign: 'left',
-                                marginTop: '7%',
-                                marginLeft: '-52%',
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-                            viewport={{ once: true }}
-                        >
-                            FOMO is your
-                        </motion.span>
-                        <motion.span 
-                            style={{
-                                fontSize: '7.5vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginLeft: isMobileScreen ? '-11.5%' : '-15%',
-                                marginTop: '-2.5%',
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
-                        >
-                            NOCTURNAL
-                        </motion.span>
-                        <motion.span 
-                            style={{
-                                fontSize: '7.5vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginLeft: isMobileScreen ? '-18%' : '-21.5%',
-                                marginTop: '-4%',
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
-                        >
-                            NAVIGATOR
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '3.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '500',
-                                textAlign: 'left',
-                                paddingRight: '8%',
-                                marginTop: '-2.5%',
-                                marginLeft: '10.5%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 }}
-                        >
-                            ready to take you on wild rides through the cities <br/> that never sleep!
-                        </motion.span>
+                    >   
+                        <div style={{
+                            position: 'relative',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            textAlign: 'left',
+                            marginLeft: '-10%'
+                        }}>
+                            <motion.span
+                                style={{
+                                    fontSize: '3.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '500',
+                                    marginTop: '7%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
+                                viewport={{ once: true }}
+                            >
+                                FOMO is your
+                            </motion.span>
+                            <motion.span 
+                                style={{
+                                    fontSize: '7.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '-2.5%',
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
+                            >
+                                NOCTURNAL
+                            </motion.span>
+                            <motion.span 
+                                style={{
+                                    fontSize: '7.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '-4%',
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
+                            >
+                                NAVIGATOR
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '3.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '500',
+                                    marginTop: '-2.5%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 }}
+                            >
+                                ready to take you on wild rides through the cities <br/> that never sleep!
+                            </motion.span>
+                        </div>
                         <motion.img
                             src={mask1Image}
                             alt={"Mask 1"}
@@ -516,74 +516,75 @@ function LandingInfoAreaComponent() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.7 }}
                         />
-                        <motion.span
-                            style={{
-                                fontSize: '6vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginTop: '37%',
-                                marginLeft: '-37%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-                        >
-                            AT FOMO,
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '6vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginTop: '-2%',
-                                marginLeft: '-11.5%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            WE'VE BOTTLED
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '6vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'left',
-                                marginTop: '-2%',
-                                marginLeft: '-22%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            THAT FEAR &
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '3.5vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '500',
-                                textAlign: 'left',
-                                marginLeft: '-31%',
-                                marginTop: '-2%'
-                            }}
-                            initial={{ opacity: 0, y: '20vh'}}
-                            whileInView={{ opacity: 1, y: '0'}}
-                            viewport={{ once: true }}
-                            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                        >
-                            turned it into a way of life.
-                        </motion.span>
+                        <div style={{
+                            position: 'relative',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            textAlign: 'left',
+                            marginTop: '12%',
+                            marginLeft: '-10%'
+                        }}>
+                            <motion.span
+                                style={{
+                                    fontSize: '6vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '37%',
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
+                            >
+                                AT FOMO,
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '6vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '-2%',
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                WE'VE BOTTLED
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '6vw',
+                                    color: 'white',
+                                    fontFamily: 'Nulshock',
+                                    fontWeight: 'bold',
+                                    marginTop: '-2%',
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                THAT FEAR &
+                            </motion.span>
+                            <motion.span
+                                style={{
+                                    fontSize: '3.5vw',
+                                    color: 'white',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '500',
+                                    marginTop: '-2%'
+                                }}
+                                initial={{ opacity: 0, y: '20vh'}}
+                                whileInView={{ opacity: 1, y: '0'}}
+                                viewport={{ once: true }}
+                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
+                            >
+                                turned it into a way of life.
+                            </motion.span>
+                        </div>
                         <motion.img
                             src={cheersImage}
                             alt={"Cheers hands"}
@@ -1117,7 +1118,7 @@ function LandingInfoAreaComponent() {
                                 style={{
                                     position: 'absolute',
                                     marginTop: '1%',
-                                    marginBottom: isMobileScreen ? '70%' : '35%'
+                                    marginBottom: isMobileScreen ? '75%' : '35%'
                                 }}
                             />
                             <span
@@ -1167,7 +1168,7 @@ function LandingInfoAreaComponent() {
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                paddingBottom: isMobileScreen ? '75%' : '45%'
+                                paddingBottom: isMobileScreen ? '80%' : '45%'
                             }}
                         />
                         <span
