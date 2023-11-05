@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='App'>
       <RingsAreaComponent stage={stage} setStage={setStage} />
-      { (stage === 4) && <MainPage />}
+      { stage === 4 && <MainPage />}
     </div>
       
   );

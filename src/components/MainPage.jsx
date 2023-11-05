@@ -108,12 +108,6 @@ const mask4ImageStyle = {
     marginTop: '307%',
 }
 
-const fomoLogoStyle2 = {
-    position: 'absolute',
-    width: '40%',
-    marginTop: '526%'
-};
-
 function Section({ image, aspectRatio, style, children }) {
     const sectionStyle = {
         backgroundImage: `url(${image})`,
@@ -255,6 +249,12 @@ function LandingInfoAreaComponent() {
         "Curated by true party enthusiasts.",
         "We've got your back!"
     ]
+
+    const fomoLogoStyle2 = {
+        position: 'absolute',
+        width: isMobileScreen ? '30%' : '40%',
+        marginTop: isMobileScreen ? '537%' : '531%'
+    };
     
     return (
             <Section
