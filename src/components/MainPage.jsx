@@ -244,15 +244,15 @@ function LandingInfoAreaComponent() {
         "We're diving deep into the vibrant",
         "heartbeats of Bangalore and",
         "the sun-soaked shores of Goa.",
-        "We are bringing you the insider scoops" ,
-        "on the happening parties in town."  
+        "We are bringing you the insider scoops",
+        "on the happening parties in town."
     ]
 
     const leftAlignedParagraph = [
         "Get ready for action-packed parties,",
-        "electric pubs, and clubs that buzz", 
-        "louder than your morning alarm.", 
-        "Curated by true party enthusiasts.", 
+        "electric pubs, and clubs that buzz",
+        "louder than your morning alarm.",
+        "Curated by true party enthusiasts.",
         "We've got your back!"
     ]
     
@@ -794,7 +794,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: '17%',
-                                    marginTop: '3%',
+                                    marginTop: isMobileScreen ? '2%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -806,11 +806,12 @@ function LandingInfoAreaComponent() {
                                     marginLeft: '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    paddingRight: '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
-                            >Explore the city's coolest bars and most exciting <br/> events that match your vibe!</p>
+                            >Explore the city's coolest bars and most exciting events that match your vibe!</p>
                         </motion.div>
                         <motion.div 
                         style={{
@@ -846,25 +847,27 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: '17%',
-                                    marginTop: '3%',
+                                    marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
                                 }}
-                            >PARTY PACKAGE</span>
+                            >
+                                PARTY PACKAGES
+                            </span>
                             <p
                                 style={{
                                     position: 'absolute',
                                     marginLeft: '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    paddingRight: '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
                             >
-                                Perfect for large group bookings for private and corporate events. We help you find and book <br/>
-                                the ideal party venue and the best party packages that suit your budget.
+                                Perfect for large group bookings for private and corporate events. We help you find and book the ideal party venue and the best party packages that suit your budget.
                             </p>
                         </motion.div>
                         <motion.div 
@@ -901,7 +904,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: '17%',
-                                    marginTop: '3%',
+                                    marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -913,13 +916,13 @@ function LandingInfoAreaComponent() {
                                     marginLeft: '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    paddingRight: '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
                             >
-                                Get FOMO-verified recommendations for the town's top parties, ensuring you never miss <br/>
-                                out again!
+                                Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
                             </p>
                         </motion.div>
                         <motion.div 
@@ -956,7 +959,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: '17%',
-                                    marginTop: '3%',
+                                    marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -968,7 +971,8 @@ function LandingInfoAreaComponent() {
                                     marginLeft: '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    paddingRight: '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -1010,8 +1014,9 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: '17%',
-                                    marginTop: '3%',
+                                    marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
+                                    paddingRight: '15%',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
                                 }}
@@ -1022,7 +1027,8 @@ function LandingInfoAreaComponent() {
                                     marginLeft: '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    paddingRight: '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -1064,7 +1070,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: '17%',
-                                    marginTop: '3%',
+                                    marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -1076,12 +1082,13 @@ function LandingInfoAreaComponent() {
                                     marginLeft: '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    paddingRight: '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
                             >
-                                Create and share party content, review your favourite outlets and refer FOMO to your friends <br/>
+                                Create and share party content, review your favourite outlets and refer FOMO to your friends
                                 to earn points, goodies and freebies
                             </p>
                         </motion.div>
