@@ -41,8 +41,8 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
         }}
         className="absolute bottom-8 md:bottom-12 mx-9 md:mx-20 lg:mx-28 w-5/6 rounded-3xl"
         >
-            <div className="flex justify-center -mt-8 md:-mt-16"> {/* Negative margin to pull the logo half way up */}
-                <img src={logoImage} alt="Logo" className="w-24 h-24 md:w-40 md:h-40" />
+            <div className="flex justify-center -mt-16 md:-mt-24"> {/* Negative margin to pull the logo half way up */}
+                <img src={logoImage} alt="Logo" className="w-32 h-32 md:w-48 md:h-48" />
             </div>
             <div className='flex flex-col' style={{ color: '#fff' }}>
                 <span style={{ fontFamily: 'Roboto', fontWeight: '800' }} className='text-lg md:text-2xl justify-center'>Shoot Your Queries</span>
@@ -56,7 +56,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                         <input 
                             text={formName} 
                             placeholder='Name'
-                            className='w-full px-2 py-4 text-2xl rounded-lg'
+                            className='w-full px-2 py-3 md:py-4 text-2xl rounded-lg'
                             onChange={setFormName} 
                         />
                     </div>
@@ -65,7 +65,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                             <input
                             type="tel"
                             text={formPhoneNumber}
-                            className="w-full px-2 py-4 text-2xl rounded-lg border border-gray-300"
+                            className="w-full px-2 py-3 md:py-4 text-2xl rounded-lg border border-gray-300"
                             placeholder="Phone"
                             onChange={setFormPhoneNumber}
                             />
@@ -74,7 +74,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                             <input
                             type="email"
                             text={formEmail}
-                            className="w-full px-2 py-4 text-2xl rounded-lg border border-gray-300"
+                            className="w-full px-2 py-3 md:py-4 text-2xl rounded-lg border border-gray-300"
                             placeholder="Email"
                             onChange={setFormEmail}
                             />
@@ -87,7 +87,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                             background: 'transparent linear-gradient(107deg, #000000 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
                             boxShadow: '0px 3px 15px #0000004D'
                         }}
-                        className= 'text-3xl py-3 px-4 rounded-full'
+                        className= 'text-xl md:text-3xl px-6 py-4 rounded-full'
                         whileHover={{ scale: 1.04 }}
                         onTap={handleFormSubmit}
                     >
