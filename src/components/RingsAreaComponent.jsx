@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
 
-const HeroComponent = () => {
-	const [stage, setStage] = useState(0);
+const HeroComponent = ({ stage, setStage }) => {
+
 	const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ const HeroComponent = () => {
 	
 		  return () => clearTimeout(timer);
 		}
-	  }, [stage, isMobileScreen]);
+	  }, [stage, setStage, isMobileScreen]);
 
 	const ringData = [
 		[
@@ -78,10 +78,10 @@ const HeroComponent = () => {
 	);
 };
 
-const LandingPageComponent = () => {
+const LandingPageComponent = ({ stage, setStage }) => {
 	return (
 		<div style={{ height: '100vh' }}>
-			<HeroComponent />
+			<HeroComponent stage={stage} setStage={setStage} />
 		</div>
 	)
 }
