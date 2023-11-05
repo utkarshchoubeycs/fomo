@@ -142,7 +142,7 @@ function MainPage() {
 function LandingInfoAreaComponent() {
 
     const sunsetViewRef = useRef();
-    const [ isMobileScreen, setIsMobileScreen ] = useState(window.innerWidth < 768);
+    const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
     const [isFomoVisible, setIsFomoVisible] = useState(false);
     const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
 
@@ -253,7 +253,7 @@ function LandingInfoAreaComponent() {
     const fomoLogoStyle2 = {
         position: 'absolute',
         width: isMobileScreen ? '30%' : '40%',
-        marginTop: isMobileScreen ? '537%' : '531%'
+        marginTop: isMobileScreen ? '551%' : '531%'
     };
     
     return (
@@ -767,6 +767,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             textAlign: 'center',
                             marginTop: '3%',
+                            marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -783,9 +784,9 @@ function LandingInfoAreaComponent() {
                                 src={discoverTileImage} 
                                 alt="discover tile"
                                 style={{
-                                    width: '80%',
+                                    width: isMobileScreen ? '90%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: '10%'
+                                    marginLeft: isMobileScreen ? '5%' : '10%'
                                 }}
                                 />
                             <span
@@ -793,7 +794,7 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     marginTop: isMobileScreen ? '2%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
@@ -803,11 +804,11 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -821,6 +822,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             textAlign: 'center',
                             marginTop: '3%',
+                            marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -836,9 +838,9 @@ function LandingInfoAreaComponent() {
                                 src={partyPackageTileImage} 
                                 alt="party package"
                                 style={{
-                                    width: '80%',
+                                    width: isMobileScreen ? '90%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: '10%',
+                                    marginLeft: isMobileScreen ? '5%' : '10%'
                                     
                                 }}/>
                             <span
@@ -846,7 +848,7 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
@@ -858,11 +860,11 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -878,6 +880,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             textAlign: 'center',
                             marginTop: '3%',
+                            marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -893,9 +896,9 @@ function LandingInfoAreaComponent() {
                                 src={fomoTipsTileImage} 
                                 alt="fomo tips tile"
                                 style={{
-                                    width: '80%',
+                                    width: isMobileScreen ? '90%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: '10%',
+                                    marginLeft: isMobileScreen ? '5%' : '10%'
                                     
                                 }}/>
                             <span
@@ -903,7 +906,7 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
@@ -913,11 +916,11 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -933,6 +936,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             textAlign: 'center',
                             marginTop: '3%',
+                            marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -948,9 +952,9 @@ function LandingInfoAreaComponent() {
                                 src={contentTileImage} 
                                 alt="content tile"
                                 style={{
-                                    width: '80%',
+                                    width: isMobileScreen ? '90%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: '10%',
+                                    marginLeft: isMobileScreen ? '5%' : '10%'
                                     
                                 }}/>
                             <span
@@ -958,7 +962,7 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
@@ -968,11 +972,11 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -988,6 +992,7 @@ function LandingInfoAreaComponent() {
                             justifyContent: 'center',
                             textAlign: 'center',
                             marginTop: '3%',
+                            marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -1003,9 +1008,9 @@ function LandingInfoAreaComponent() {
                                 src={dealsTileImage} 
                                 alt="deals tile"
                                 style={{
-                                    width: '80%',
+                                    width: isMobileScreen ? '90%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: '10%',
+                                    marginLeft: isMobileScreen ? '5%' : '10%'
                                     
                                 }}/>
                             <span
@@ -1013,7 +1018,7 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     paddingRight: '15%',
@@ -1024,11 +1029,11 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -1059,9 +1064,9 @@ function LandingInfoAreaComponent() {
                                 src={loyaltyTileImage} 
                                 alt="loyalty tile"
                                 style={{
-                                    width: '80%',
+                                    width: isMobileScreen ? '90%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: '10%',
+                                    marginLeft: isMobileScreen ? '5%' : '10%'
                                     
                                 }}/>
                             <span
@@ -1069,7 +1074,7 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     marginTop: isMobileScreen ? '1%' : '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
@@ -1079,11 +1084,11 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: '17%',
+                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
                                     marginTop: '7%'
                                 }}
@@ -1104,7 +1109,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '40.5%'
+                                marginTop: isMobileScreen ? '35%' : '39%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
@@ -1112,7 +1117,7 @@ function LandingInfoAreaComponent() {
                         <div
                             style={{
                                 position: 'relative',
-                                marginTop: '12%',
+                                marginTop: isMobileScreen ? '10%' : '11%',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
@@ -1137,7 +1142,6 @@ function LandingInfoAreaComponent() {
                                     fontWeight: '300',
                                     textAlign: 'center',
                                     marginTop: '5%'
-                                    //marginTop: isMobileScreen ? '19%' : '17%' 
                                 }}
                             >   
                                 Follow us on Instagram
@@ -1169,7 +1173,7 @@ function LandingInfoAreaComponent() {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: '10%'
+                            marginTop: isMobileScreen ? '8%' : '9%'
                         }}>
                             <img
                             src={whatsappxs}
@@ -1218,7 +1222,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
                                 padding: '1.5% 1% 1.5% 1%',
-                                marginTop: '10%',
+                                marginTop: '8%',
                                 width: '25%',
                                 borderRadius: '50px',
                                 boxShadow: '0px 3px 15px #00000099',
