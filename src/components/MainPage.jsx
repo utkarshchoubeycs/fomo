@@ -795,7 +795,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '2%' : '3%',
+                                    marginTop: '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -864,12 +864,13 @@ function LandingInfoAreaComponent() {
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
-                                    paddingRight: isMobileScreen ? '10%' : '15%',
+                                    paddingRight: isMobileScreen ? '13%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '7%'
+                                    marginTop: isMobileScreen ? '6%' : '7%'
                                 }}
                             >
-                                Perfect for large group bookings for private and corporate events. We help you find and book the ideal party venue and the best party packages that suit your budget.
+                                Perfect for large group bookings for private and corporate events.
+                                We help you find and book the ideal party venue and the best party packages that suit your budget.
                             </p>
                         </motion.div>
                         <motion.div 
@@ -907,7 +908,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '1%' : '3%',
+                                    marginTop: '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -963,7 +964,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '1%' : '3%',
+                                    marginTop: '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -1019,7 +1020,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '1%' : '3%',
+                                    marginTop: '3%',
                                     fontSize: '3.5vw',
                                     paddingRight: '15%',
                                     fontFamily: 'Nulshock',
@@ -1075,7 +1076,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '1%' : '3%',
+                                    marginTop: '3%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
