@@ -1125,7 +1125,8 @@ function LandingInfoAreaComponent() {
                                 style={{
                                     position: 'absolute',
                                     marginTop: '1%',
-                                    marginBottom: isMobileScreen ? '75%' : '35%'
+                                    width: isMobileScreen ? '13%' : '15%',
+                                    marginBottom: isMobileScreen ? '47%' : '35%'
                                 }}
                             />
                             <span
@@ -1146,7 +1147,7 @@ function LandingInfoAreaComponent() {
                                 target="_blank"  // This will open the link in a new tab
                                 rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
                                 style={{ textDecoration: 'none', 
-                                marginTop: '-5%'
+                                marginTop: isMobileScreen ? '-9%' : '-5%'
                             }}  // This will remove the underline typically associated with links
                             >
                                 <span
@@ -1175,7 +1176,8 @@ function LandingInfoAreaComponent() {
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                paddingBottom: isMobileScreen ? '80%' : '45%'
+                                width: isMobileScreen ? '19%' : '22%',
+                                paddingBottom: isMobileScreen ? '52%' : '45%'
                             }}
                         />
                         <span
@@ -1192,7 +1194,7 @@ function LandingInfoAreaComponent() {
                         </span>
                         <a
                             href="tel:+919945594437"
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-2%' : '-1%' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-12%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
@@ -1200,7 +1202,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
-                                    textAlign: 'center'
+                                    textAlign: 'center',
                                 }}
                             >
                                 +91 99455 94437
