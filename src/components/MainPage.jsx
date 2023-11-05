@@ -810,7 +810,7 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '7%'
+                                    marginTop: '5%'
                                 }}
                             >Explore the city's coolest bars and most exciting events that match your vibe!</p>
                         </motion.div>
@@ -866,7 +866,7 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
                                     paddingRight: isMobileScreen ? '13%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: isMobileScreen ? '6%' : '7%'
+                                    marginTop: '5%'
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
@@ -923,7 +923,7 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '7%'
+                                    marginTop: '5%'
                                 }}
                             >
                                 Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
@@ -979,7 +979,7 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '7%'
+                                    marginTop: '5%'
                                 }}
                             >
                                 Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
@@ -1036,7 +1036,7 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '7%'
+                                    marginTop: '5%'
                                 }}
                             >
                                 Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
@@ -1091,7 +1091,7 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '7%'
+                                    marginTop: '5%'
                                 }}
                             >
                                 Create and share party content, review your favourite outlets and refer FOMO to your friends
