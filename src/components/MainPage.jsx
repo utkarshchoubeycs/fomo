@@ -1143,7 +1143,7 @@ function LandingInfoAreaComponent() {
                             />
                             <span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '4vw' : '3vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '300',
@@ -1163,7 +1163,7 @@ function LandingInfoAreaComponent() {
                             >
                                 <span
                                     style={{
-                                        fontSize: '3.5vw',
+                                        fontSize: isMobileScreen ? '4vw' : '3vw',
                                         color: 'white',
                                         fontFamily: 'Roboto',
                                         fontWeight: '800',
@@ -1193,12 +1193,12 @@ function LandingInfoAreaComponent() {
                         />
                         <span
                             style={{
-                                fontSize: '3.5vw',
+                                fontSize: isMobileScreen ? '4vw' : '3vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '12%' : '13%'
+                                marginTop: isMobileScreen ? '8%' : '13%'
                             }}
                         >
                             Contact us at
@@ -1209,7 +1209,7 @@ function LandingInfoAreaComponent() {
                         >
                             <span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '4vw' : '3vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
