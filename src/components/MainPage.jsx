@@ -198,7 +198,7 @@ function LandingInfoAreaComponent() {
         position: 'absolute',
         width: '100%',
         height: '10%',
-        marginTop: isMobileScreen ? '29%' : '23%'
+        marginTop: isMobileScreen ? '27%' : '23%'
     }
     
     const mask2ImageStyle = {
