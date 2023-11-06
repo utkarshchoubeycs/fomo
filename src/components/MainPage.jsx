@@ -1198,14 +1198,14 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '8%' : '13%'
+                                marginTop: isMobileScreen ? '6%' : '13%'
                             }}
                         >
                             Contact us at
                         </span>
                         <a
                             href="tel:+919945594437"
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-8%' : '-1%' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-7%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
