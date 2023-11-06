@@ -214,7 +214,7 @@ function LandingInfoAreaComponent() {
         width: '98%',
         marginRight: '-2%',
         height: '6%',
-        marginTop: isMobileScreen ? '190%' : '188%'
+        marginTop: isMobileScreen ? '188%' : '186%'
     }
     
     const cheersImageStyle = {
@@ -252,7 +252,7 @@ function LandingInfoAreaComponent() {
     const fomoLogoStyle2 = {
         position: 'absolute',
         width: isMobileScreen ? '40%' : '40%',
-        marginTop: isMobileScreen ? '541%' : '525%'
+        marginTop: isMobileScreen ? '541%' : '527%'
     };
     
     return (
@@ -530,7 +530,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
-                                    marginTop: '37%',
+                                    marginTop: '39%',
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
@@ -1116,7 +1116,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '39%' : '37%'
+                                marginTop: isMobileScreen ? '39%' : '39%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
