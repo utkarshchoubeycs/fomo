@@ -220,7 +220,7 @@ function LandingInfoAreaComponent() {
     const cheersImageStyle = {
         position: 'absolute',
         width: '40vw',
-        marginTop: isMobileScreen? '248%' : '243%',
+        marginTop: isMobileScreen? '247%' : '243%',
         marginRight: '-32%'
     }
     
