@@ -51,7 +51,6 @@ const fomoLogoStyle = {
     position: 'absolute',
     width: '41vw',
     marginLeft: '0%',
-    marginTop: '-1%',
 };
 
 const sunsetLogoStyle = {
@@ -67,45 +66,6 @@ const fourhandsStyle = {
     marginTop: '1%',
     marginLeft: '25%',
     marginRight: '25%',   
-}
-
-const mask1ImageStyle = {
-    position: 'absolute',
-    width: '100%',
-    height: '10%',
-    marginTop: '25%'
-}
-
-const mask2ImageStyle = {
-    position: 'absolute',
-    width: '90%',
-    height: '8%',
-    marginLeft: '-10%',
-    marginTop: '110%'
-}
-
-const mask3ImageStyle = {
-    position: 'absolute',
-    width: '98%',
-    marginRight: '-2%',
-    height: '6%',
-    marginTop: '188%'
-}
-
-const cheersImageStyle = {
-    position: 'absolute',
-    width: '40vw',
-    marginTop: '245%',
-    marginRight: '-32%'
-}
-
-const mask4ImageStyle = {
-    position: 'absolute',
-    width: '99%',
-    top: '0%',
-    height: '6%',
-    marginLeft: '-1%',
-    marginTop: '307%',
 }
 
 function Section({ image, aspectRatio, style, children }) {
@@ -234,6 +194,45 @@ function LandingInfoAreaComponent() {
         }
     };
 
+    const mask1ImageStyle = {
+        position: 'absolute',
+        width: '100%',
+        height: '10%',
+        marginTop: isMobileScreen ? '29%' : '23%'
+    }
+    
+    const mask2ImageStyle = {
+        position: 'absolute',
+        width: '90%',
+        height: '8%',
+        marginLeft: '-10%',
+        marginTop: isMobileScreen? '113%' : '110%'
+    }
+    
+    const mask3ImageStyle = {
+        position: 'absolute',
+        width: '98%',
+        marginRight: '-2%',
+        height: '6%',
+        marginTop: isMobileScreen ? '190%' : '188%'
+    }
+    
+    const cheersImageStyle = {
+        position: 'absolute',
+        width: '40vw',
+        marginTop: isMobileScreen? '248%' : '243%',
+        marginRight: '-32%'
+    }
+    
+    const mask4ImageStyle = {
+        position: 'absolute',
+        width: '99%',
+        top: '0%',
+        height: '6%',
+        marginLeft: '-1%',
+        marginTop: isMobileScreen ? '310%' : '307%',
+    }
+
     const rightAlignedParagraph = [
         "We're diving deep into the vibrant",
         "heartbeats of Bangalore and",
@@ -252,8 +251,8 @@ function LandingInfoAreaComponent() {
 
     const fomoLogoStyle2 = {
         position: 'absolute',
-        width: isMobileScreen ? '30%' : '40%',
-        marginTop: isMobileScreen ? '551%' : '531%'
+        width: isMobileScreen ? '40%' : '40%',
+        marginTop: isMobileScreen ? '541%' : '523%'
     };
     
     return (
@@ -332,7 +331,7 @@ function LandingInfoAreaComponent() {
                                 justifyContent: 'center',
                                 marginLeft: '10%',
                                 marginRight: '10%',
-                                marginTop: '30%', 
+                                marginTop: '31%', 
                                 transform: isFomoVisible ? "none" : "translateY(5vh)",
                                 transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
                                 opacity: isFomoVisible ? 1: 0,
@@ -343,7 +342,7 @@ function LandingInfoAreaComponent() {
                     </div>
                     <div style={{
                         top: '0%',
-                        marginTop: '40%',
+                        marginTop: '45%',
                         position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
@@ -367,7 +366,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '500',
-                                    marginTop: '7%'
+                                    marginTop: isMobileScreen ? '12%' : '7%'
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
@@ -412,7 +411,8 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '500',
-                                    marginTop: '-2.5%'
+                                    marginTop: '-2.5%',
+                                    lineHeight: '100%'
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
@@ -698,7 +698,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '3.5%',
+                                marginTop: '1%',
                                 marginLeft: '12%'
                             }}
                             initial="hidden"
@@ -717,7 +717,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '3.5%',
+                                marginTop: '1%',
                                 marginLeft: '11%'
                             }}
                             initial="hidden"
@@ -736,7 +736,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '2.5%',
+                                marginTop: '1%',
                                 marginLeft: '8%'
                             }}
                             initial="hidden"
@@ -749,12 +749,12 @@ function LandingInfoAreaComponent() {
                         </motion.span>
                         <span
                             style={{
-                                fontSize: '3.5vw',
+                                fontSize: '6vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '8%'
+                                marginTop: '11%'
                             }}
                         >
                             COMING SOON!
@@ -766,7 +766,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '3%',
+                            marginTop: '1%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -795,7 +795,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: '3%',
+                                    marginTop: '2.5%',
                                     fontSize: '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -807,10 +807,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
+                                    fontSize: isMobileScreen ? '2.7vw' : '2vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '5%'
+                                    marginTop: '2.5%'
                                 }}
                             >Explore the city's coolest bars and most exciting events that match your vibe!</p>
                         </motion.div>
@@ -821,7 +822,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '3%',
+                            marginTop: '2%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -863,10 +864,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    fontSize: isMobileScreen ? '2.7vw' : '2vw',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
                                     paddingRight: isMobileScreen ? '13%' : '15%',
                                     textAlign: 'left',
-                                    marginTop: '5%'
+                                    marginTop: isMobileScreen ? '3%' : '5%' 
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
@@ -880,7 +882,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '3%',
+                            marginTop: isMobileScreen ? '2%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -920,10 +922,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '5%'
+                                    marginTop: '3%'
                                 }}
                             >
                                 Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
@@ -936,7 +939,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '3%',
+                            marginTop: isMobileScreen ? '2%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -976,10 +979,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '5%'
+                                    marginTop: '3%'
                                 }}
                             >
                                 Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
@@ -992,7 +996,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '3%',
+                            marginTop: isMobileScreen ? '2%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -1033,10 +1037,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '5%'
+                                    marginTop: '3%'
                                 }}
                             >
                                 Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
@@ -1049,7 +1054,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '3%',
+                            marginTop: isMobileScreen ? '2%' : '3%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -1088,10 +1093,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '1.5vw',
+                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
                                     paddingRight: isMobileScreen ? '10%' : '15%',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '5%'
+                                    marginTop: '3%'
                                 }}
                             >
                                 Create and share party content, review your favourite outlets and refer FOMO to your friends
@@ -1110,7 +1116,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '35%' : '39%'
+                                marginTop: isMobileScreen ? '39%' : '39%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
@@ -1118,7 +1124,7 @@ function LandingInfoAreaComponent() {
                         <div
                             style={{
                                 position: 'relative',
-                                marginTop: isMobileScreen ? '10%' : '11%',
+                                marginTop: isMobileScreen ? '8%' : '11%',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
@@ -1137,7 +1143,7 @@ function LandingInfoAreaComponent() {
                             />
                             <span
                                 style={{
-                                    fontSize: '2.5vw',
+                                    fontSize: '2.7vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '300',
@@ -1152,16 +1158,16 @@ function LandingInfoAreaComponent() {
                                 target="_blank"  // This will open the link in a new tab
                                 rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
                                 style={{ textDecoration: 'none', 
-                                marginTop: isMobileScreen ? '-9%' : '-5%'
+                                marginTop: isMobileScreen ? '-9%' : '-2%'
                             }}  // This will remove the underline typically associated with links
                             >
                                 <span
                                     style={{
-                                        fontSize: '2.5vw',
+                                        fontSize: '2.7vw',
                                         color: 'white',
                                         fontFamily: 'Roboto',
                                         fontWeight: '800',
-                                        textAlign: 'center',
+                                        textAlign: 'center'
                                     }}
                                 >
                                     @thefomo.co
@@ -1187,7 +1193,7 @@ function LandingInfoAreaComponent() {
                         />
                         <span
                             style={{
-                                fontSize: '2.5vw',
+                                fontSize: '2.7vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
@@ -1203,7 +1209,7 @@ function LandingInfoAreaComponent() {
                         >
                             <span
                                 style={{
-                                    fontSize: '2.5vw',
+                                    fontSize: '2.7vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
@@ -1219,13 +1225,13 @@ function LandingInfoAreaComponent() {
                                 background: '#FFFFFF 0% 0% no-repeat padding-box',
                                 border: '1px solid #707070',
                                 justifyContent: 'center',
-                                fontSize: '2.3vw',
+                                fontSize: isMobileScreen ? '2.7vw' : '3vw',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
-                                padding: '1.5% 1% 1.5% 1%',
-                                marginTop: '8%',
+                                padding: isMobileScreen ? '1.5% 1% 1.5% 1%' : '2% 2.5% 2% 2.5%',
+                                marginTop: '6%',
                                 width: '25%',
-                                borderRadius: '50px',
+                                borderRadius: isMobileScreen ? '50px' : '75px',
                                 boxShadow: '0px 3px 15px #00000099',
                                 cursor: 'pointer',
                                 userSelect: 'none'

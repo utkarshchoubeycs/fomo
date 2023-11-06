@@ -56,7 +56,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                         <input 
                             text={formName} 
                             placeholder='Name'
-                            className='w-full px-2 py-3 md:py-4 text-2xl rounded-lg'
+                            className='w-full px-4 py-4 md:py-4 text-lg rounded-lg'
                             onChange={setFormName} 
                         />
                     </div>
@@ -65,7 +65,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                             <input
                             type="tel"
                             text={formPhoneNumber}
-                            className="w-full px-2 py-3 md:py-4 text-2xl rounded-lg border border-gray-300"
+                            className="w-full px-4 py-4 md:py-4 text-lg rounded-lg border border-gray-300"
                             placeholder="Phone"
                             onChange={setFormPhoneNumber}
                             />
@@ -74,7 +74,7 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                             <input
                             type="email"
                             text={formEmail}
-                            className="w-full px-2 py-3 md:py-4 text-2xl rounded-lg border border-gray-300"
+                            className="w-full px-4 py-4 md:py-4 text-lg rounded-lg border border-gray-300"
                             placeholder="Email"
                             onChange={setFormEmail}
                             />
