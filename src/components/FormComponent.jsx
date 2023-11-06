@@ -5,7 +5,7 @@ import '../index.css';
 import landscapeFormBg from '../assets/Group66.webp';
 import logoImage from '../assets/P2.webp';
 
-const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEnabled}) => {
+const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}) => {
 
     const [formName, setFormName] = useState('')
     const [formPhoneNumber, setFormPhoneNumber] = useState('');

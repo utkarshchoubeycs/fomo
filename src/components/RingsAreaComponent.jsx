@@ -72,7 +72,7 @@ const HeroComponent = ({ stage, setStage }) => {
 	}
 
 	return (
-		<div style={{ height: '100vh', justifyContent: 'center', position: stage < 5 ? 'fixed' : 'relative', zIndex: -1}}>
+		<div style={{ height: '100vh', justifyContent: 'center', position: stage < 4 ? 'fixed' : 'relative', zIndex: -1}}>
 			{renderStages()}
 		</div>
 	);
@@ -80,7 +80,7 @@ const HeroComponent = ({ stage, setStage }) => {
 
 const LandingPageComponent = ({ stage, setStage }) => {
 	return (
-		<div style={{ height: '100vh' }}>
+		<div style={{ height: '100vh', overflow: 'hidden' }}>
 			<HeroComponent stage={stage} setStage={setStage} />
 		</div>
 	)
