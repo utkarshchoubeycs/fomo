@@ -252,7 +252,7 @@ function LandingInfoAreaComponent() {
     const fomoLogoStyle2 = {
         position: 'absolute',
         width: isMobileScreen ? '40%' : '40%',
-        marginTop: isMobileScreen ? '541%' : '523%'
+        marginTop: isMobileScreen ? '541%' : '525%'
     };
     
     return (
@@ -698,7 +698,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '1%',
+                                marginTop: isMobileScreen ? '1%' : '4%',
                                 marginLeft: '12%'
                             }}
                             initial="hidden"
@@ -717,7 +717,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '1%',
+                                marginTop: isMobileScreen ? '1%' : '4%',
                                 marginLeft: '11%'
                             }}
                             initial="hidden"
@@ -736,7 +736,7 @@ function LandingInfoAreaComponent() {
                                 fontWeight: 'bold',
                                 textAlign: 'center',
                                 paddingRight: '8%',
-                                marginTop: '1%',
+                                marginTop: isMobileScreen ? '1%' : '4%',
                                 marginLeft: '8%'
                             }}
                             initial="hidden"
@@ -754,7 +754,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: '11%'
+                                marginTop: isMobileScreen ? '11%' : '6%'
                             }}
                         >
                             COMING SOON!
@@ -1116,7 +1116,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '39%' : '39%'
+                                marginTop: isMobileScreen ? '39%' : '37%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
