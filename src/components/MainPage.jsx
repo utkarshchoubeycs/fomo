@@ -252,7 +252,7 @@ function LandingInfoAreaComponent() {
     const fomoLogoStyle2 = {
         position: 'absolute',
         width: isMobileScreen ? '40%' : '40%',
-        marginTop: isMobileScreen ? '541%' : '527%'
+        marginTop: isMobileScreen ? '538%' : '527%'
     };
     
     return (
@@ -754,7 +754,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '11%' : '6%'
+                                marginTop: isMobileScreen ? '6%' : '6%'
                             }}
                         >
                             COMING SOON!
