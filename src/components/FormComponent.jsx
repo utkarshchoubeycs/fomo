@@ -52,13 +52,15 @@ const FormComponent = ({isUserInterestFormEnabled=true, setIsUserInterestFormEna
                 </div>
 
                 <div className='flex flex-col my-5 mt-8 space-y-4 mx-10 md:mx-32 lg:mx-56' style={{color: '#000', fontFamily: 'Roboto', fontWeight: '400'}}>
-                    <div className='flex flex-col md:flex-row items-center mx-0 md:mx-0'>
-                        <input 
-                            text={formName} 
-                            placeholder='Name'
-                            className='w-full px-4 py-4 md:py-4 text-lg rounded-lg'
-                            onChange={setFormName} 
-                        />
+                    <div className='flex flex-col md:flex-row items-center'>
+                        <div className='flex-1'>
+                            <input 
+                                text={formName} 
+                                placeholder='Name'
+                                className='w-full px-4 py-4 md:py-4 text-lg rounded-lg border border-gray-300'
+                                onChange={setFormName} 
+                            />
+                        </div>
                     </div>
                     <div className="flex flex-col md:flex-row items-center">
                         <div className="mb-4 md:mb-0 md:mr-2 flex-1">

@@ -1138,17 +1138,17 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     marginTop: '1%',
                                     width: isMobileScreen ? '13%' : '15%',
-                                    marginBottom: isMobileScreen ? '47%' : '35%'
+                                    marginBottom: isMobileScreen ? '45%' : '35%'
                                 }}
                             />
                             <span
                                 style={{
-                                    fontSize: '2.7vw',
+                                    fontSize: '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '300',
                                     textAlign: 'center',
-                                    marginTop: '5%'
+                                    marginTop: isMobileScreen ? '0%' : '3%'
                                 }}
                             >   
                                 Follow us on Instagram
@@ -1158,12 +1158,12 @@ function LandingInfoAreaComponent() {
                                 target="_blank"  // This will open the link in a new tab
                                 rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
                                 style={{ textDecoration: 'none', 
-                                marginTop: isMobileScreen ? '-9%' : '-2%'
+                                marginTop: isMobileScreen ? '-6%' : '-2%'
                             }}  // This will remove the underline typically associated with links
                             >
                                 <span
                                     style={{
-                                        fontSize: '2.7vw',
+                                        fontSize: '3.5vw',
                                         color: 'white',
                                         fontFamily: 'Roboto',
                                         fontWeight: '800',
@@ -1188,28 +1188,28 @@ function LandingInfoAreaComponent() {
                             style={{
                                 position: 'absolute',
                                 width: isMobileScreen ? '19%' : '22%',
-                                paddingBottom: isMobileScreen ? '52%' : '45%'
+                                paddingBottom: isMobileScreen ? '45%' : '45%'
                             }}
                         />
                         <span
                             style={{
-                                fontSize: '2.7vw',
+                                fontSize: '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '16%' : '13%'
+                                marginTop: isMobileScreen ? '12%' : '13%'
                             }}
                         >
                             Contact us at
                         </span>
                         <a
                             href="tel:+919945594437"
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-12%' : '-1%' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-8%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
-                                    fontSize: '2.7vw',
+                                    fontSize: '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
@@ -1225,12 +1225,12 @@ function LandingInfoAreaComponent() {
                                 background: '#FFFFFF 0% 0% no-repeat padding-box',
                                 border: '1px solid #707070',
                                 justifyContent: 'center',
-                                fontSize: isMobileScreen ? '2.7vw' : '3vw',
+                                fontSize: isMobileScreen ? '3.5vw' : '3vw',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
-                                padding: isMobileScreen ? '1.5% 1% 1.5% 1%' : '2% 2.5% 2% 2.5%',
-                                marginTop: '6%',
-                                width: '25%',
+                                padding: isMobileScreen ? '1.5% 1.5% 1.5% 1.5%' : '2% 2.5% 2% 2.5%',
+                                marginTop: isMobileScreen ? '4%' : '6%',
+                                width: '30%',
                                 borderRadius: isMobileScreen ? '50px' : '75px',
                                 boxShadow: '0px 3px 15px #00000099',
                                 cursor: 'pointer',
