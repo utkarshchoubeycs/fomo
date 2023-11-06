@@ -47,12 +47,6 @@ const contentStyle = {
     flexDirection: 'column'
 };
 
-const fomoLogoStyle = {
-    position: 'absolute',
-    width: '41vw',
-    marginLeft: '0%',
-};
-
 const sunsetLogoStyle = {
     position: 'absolute',
     width: '35vw',
@@ -194,6 +188,13 @@ function LandingInfoAreaComponent() {
         }
     };
 
+    const fomoLogoStyle = {
+        position: 'absolute',
+        width: '41vw',
+        marginLeft: '0%',
+        marginTop: isMobileScreen ? '3%' : '3%'
+    };
+
     const mask1ImageStyle = {
         position: 'absolute',
         width: '100%',
@@ -331,7 +332,7 @@ function LandingInfoAreaComponent() {
                                 justifyContent: 'center',
                                 marginLeft: '10%',
                                 marginRight: '10%',
-                                marginTop: '31%', 
+                                marginTop: '34%', 
                                 transform: isFomoVisible ? "none" : "translateY(5vh)",
                                 transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
                                 opacity: isFomoVisible ? 1: 0,
