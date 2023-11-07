@@ -5,7 +5,7 @@ import '../index.css';
 import landscapeFormBg from '../assets/Group66.webp';
 import logoImage from '../assets/P2.webp';
 
-const googleFormUrl = "https://script.google.com/macros/s/AKfycbxka-6RpEA7LPWj1AwjkOFo1dMqPUMfMpqZegf49Snfv1DVWgGp3X7BJ3Us2v9UZD2TUg/exec"
+const googleFormUrl = "https://script.google.com/macros/s/AKfycbzaNuZOUQMdoyP1kV9UjfQ9CHg2mTcT35vYs4wOFPHQZLSyYaCgGKgiBn47_V7NKfBiYg/exec"
 const phoneRegex = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})?[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
 const emailRegex = /\S+@\S+\.\S+/;
 
