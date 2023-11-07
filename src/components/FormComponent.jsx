@@ -81,6 +81,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
         setFormName('');
         setFormPhoneNumber('');
         setIsSubmitting(false);
+        setIsUserInterestFormEnabled(false);
     }
 
     return (
