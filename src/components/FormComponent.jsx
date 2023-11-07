@@ -70,6 +70,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
             });
 
             const result = await response.json();
+            console.log(result);
             alert("Success!");
 
         } catch (error) {
