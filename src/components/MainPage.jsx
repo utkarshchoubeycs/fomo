@@ -284,7 +284,7 @@ function LandingInfoAreaComponent() {
     return (
             <Section
                 image={isMobileScreen ? backgroundImageMobile : backgroundImage}
-                aspectRatio={isMobileScreen ? 0.059 : 0.14}
+                aspectRatio={isMobileScreen ? 0.057 : 0.14}
                 style={{
                     ...mainImageStyle
                 }}
