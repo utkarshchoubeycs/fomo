@@ -263,9 +263,9 @@ function LandingInfoAreaComponent() {
     ]
 
     const fomoLogoStyle2 = {
-        position: 'absolute',
-        width: isMobileScreen ? '60%' : '50vw',
-        marginTop: isMobileScreen ? '1200%' : '537%'
+        position: 'relative',
+        width: isMobileScreen ? '60%' : '50%',
+        marginTop: isMobileScreen ? '20%' : '5%'
     };
 
     const sunsetLogoStyle = {
@@ -723,11 +723,15 @@ function LandingInfoAreaComponent() {
                             viewport={{ once: true }}
                             variants={stampVariants}
                         >
-                            FASTEN YOUR {isMobileScreen ? <br/> : <span>&nbsp;</span>} SEATBELTS,
+                            FASTEN YOUR
+                            {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                            SEATBELTS,
                             <br/>
                             BANGALORE & GOA
                             <br/>
-                            ARE ABOUT TO {isMobileScreen ? <br/> : <span>&nbsp;</span>} GET WILD!
+                            ARE ABOUT TO
+                            {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                            GET WILD!
                         </motion.div>
                         <span
                             style={{
@@ -1106,7 +1110,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '75%' : '50%'
+                                marginTop: isMobileScreen ? '5%' : '0%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
