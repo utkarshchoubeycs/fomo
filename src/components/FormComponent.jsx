@@ -49,12 +49,15 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
         setIsSubmitting(true);
         if (!formName || !formPhoneNumber || !formEmail) {
             alert("Please fill all the fields!");
+            setIsSubmitting(false);
             return;
         } else if (!formPhoneNumber.match(phoneRegex)) {
             alert("Please enter a valid phone number!");
+            setIsSubmitting(false);
             return;
         } else if (!formEmail.match(emailRegex)) {
             alert("Please enter a valid email address!");
+            setIsSubmitting(false);
             return;
         }
 
