@@ -11,6 +11,7 @@ import cheersImage from '../assets/P6.webp';
 import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
 import backgroundImage from '../assets/BG.webp';
+import backgroundImageMobile from '../assets/BG_Mobile.jpg';
 
 import discoverTileImage from '../assets/Coming Soon/Group 77.webp';
 import partyPackageTileImage from '../assets/Coming Soon/Group 78.webp';
@@ -18,6 +19,13 @@ import fomoTipsTileImage from '../assets/Coming Soon/Group 79.webp';
 import contentTileImage from '../assets/Coming Soon/Group 80.webp';
 import dealsTileImage from '../assets/Coming Soon/Group 81.webp';
 import loyaltyTileImage from '../assets/Coming Soon/Group 82.webp';
+
+import discoverTileMobileImage from '../assets/Coming Soon/Group 88.webp';
+import partyPackageTileMobileImage from '../assets/Coming Soon/Group 87.webp';
+import fomoTipsTileMobileImage from '../assets/Coming Soon/Group 86.webp';
+import contentTileMobileImage from '../assets/Coming Soon/Group 85.webp';
+import dealsTileMobileImage from '../assets/Coming Soon/Group 84.webp';
+import loyaltyTileMobileImage from '../assets/Coming Soon/Group 83.webp';
 
 import whatsappxs from '../assets/whatsappSmall.png';
 import instaxs from '../assets/instaSmall.png';
@@ -46,21 +54,6 @@ const contentStyle = {
     bottom: '0%',
     flexDirection: 'column'
 };
-
-const sunsetLogoStyle = {
-    position: 'absolute',
-    width: '35vw',
-    marginLeft: '0%',
-    marginTop: '10%',
-}
-
-const fourhandsStyle = {
-    position: 'absolute',
-    width: '58vw',
-    marginTop: '1%',
-    marginLeft: '25%',
-    marginRight: '25%',   
-}
 
 function Section({ image, aspectRatio, style, children }) {
     const sectionStyle = {
@@ -111,7 +104,10 @@ function LandingInfoAreaComponent() {
 
     useEffect(() => {
         const unsubScrollYProgress = scrollYProgress.on("change", value => {
-            if(value <= 0.9) setIsFomoVisible(false);
+            
+            const threshold = isMobileScreen ? 0.65 : 0.9;
+
+            if(value <= threshold) setIsFomoVisible(false);
             else setIsFomoVisible(true);
         })
 
@@ -190,59 +186,75 @@ function LandingInfoAreaComponent() {
 
     const fomoLogoStyle = {
         position: 'absolute',
-        width: '41vw',
-        marginLeft: '0%',
-        marginTop: isMobileScreen ? '3%' : '3%'
+        width: isMobileScreen ? '70vw' : '45vw',
+        marginTop: isMobileScreen ? '75%' : '0%'
     };
 
     const mask1ImageStyle = {
         position: 'absolute',
         width: '100%',
-        height: '10%',
-        marginTop: isMobileScreen ? '27%' : '23%'
+        height: isMobileScreen ? '' : '10%',
+        marginTop: isMobileScreen ? '50%' : '30%'
     }
     
     const mask2ImageStyle = {
         position: 'absolute',
-        width: '90%',
-        height: '8%',
-        marginLeft: '-10%',
-        marginTop: isMobileScreen? '113%' : '110%'
+        width: '95%',
+        height: isMobileScreen ? '' : '8%',
+        marginLeft: '-5%',
+        marginTop: isMobileScreen? '177%' : '115%'
     }
     
     const mask3ImageStyle = {
         position: 'absolute',
         width: '98%',
         marginRight: '-2%',
-        height: '6%',
-        marginTop: isMobileScreen ? '188%' : '186%'
+        height: isMobileScreen ? '' : '6%',
+        marginTop: isMobileScreen ? '300%' : '197%'
     }
     
     const cheersImageStyle = {
         position: 'absolute',
-        width: '40vw',
-        marginTop: isMobileScreen? '247%' : '243%',
-        marginRight: '-32%'
+        width: isMobileScreen ? '70vw' : '40vw',
+        marginTop: isMobileScreen? '395%' : '259%',
+        marginRight: isMobileScreen ? '-10%' : '-32%'
     }
     
     const mask4ImageStyle = {
         position: 'absolute',
-        width: '99%',
+        width: isMobileScreen ? '80%' : '99%',
         top: '0%',
-        height: '6%',
-        marginLeft: '-1%',
-        marginTop: isMobileScreen ? '310%' : '307%',
+        height: isMobileScreen ? '' : '6%',
+        marginLeft: isMobileScreen ? '-20%' : '-1%',
+        marginTop: isMobileScreen ? '520%' : '320%',
     }
 
-    const rightAlignedParagraph = [
+    const rightAlignedParagraph =  isMobileScreen ? [
+        "We're diving deep into the",
+        "vibrant heartbeats of",
+        "Bangalore and the sun-soaked",
+        "shores of Goa. We are bringing",
+        " you the insider scoops",
+        "on the happening parties in town."
+    ] :
+    [
         "We're diving deep into the vibrant",
         "heartbeats of Bangalore and",
         "the sun-soaked shores of Goa.",
         "We are bringing you the insider scoops",
         "on the happening parties in town."
-    ]
+    ];
 
-    const leftAlignedParagraph = [
+    const leftAlignedParagraph = isMobileScreen ? 
+    [
+        "Get ready for action-packed",
+        "parties, electric pubs and",
+        "clubs that buzz louder than",
+        "your morning alarm. Curated",
+        "by true party enthusiasts.",
+        "We've got your back!"
+    ] :
+    [
         "Get ready for action-packed parties,",
         "electric pubs, and clubs that buzz",
         "louder than your morning alarm.",
@@ -252,24 +264,38 @@ function LandingInfoAreaComponent() {
 
     const fomoLogoStyle2 = {
         position: 'absolute',
-        width: isMobileScreen ? '40%' : '40%',
-        marginTop: isMobileScreen ? '538%' : '527%'
+        width: isMobileScreen ? '60%' : '50vw',
+        marginTop: isMobileScreen ? '1200%' : '537%'
     };
+
+    const sunsetLogoStyle = {
+        position: 'absolute',
+        width: isMobileScreen ? '60vw' : '41vw',
+        marginLeft: '0%',
+        marginTop: isMobileScreen ? '70%' : '10%',
+    }
+
+    const fourhandsStyle = {
+        position: 'absolute',
+        width: isMobileScreen ? '95vw' : '58vw',
+        marginTop: isMobileScreen ? '57.5%' : '1%',
+    }
     
     return (
             <Section
-                image={backgroundImage}
-                aspectRatio={0.14692378}
+                image={isMobileScreen ? backgroundImageMobile : backgroundImage}
+                aspectRatio={isMobileScreen ? 0.059 : 0.14}
                 style={{
                     ...mainImageStyle
                 }}
-            >   
+            > 
                 <div style={{ filter: isUserInterestFormEnabled ? 'blur(12px)' : '', ...contentStyle}}>
                     <div 
                         ref={sunsetViewRef}
                         style={{
                         top: '0%',
-                        position: 'absolute',
+                        position: 'relative',
+                        height: '100vh',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -278,15 +304,15 @@ function LandingInfoAreaComponent() {
                         right: '0%',
                     }}>    
                         <span style={{
-                            fontSize: '3.5vw', 
+                            fontSize: isMobileScreen ? '8vw' : '4vw', 
                             color: 'white', 
+                            paddingLeft: isMobileScreen ? '15%' : '0%',
+                            paddingRight: isMobileScreen ? '15%' : '0%',
                             fontFamily: 'Nulshock', 
                             fontWeight: 'bold', 
                             textAlign: 'center',
                             justifyContent: 'center',
-                            marginLeft: '11%',
-                            marginRight: '10%',
-                            marginTop: '2%', 
+                            marginTop: isMobileScreen ? '40%' : '2%', 
                             transform: isFomoVisible ? 'transformY(50%)' : 'none',
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isFomoVisible ? 0 : 1
@@ -294,13 +320,13 @@ function LandingInfoAreaComponent() {
                             AS THE SUN GOES DOWN
                         </span>
                         <img
-                            
                             src={sunsetLogo}
                             alt={"Sunset Logo"}
                             style={{
                                 transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
                                 opacity: isFomoVisible ? 0 : 1,
-                                ...sunsetLogoStyle}}
+                                ...sunsetLogoStyle
+                            }}
                         />
                         <img
                             src={FOMOLogo}
@@ -324,7 +350,7 @@ function LandingInfoAreaComponent() {
                         />
                         <span 
                             style={{
-                                fontSize: '5.8vw', 
+                                fontSize: isMobileScreen ? '8vw' : '4vw', 
                                 color: 'white', 
                                 fontFamily: 'Nulshock', 
                                 fontWeight: 'bold', 
@@ -332,7 +358,7 @@ function LandingInfoAreaComponent() {
                                 justifyContent: 'center',
                                 marginLeft: '10%',
                                 marginRight: '10%',
-                                marginTop: '34%', 
+                                marginTop: isMobileScreen ? '80%' : '35%', 
                                 transform: isFomoVisible ? "none" : "translateY(5vh)",
                                 transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
                                 opacity: isFomoVisible ? 1: 0,
@@ -343,7 +369,7 @@ function LandingInfoAreaComponent() {
                     </div>
                     <div style={{
                         top: '0%',
-                        marginTop: '45%',
+                        marginTop: isMobileScreen ? '235%' : '45%',
                         position: 'absolute',
                         display: 'flex',
                         flexDirection: 'column',
@@ -359,15 +385,15 @@ function LandingInfoAreaComponent() {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             textAlign: 'left',
-                            marginLeft: '-10%'
+                            marginLeft: isMobileScreen ? '12%' : '10%'
                         }}>
                             <motion.span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '500',
-                                    marginTop: isMobileScreen ? '12%' : '7%'
+                                    marginTop: isMobileScreen ? '11%' : '7%'
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
@@ -397,7 +423,7 @@ function LandingInfoAreaComponent() {
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
-                                    marginTop: '-4%',
+                                    marginTop: isMobileScreen ? '-2%' : '-4%',
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
@@ -408,19 +434,20 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
-                                    fontWeight: '500',
-                                    marginTop: '-2.5%',
-                                    lineHeight: '100%'
+                                    fontWeight: isMobileScreen ? '400' : '500',
+                                    marginTop: isMobileScreen ? '-1%' : '-2.5%',
+                                    lineHeight: isMobileScreen ? '120%' : '100%',
+                                    paddingRight: isMobileScreen ? '20%' : '10%'
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
                                 viewport={{ once: true }}
                                 transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 }}
                             >
-                                ready to take you on wild rides through the cities <br/> that never sleep!
+                                ready to take you on wild rides through the cities that never sleep!
                             </motion.span>
                         </div>
                         <motion.img
@@ -434,14 +461,17 @@ function LandingInfoAreaComponent() {
                         />
                         <div
                             style={{
-                                fontSize: '3.2vw',
+                                position: 'relative',
+                                fontSize: isMobileScreen ? '5.5vw' : '3.2vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
-                                fontWeight: '500',
+                                fontWeight: isMobileScreen ? '400' : '500',
+                                paddingLeft: isMobileScreen ? '0%' : '0%',
+                                paddingRight: isMobileScreen ? '10%' : '0%',
                                 textAlign: 'right',
-                                paddingRight: '8%',
-                                marginTop: '59%',
-                                marginRight: '-30%'
+                                lineHeight: isMobileScreen ? '160%' : '',
+                                marginTop: isMobileScreen ? '75%' : '67.5%',
+                                marginRight: isMobileScreen ? '-5%' : '-30%'
                             }}
                         >
                             {rightAlignedParagraph.map((line, index) => (
@@ -477,13 +507,14 @@ function LandingInfoAreaComponent() {
                         />
                         <div
                             style={{
-                                fontSize: '3.5vw',
+                                fontSize: isMobileScreen ? '5.5vw' : '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
-                                fontWeight: '500',
+                                fontWeight: isMobileScreen ? '400' : '500',
                                 textAlign: 'left',
-                                marginTop: '52%',
-                                marginLeft: '-16%'
+                                marginTop: isMobileScreen ? '75%' : '52%',
+                                marginLeft: isMobileScreen ? '0%' : '-16%',
+                                lineHeight : isMobileScreen ? '160%' : '',
                             }}
                         >
                             {leftAlignedParagraph.map((line, index) => (
@@ -522,12 +553,12 @@ function LandingInfoAreaComponent() {
                             display: 'flex',
                             flexDirection: 'column',
                             textAlign: 'left',
-                            marginTop: '12%',
-                            marginLeft: '-10%'
+                            marginTop: isMobileScreen ? '40%' : '20%',
+                            marginLeft: isMobileScreen ? '0%' : '-10%'
                         }}>
                             <motion.span
                                 style={{
-                                    fontSize: '6vw',
+                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -542,7 +573,7 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '6vw',
+                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -557,7 +588,7 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '6vw',
+                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -572,11 +603,12 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
-                                    fontWeight: '500',
-                                    marginTop: '-2%'
+                                    fontWeight: isMobileScreen ? '400' : '500',
+                                    marginTop: '-2%',
+                                    marginLeft : isMobileScreen ? '2%'  :''
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
                                 whileInView={{ opacity: 1, y: '0'}}
@@ -600,15 +632,15 @@ function LandingInfoAreaComponent() {
                             display: 'flex',
                             flexDirection: 'column',
                             textAlign: 'left',
-                            marginLeft: '-25%',
-                            marginTop: '15%'
+                            marginLeft: isMobileScreen ? '-10%' : '-25%',
+                            marginTop: isMobileScreen ? '55%' : '15%'
                         }}>
                             <motion.span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
-                                    fontWeight: '500',
+                                    fontWeight: isMobileScreen ? '400' : '500',
                                     marginTop: '35%'
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
@@ -620,7 +652,7 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '6vw',
+                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -635,7 +667,7 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '6vw',
+                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
                                     color: 'white',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -650,10 +682,10 @@ function LandingInfoAreaComponent() {
                             </motion.span>
                             <motion.span
                                 style={{
-                                    fontSize: '3.5vw',
+                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
-                                    fontWeight: '500',
+                                    fontWeight: isMobileScreen ? '400' : '500',
                                     marginTop: '-2%'
                                 }}
                                 initial={{ opacity: 0, y: '20vh'}}
@@ -673,92 +705,41 @@ function LandingInfoAreaComponent() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.7 }}
                         />
-                        <motion.span
+                        <motion.div
                             style={{
                                 fontFamily: 'Nulshock',
-                                fontSize: '4vw',
+                                fontSize: isMobileScreen ? '7vw' : '4vw',
                                 color: 'white',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: '41%',
-                                marginLeft: '12%',
+                                paddingRight: isMobileScreen ? '0%' : '8%',
+                                marginTop: '55%',
+                                marginBottom: '15%',
+                                marginLeft: isMobileScreen ? '0%' : '12%',
+                                lineHeight: isMobileScreen ? '105%' : ''
                             }}
                             initial="hidden"
                             whileInView="stamp"
                             viewport={{ once: true }}
                             variants={stampVariants}
                         >
-                            FASTEN YOUR SEATBELTS,
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '6vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: isMobileScreen ? '1%' : '4%',
-                                marginLeft: '12%'
-                            }}
-                            initial="hidden"
-                            whileInView="stamp"
-                            viewport={{ once: true }}
-                            variants={stampVariants}
-                            transition={{ delay: 2 }}
-                        >
+                            FASTEN YOUR {isMobileScreen ? <br/> : <span>&nbsp;</span>} SEATBELTS,
+                            <br/>
                             BANGALORE & GOA
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '7.5vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: isMobileScreen ? '1%' : '4%',
-                                marginLeft: '11%'
-                            }}
-                            initial="hidden"
-                            whileInView="stamp"
-                            viewport={{ once: true }}
-                            variants={stampVariants}
-                            transition={{ delay: 3 }}
-                        >
-                            ARE ABOUT TO
-                        </motion.span>
-                        <motion.span
-                            style={{
-                                fontSize: '9.3vw',
-                                color: 'white',
-                                fontFamily: 'Nulshock',
-                                fontWeight: 'bold',
-                                textAlign: 'center',
-                                paddingRight: '8%',
-                                marginTop: isMobileScreen ? '1%' : '4%',
-                                marginLeft: '8%'
-                            }}
-                            initial="hidden"
-                            whileInView="stamp"
-                            viewport={{ once: true }}
-                            variants={stampVariants}
-                            transition={{ delay: 4 }}
-                        >
-                            GET WILD!
-                        </motion.span>
+                            <br/>
+                            ARE ABOUT TO {isMobileScreen ? <br/> : <span>&nbsp;</span>} GET WILD!
+                        </motion.div>
                         <span
                             style={{
-                                fontSize: '6vw',
+                                fontSize: isMobileScreen ? '6vw' : '4vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '6%' : '6%'
+                                marginTop: isMobileScreen ? '20%' : '6%'
                             }}
                         >
-                            COMING SOON!
+                            COMING SOON
                         </span>
                         <motion.div 
                         style={{
@@ -767,7 +748,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '1%',
+                            marginTop: isMobileScreen ? '10%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -782,12 +763,12 @@ function LandingInfoAreaComponent() {
                         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
-                                src={discoverTileImage} 
+                                src={isMobileScreen ? discoverTileMobileImage : discoverTileImage} 
                                 alt="discover tile"
                                 style={{
-                                    width: isMobileScreen ? '90%' : '80%',
+                                    width: isMobileScreen ? '100%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '5%' : '10%'
+                                    marginLeft: isMobileScreen ? '0%' : '10%'
                                 }}
                                 />
                             <span
@@ -795,9 +776,9 @@ function LandingInfoAreaComponent() {
                                     position: 'absolute',
                                     left: 0,
                                     top: 0,
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: '2.5%',
-                                    fontSize: '3.5vw',
+                                    marginLeft: isMobileScreen ? '17%' : '17%',
+                                    marginTop: isMobileScreen ? '27.5%' : '2.5%',
+                                    fontSize:isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
                                 }}
@@ -805,14 +786,14 @@ function LandingInfoAreaComponent() {
                             <p
                                 style={{
                                     position: 'absolute',
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
+                                    marginLeft: isMobileScreen ? '17%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
-                                    fontSize: isMobileScreen ? '2.7vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '15%',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    paddingRight: isMobileScreen ? '10%' : '20%',
                                     textAlign: 'left',
-                                    marginTop: '2.5%'
+                                    marginTop: isMobileScreen ? '15%' : '2.5%'
                                 }}
                             >Explore the city's coolest bars and most exciting events that match your vibe!</p>
                         </motion.div>
@@ -823,7 +804,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: '2%',
+                            marginTop: isMobileScreen ? '5%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -837,12 +818,12 @@ function LandingInfoAreaComponent() {
                         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
-                                src={partyPackageTileImage} 
+                                src={isMobileScreen ? partyPackageTileMobileImage : partyPackageTileImage} 
                                 alt="party package"
                                 style={{
-                                    width: isMobileScreen ? '90%' : '80%',
+                                    width: isMobileScreen ? '100%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '5%' : '10%'
+                                    marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
                             <span
@@ -851,13 +832,17 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '1%' : '3%',
-                                    fontSize: '3.5vw',
+                                    marginTop: isMobileScreen ? '15%' : '1.5%',
+                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
-                                    fontWeight: 'bold'
+                                    fontWeight: 'bold',
+                                    textAlign: 'left',
+                                    lineHeight: isMobileScreen ? '100%' : ''
                                 }}
                             >
-                                PARTY PACKAGES
+                                PARTY
+                                {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                                PACKAGES
                             </span>
                             <p
                                 style={{
@@ -865,11 +850,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.7vw' : '2vw',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
-                                    paddingRight: isMobileScreen ? '13%' : '15%',
+                                    paddingRight: isMobileScreen ? '10%' : '20%',
                                     textAlign: 'left',
-                                    marginTop: isMobileScreen ? '3%' : '5%' 
+                                    marginTop: isMobileScreen ? '25%' : '3%' 
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
@@ -883,7 +868,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: isMobileScreen ? '2%' : '3%',
+                            marginTop: isMobileScreen ? '5%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -897,12 +882,12 @@ function LandingInfoAreaComponent() {
                         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
-                                src={fomoTipsTileImage} 
+                                src={isMobileScreen ? fomoTipsTileMobileImage : fomoTipsTileImage} 
                                 alt="fomo tips tile"
                                 style={{
-                                    width: isMobileScreen ? '90%' : '80%',
+                                    width: isMobileScreen ? '100%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '5%' : '10%'
+                                    marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
                             <span
@@ -911,8 +896,8 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: '3%',
-                                    fontSize: '3.5vw',
+                                    marginTop: isMobileScreen ? '20%' : '3%',
+                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
                                 }}
@@ -923,11 +908,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '15%',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    paddingRight: isMobileScreen ? '15%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '3%'
+                                    marginTop: isMobileScreen ? '10%' : '3%'
                                 }}
                             >
                                 Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
@@ -940,7 +925,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: isMobileScreen ? '2%' : '3%',
+                            marginTop: isMobileScreen ? '5%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -954,12 +939,12 @@ function LandingInfoAreaComponent() {
                         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
-                                src={contentTileImage} 
+                                src={isMobileScreen ? contentTileMobileImage : contentTileImage} 
                                 alt="content tile"
                                 style={{
-                                    width: isMobileScreen ? '90%' : '80%',
+                                    width: isMobileScreen ? '100%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '5%' : '10%'
+                                    marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
                             <span
@@ -968,8 +953,8 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: '3%',
-                                    fontSize: '3.5vw',
+                                    marginTop: isMobileScreen ? '20%' : '3%',
+                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
                                 }}
@@ -980,11 +965,11 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '15%',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '3%'
+                                    marginTop: isMobileScreen ? '10%' : '3%'
                                 }}
                             >
                                 Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
@@ -997,7 +982,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: isMobileScreen ? '2%' : '3%',
+                            marginTop: isMobileScreen ? '5%' : '3%',
                             marginBottom: isMobileScreen ? '1.5%' : '0%',
                             color: '#FFF',
                             userSelect: 'none',
@@ -1011,12 +996,12 @@ function LandingInfoAreaComponent() {
                         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
-                                src={dealsTileImage} 
+                                src={isMobileScreen ? dealsTileMobileImage : dealsTileImage} 
                                 alt="deals tile"
                                 style={{
-                                    width: isMobileScreen ? '90%' : '80%',
+                                    width: isMobileScreen ? '100%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '5%' : '10%'
+                                    marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
                             <span
@@ -1025,8 +1010,8 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: '3%',
-                                    fontSize: '3.5vw',
+                                    marginTop: isMobileScreen ? '20%' : '3%',
+                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     paddingRight: '15%',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -1038,8 +1023,8 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '15%',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
                                     marginTop: '3%'
@@ -1055,7 +1040,7 @@ function LandingInfoAreaComponent() {
                             position: 'relative',
                             justifyContent: 'center',
                             textAlign: 'center',
-                            marginTop: isMobileScreen ? '2%' : '3%',
+                            marginTop: isMobileScreen ? '5%' : '3%',
                             color: '#FFF',
                             userSelect: 'none',
                             cursor: 'pointer'
@@ -1068,12 +1053,12 @@ function LandingInfoAreaComponent() {
                         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
                         >
                             <img 
-                                src={loyaltyTileImage} 
+                                src={isMobileScreen ? loyaltyTileMobileImage : loyaltyTileImage} 
                                 alt="loyalty tile"
                                 style={{
-                                    width: isMobileScreen ? '90%' : '80%',
+                                    width: isMobileScreen ? '100%' : '80%',
                                     justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '5%' : '10%'
+                                    marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
                             <span
@@ -1082,23 +1067,27 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: '3%',
-                                    fontSize: '3.5vw',
+                                    marginTop: isMobileScreen ? '10%' : '3%',
+                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
                                 }}
-                            >LOYALTY & REFERRAL</span>
+                            >
+                                LOYALTY &
+                                {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                                REFERRAL
+                            </span>
                             <p
                                 style={{
                                     position: 'absolute',
                                     marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
-                                    fontSize: isMobileScreen ? '2.3vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '15%',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: '3%'
+                                    marginTop: isMobileScreen ? '25%' : '3%'
                                 }}
                             >
                                 Create and share party content, review your favourite outlets and refer FOMO to your friends
@@ -1117,7 +1106,7 @@ function LandingInfoAreaComponent() {
                                 fontFamily: 'Germany Sans',
                                 fontWeight: 'normal',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '39%' : '39%'
+                                marginTop: isMobileScreen ? '75%' : '50%'
                             }}
                         >
                             REDEFINING NIGHTLIFE EXPERIENCES
@@ -1125,7 +1114,7 @@ function LandingInfoAreaComponent() {
                         <div
                             style={{
                                 position: 'relative',
-                                marginTop: isMobileScreen ? '8%' : '11%',
+                                marginTop: isMobileScreen ? '35%' : '12%',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
@@ -1138,13 +1127,13 @@ function LandingInfoAreaComponent() {
                                 style={{
                                     position: 'absolute',
                                     marginTop: '1%',
-                                    width: isMobileScreen ? '13%' : '15%',
+                                    width: isMobileScreen ? '20%' : '15%',
                                     marginBottom: isMobileScreen ? '45%' : '35%'
                                 }}
                             />
                             <span
                                 style={{
-                                    fontSize: isMobileScreen ? '4vw' : '3vw',
+                                    fontSize: isMobileScreen ? '5vw' : '3vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '300',
@@ -1159,12 +1148,12 @@ function LandingInfoAreaComponent() {
                                 target="_blank"  // This will open the link in a new tab
                                 rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
                                 style={{ textDecoration: 'none', 
-                                marginTop: isMobileScreen ? '-6%' : '-2%'
+                                marginTop: isMobileScreen ? '-3%' : '-2%'
                             }}  // This will remove the underline typically associated with links
                             >
                                 <span
                                     style={{
-                                        fontSize: isMobileScreen ? '4vw' : '3vw',
+                                        fontSize: isMobileScreen ? '5vw' : '3vw',
                                         color: 'white',
                                         fontFamily: 'Roboto',
                                         fontWeight: '800',
@@ -1181,36 +1170,36 @@ function LandingInfoAreaComponent() {
                             flexDirection: 'column',
                             justifyContent: 'center',
                             alignItems: 'center',
-                            marginTop: isMobileScreen ? '8%' : '9%'
+                            marginTop: isMobileScreen ? '35%' : '12%'
                         }}>
                             <img
                             src={whatsappxs}
                             alt="whatsapp small logo"
                             style={{
                                 position: 'absolute',
-                                width: isMobileScreen ? '19%' : '22%',
+                                width: isMobileScreen ? '27.5%' : '22%',
                                 paddingBottom: isMobileScreen ? '45%' : '45%'
                             }}
                         />
                         <span
                             style={{
-                                fontSize: isMobileScreen ? '4vw' : '3vw',
+                                fontSize: isMobileScreen ? '5vw' : '3vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '300',
                                 textAlign: 'center',
-                                marginTop: isMobileScreen ? '6%' : '13%'
+                                marginTop: isMobileScreen ? '8%' : '13%'
                             }}
                         >
                             Contact us at
                         </span>
                         <a
                             href="tel:+919945594437"
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-7%' : '-1%' }}  // This will remove the underline typically associated with links
+                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-4%' : '-1%' }}  // This will remove the underline typically associated with links
                         >
                             <span
                                 style={{
-                                    fontSize: isMobileScreen ? '4vw' : '3vw',
+                                    fontSize: isMobileScreen ? '5vw' : '3vw',
                                     color: 'white',
                                     fontFamily: 'Roboto',
                                     fontWeight: '800',
@@ -1226,12 +1215,12 @@ function LandingInfoAreaComponent() {
                                 background: '#FFFFFF 0% 0% no-repeat padding-box',
                                 border: '1px solid #707070',
                                 justifyContent: 'center',
-                                fontSize: isMobileScreen ? '3.5vw' : '3vw',
+                                fontSize: isMobileScreen ? '4.5vw' : '3vw',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
-                                padding: isMobileScreen ? '1.5% 1.5% 1.5% 1.5%' : '2% 2.5% 2% 2.5%',
-                                marginTop: isMobileScreen ? '4%' : '6%',
-                                width: '30%',
+                                padding: isMobileScreen ? '3% 5% 3% 5%' : '2% 2.5% 2% 2.5%',
+                                marginTop: isMobileScreen ? '30%' : '10%',
+                                width: '40%',
                                 borderRadius: isMobileScreen ? '50px' : '75px',
                                 boxShadow: '0px 3px 15px #00000099',
                                 cursor: 'pointer',

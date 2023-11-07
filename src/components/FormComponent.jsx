@@ -151,7 +151,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                             background: 'transparent linear-gradient(107deg, #000000 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
                             boxShadow: '0px 3px 15px #0000004D'
                         }}
-                        className='text-xl md:text-3xl px-6 py-4 rounded-full'
+                        className='text-xl md:text-lg px-6 py-4 md:px-10 md:py-5 rounded-full'
                         whileHover={{scale: 1.04}}
                         onTap={handleFormSubmit}
                         disabled={isSubmitting}
