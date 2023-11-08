@@ -27,8 +27,8 @@ import contentTileMobileImage from '../assets/Coming Soon/Group 85.webp';
 import dealsTileMobileImage from '../assets/Coming Soon/Group 84.webp';
 import loyaltyTileMobileImage from '../assets/Coming Soon/Group 83.webp';
 
-import whatsappxs from '../assets/whatsappSmall.png';
-import instaxs from '../assets/instaSmall.png';
+import whatsappxs from '../assets/whatsappSmall.webp';
+import instaxs from '../assets/instaSmall.webp';
 
 import FormComponent from './FormComponent';
 
