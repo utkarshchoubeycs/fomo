@@ -12,7 +12,7 @@ function App() {
   const [showRings, setShowRings] = useState(true);
 
   useEffect(() => {
-    
+
     const unSubYProgress = scrollYProgress.on("change", value => {
 
       // hide RingsComponent when we scroll more than 30%
