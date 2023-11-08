@@ -775,13 +775,17 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '0%' : '10%'
                                 }}
                                 />
-                            <span
+                            <div style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                marginLeft: isMobileScreen ? '5%' : '5%',
+                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                                marginTop: isMobileScreen ? '25%' : '3%',
+                                textAlign: 'left'
+                            }}>
+                                <span
                                 style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    marginLeft: isMobileScreen ? '17%' : '17%',
-                                    marginTop: isMobileScreen ? '30%' : '3%',
                                     fontSize:isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -789,17 +793,13 @@ function LandingInfoAreaComponent() {
                             >DISCOVER</span>
                             <p
                                 style={{
-                                    position: 'absolute',
-                                    marginLeft: isMobileScreen ? '17%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
-                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '20%',
-                                    textAlign: 'left',
-                                    marginTop: isMobileScreen ? '10%' : '4.5%'
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw'
                                 }}
                             >Explore the city's coolest bars and most exciting events that match your vibe!</p>
+                            </div>
                         </motion.div>
                         <motion.div 
                         style={{
@@ -830,17 +830,20 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
-                            <span
+                            <div style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                marginLeft: isMobileScreen ? '5%' : '2.5%',
+                                padding: isMobileScreen ? '5% 10%' : '0% 12.5%',
+                                marginTop: isMobileScreen ? '10%' : '2%',
+                                textAlign: 'left'
+                            }}>
+                                <span
                                 style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '20%' : '1.5%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
-                                    textAlign: 'left',
                                     lineHeight: isMobileScreen ? '100%' : ''
                                 }}
                             >
@@ -850,20 +853,16 @@ function LandingInfoAreaComponent() {
                             </span>
                             <p
                                 style={{
-                                    position: 'absolute',
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    lineHeight: isMobileScreen ? '110%' : '120%',
-                                    paddingRight: isMobileScreen ? '10%' : '20%',
-                                    textAlign: 'left',
-                                    marginTop: isMobileScreen ? '20%' : '4%' 
+                                    lineHeight: isMobileScreen ? '110%' : '120%'
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
                                 We help you find and book the ideal party venue and the best party packages that suit your budget.
                             </p>
+                            </div>
                         </motion.div>
                         <motion.div 
                         style={{
@@ -894,33 +893,34 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
-                            <span
-                                style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '26%' : '3%',
-                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold'
-                                }}
-                            >FOMO TIPS</span>
-                            <p
-                                style={{
-                                    position: 'absolute',
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: '400',
-                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '15%' : '20%',
-                                    lineHeight: isMobileScreen ? '110%' : '120%',
-                                    textAlign: 'left',
-                                    marginTop: isMobileScreen ? '10%' : '4.5%'
-                                }}
-                            >
-                                Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
-                            </p>
+                            <div style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                marginLeft: isMobileScreen ? '5%' : '5%',
+                                marginTop: isMobileScreen ? '20%' : '3%',
+                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                                textAlign: 'left'
+                            }}>
+                                <span
+                                    style={{
+                                        fontSize: isMobileScreen ? '7vw' : '3.5vw',
+                                        fontFamily: 'Nulshock',
+                                        fontWeight: 'bold'
+                                    }}
+                                >FOMO TIPS</span>
+                                <p
+                                    style={{
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '400',
+                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                        paddingRight: isMobileScreen ? '15%' : '15%',
+                                        lineHeight: isMobileScreen ? '110%' : '120%',
+                                    }}
+                                >
+                                    Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
+                                </p>
+                            </div>
                         </motion.div>
                         <motion.div 
                         style={{
@@ -951,33 +951,35 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
-                            <span
-                                style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '30%' : '3%',
-                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold'
-                                }}
-                            >CONTENT</span>
-                            <p
-                                style={{
-                                    position: 'absolute',
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: '400',
-                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '20%',
-                                    lineHeight: isMobileScreen ? '110%' : '120%',
-                                    textAlign: 'left',
-                                    marginTop: isMobileScreen ? '10%' : '4%'
-                                }}
-                            >
-                                Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
-                            </p>
+                            <div style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                marginLeft: isMobileScreen ? '5%' : '5%',
+                                marginTop: isMobileScreen ? '25%' : '3%',
+                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                                textAlign: 'left'
+                            }}>
+                                <span
+                                    style={{
+                                        fontSize: isMobileScreen ? '7vw' : '3.5vw',
+                                        fontFamily: 'Nulshock',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    CONTENT
+                                </span>
+                                <p
+                                    style={{
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '400',
+                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                        lineHeight: isMobileScreen ? '110%' : '120%'
+                                    }}
+                                >
+                                    Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
+                                </p>
+                            </div>
                         </motion.div>
                         <motion.div 
                         style={{
@@ -1008,34 +1010,33 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
-                            <span
-                                style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '30%' : '3%',
-                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
-                                    paddingRight: '15%',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold'
-                                }}
-                            >DEALS</span>
-                            <p
-                                style={{
-                                    position: 'absolute',
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: '400',
-                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '20%',
-                                    lineHeight: isMobileScreen ? '110%' : '120%',
-                                    textAlign: 'left',
-                                    marginTop: isMobileScreen ? '10%' : '4%'
-                                }}
-                            >
-                                Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
-                            </p>
+                            <div style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                marginLeft: isMobileScreen ? '5%' : '5%',
+                                marginTop: isMobileScreen ? '25%' : '2.5%',
+                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                                textAlign: 'left'
+                            }}>
+                                <span
+                                    style={{
+                                        fontSize: isMobileScreen ? '7vw' : '3.5vw',
+                                        fontFamily: 'Nulshock',
+                                        fontWeight: 'bold'
+                                    }}
+                                >DEALS</span>
+                                <p
+                                    style={{
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '400',
+                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                        lineHeight: isMobileScreen ? '110%' : '120%',
+                                    }}
+                                >
+                                    Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
+                                </p>
+                            </div>
                         </motion.div>
                         <motion.div 
                         style={{
@@ -1065,39 +1066,39 @@ function LandingInfoAreaComponent() {
                                     marginLeft: isMobileScreen ? '0%' : '10%'
                                     
                                 }}/>
-                            <span
-                                style={{
-                                    position: 'absolute',
-                                    left: 0,
-                                    top: 0,
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '20%' : '3%',
-                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    lineHeight: isMobileScreen ? '120%' : ''
-                                }}
-                            >
-                                LOYALTY &
-                                {isMobileScreen ? <br/> : <span>&nbsp;</span>}
-                                REFERRAL
-                            </span>
-                            <p
-                                style={{
-                                    position: 'absolute',
-                                    marginLeft: isMobileScreen ? '13%' : '17%',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: '400',
-                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    paddingRight: isMobileScreen ? '10%' : '20%',
-                                    lineHeight: isMobileScreen ? '110%' : '120%',
-                                    textAlign: 'left',
-                                    marginTop: isMobileScreen ? '15%' : '4%'
-                                }}
-                            >
-                                Create and share party content, review your favourite outlets and refer FOMO to your friends
-                                to earn points, goodies and freebies
-                            </p>
+                            <div style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                                marginLeft: isMobileScreen ? '5%' : '5%',
+                                marginTop: isMobileScreen ? '15%' : '3%',
+                                textAlign: 'left'
+                            }}>
+                                <span
+                                    style={{
+                                        fontSize: isMobileScreen ? '7vw' : '3.5vw',
+                                        fontFamily: 'Nulshock',
+                                        fontWeight: 'bold',
+                                        lineHeight: isMobileScreen ? '120%' : ''
+                                    }}
+                                >
+                                    LOYALTY &
+                                    {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                                    REFERRAL
+                                </span>
+                                <p
+                                    style={{
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '400',
+                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                        lineHeight: isMobileScreen ? '110%' : '120%'
+                                    }}
+                                >
+                                    Create and share party content, review your favourite outlets and refer FOMO to your friends
+                                    to earn points, goodies and freebies
+                                </p>
+                            </div>
                         </motion.div>
                         <img
                             src={FOMOLogo}
