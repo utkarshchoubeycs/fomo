@@ -16,7 +16,7 @@ function App() {
     const unSubYProgress = scrollYProgress.on("change", value => {
 
       // hide RingsComponent when we scroll more than 30%
-      if(value > 0.3) setShowRings(false);
+      if(value > 0.6) setShowRings(false);
       else setShowRings(true);
 
     });
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className='App'>
-      { showRings === true && <RingsAreaComponent stage={stage} setStage={setStage} /> }
+      { showRings === true && <RingsAreaComponent stage={stage} setStage={setStage} /> } 
       { stage === 4 && <MainPage />}
     </div>
       
