@@ -1071,7 +1071,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '17.5%' : '3%',
+                                    marginTop: isMobileScreen ? '20%' : '3%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -1092,7 +1092,7 @@ function LandingInfoAreaComponent() {
                                     paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: isMobileScreen ? '27.5%' : '4%'
+                                    marginTop: isMobileScreen ? '20%' : '4%'
                                 }}
                             >
                                 Create and share party content, review your favourite outlets and refer FOMO to your friends
