@@ -781,7 +781,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '17%' : '17%',
-                                    marginTop: isMobileScreen ? '27.5%' : '3%',
+                                    marginTop: isMobileScreen ? '30%' : '3%',
                                     fontSize:isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -836,7 +836,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '15%' : '1.5%',
+                                    marginTop: isMobileScreen ? '20%' : '1.5%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
@@ -900,7 +900,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '22.5%' : '3%',
+                                    marginTop: isMobileScreen ? '26%' : '3%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -957,7 +957,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '25%' : '3%',
+                                    marginTop: isMobileScreen ? '30%' : '3%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold'
@@ -973,7 +973,7 @@ function LandingInfoAreaComponent() {
                                     paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: isMobileScreen ? '7.5%' : '4%'
+                                    marginTop: isMobileScreen ? '10%' : '4%'
                                 }}
                             >
                                 Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
@@ -1014,7 +1014,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '25%' : '3%',
+                                    marginTop: isMobileScreen ? '30%' : '3%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     paddingRight: '15%',
                                     fontFamily: 'Nulshock',
@@ -1031,7 +1031,7 @@ function LandingInfoAreaComponent() {
                                     paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: isMobileScreen ? '7.5%' : '4%'
+                                    marginTop: isMobileScreen ? '10%' : '4%'
                                 }}
                             >
                                 Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
@@ -1092,7 +1092,7 @@ function LandingInfoAreaComponent() {
                                     paddingRight: isMobileScreen ? '10%' : '20%',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
                                     textAlign: 'left',
-                                    marginTop: isMobileScreen ? '20%' : '4%'
+                                    marginTop: isMobileScreen ? '15%' : '4%'
                                 }}
                             >
                                 Create and share party content, review your favourite outlets and refer FOMO to your friends
