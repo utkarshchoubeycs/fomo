@@ -11,7 +11,7 @@ import cheersImage from '../assets/P6.webp';
 import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
 import backgroundImage from '../assets/BG.webp';
-import backgroundImageMobile from '../assets/BG_Mobile.jpg';
+import backgroundImageMobile from '../assets/BG_Mobile.webp';
 
 import discoverTileImage from '../assets/Coming Soon/Group 77.webp';
 import partyPackageTileImage from '../assets/Coming Soon/Group 78.webp';
