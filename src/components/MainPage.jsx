@@ -1071,7 +1071,7 @@ function LandingInfoAreaComponent() {
                                     left: 0,
                                     top: 0,
                                     marginLeft: isMobileScreen ? '13%' : '17%',
-                                    marginTop: isMobileScreen ? '20%' : '3%',
+                                    marginTop: isMobileScreen ? '17.5%' : '3%',
                                     fontSize: isMobileScreen ? '7vw' : '3.5vw',
                                     fontFamily: 'Nulshock',
                                     fontWeight: 'bold',
