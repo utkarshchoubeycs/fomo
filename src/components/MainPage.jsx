@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll } from 'framer-motion'
+import React, {useEffect, useRef, useState} from 'react';
+import {motion, useScroll} from 'framer-motion'
 
 import FourHandsImage from '../assets/P0.webp';
 import FOMOLogo from '../assets/P2.webp';
@@ -55,7 +55,7 @@ const contentStyle = {
     flexDirection: 'column'
 };
 
-function Section({ image, aspectRatio, style, children }) {
+function Section({image, aspectRatio, style, children}) {
     const sectionStyle = {
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
@@ -97,21 +97,21 @@ function LandingInfoAreaComponent() {
         setIsUserInterestFormEnabled(true);
     }
 
-    const { scrollYProgress } = useScroll({
+    const {scrollYProgress} = useScroll({
         target: sunsetViewRef,
         offset: ["start end", "end end"]
     });
 
     useEffect(() => {
         const unsubScrollYProgress = scrollYProgress.on("change", value => {
-            
+
             const threshold = isMobileScreen ? 0.65 : 0.9;
 
-            if(value <= threshold) setIsFomoVisible(false);
+            if (value <= threshold) setIsFomoVisible(false);
             else setIsFomoVisible(true);
         })
 
-        if(window.innerWidth < 768) setIsMobileScreen(true);
+        if (window.innerWidth < 768) setIsMobileScreen(true);
         else setIsMobileScreen(false);
 
         return () => unsubScrollYProgress();
@@ -119,7 +119,7 @@ function LandingInfoAreaComponent() {
 
     // Last section animation variant
     const stampVariants = {
-        hidden: { scale: 0.8, opacity: 0, y: '10vh' },
+        hidden: {scale: 0.8, opacity: 0, y: '10vh'},
         stamp: {
             y: '0',
             scale: [0.8, 1.5, 1],
@@ -133,21 +133,21 @@ function LandingInfoAreaComponent() {
     };
 
     const cheersImageVariants = {
-        hidden: { 
+        hidden: {
             x: '60%',
             y: '40%',
             rotate: 0,
             opacity: 0,
         },
         visible: {
-            x : '0',
+            x: '0',
             y: '0',
             opacity: 1,
             rotate: [-30, 30, -10, 10, 0],
             transition: {
-                x: { type: "spring", stiffness: 50, damping: 8 },
-                y: { type: "spring", stiffness: 50, damping: 8 },
-                rotate: { times: [0, 0.6, 0.8, 1], duration: 1.5 },
+                x: {type: "spring", stiffness: 50, damping: 8},
+                y: {type: "spring", stiffness: 50, damping: 8},
+                rotate: {times: [0, 0.6, 0.8, 1], duration: 1.5},
             }
         }
     };
@@ -196,15 +196,15 @@ function LandingInfoAreaComponent() {
         height: isMobileScreen ? '' : '10%',
         marginTop: isMobileScreen ? '50%' : '30%'
     }
-    
+
     const mask2ImageStyle = {
         position: 'absolute',
         width: '95%',
         height: isMobileScreen ? '' : '8%',
         marginLeft: '-5%',
-        marginTop: isMobileScreen? '177%' : '115%'
+        marginTop: isMobileScreen ? '177%' : '115%'
     }
-    
+
     const mask3ImageStyle = {
         position: 'absolute',
         width: '98%',
@@ -212,14 +212,14 @@ function LandingInfoAreaComponent() {
         height: isMobileScreen ? '' : '6%',
         marginTop: isMobileScreen ? '300%' : '197%'
     }
-    
+
     const cheersImageStyle = {
         position: 'absolute',
         width: isMobileScreen ? '70vw' : '40vw',
-        marginTop: isMobileScreen? '395%' : '259%',
+        marginTop: isMobileScreen ? '395%' : '259%',
         marginRight: isMobileScreen ? '-10%' : '-32%'
     }
-    
+
     const mask4ImageStyle = {
         position: 'absolute',
         width: isMobileScreen ? '80%' : '99%',
@@ -229,38 +229,38 @@ function LandingInfoAreaComponent() {
         marginTop: isMobileScreen ? '520%' : '320%',
     }
 
-    const rightAlignedParagraph =  isMobileScreen ? [
-        "We're diving deep into the",
-        "vibrant heartbeats of",
-        "Bangalore and the sun-soaked",
-        "shores of Goa. We are bringing",
-        " you the insider scoops",
-        "on the happening parties in town."
-    ] :
-    [
-        "We're diving deep into the vibrant",
-        "heartbeats of Bangalore and",
-        "the sun-soaked shores of Goa.",
-        "We are bringing you the insider scoops",
-        "on the happening parties in town."
-    ];
+    const rightAlignedParagraph = isMobileScreen ? [
+            "We're diving deep into the",
+            "vibrant heartbeats of",
+            "Bangalore and the sun-soaked",
+            "shores of Goa. We are bringing",
+            " you the insider scoops",
+            "on the happening parties in town."
+        ] :
+        [
+            "We're diving deep into the vibrant",
+            "heartbeats of Bangalore and",
+            "the sun-soaked shores of Goa.",
+            "We are bringing you the insider scoops",
+            "on the happening parties in town."
+        ];
 
-    const leftAlignedParagraph = isMobileScreen ? 
-    [
-        "Get ready for action-packed",
-        "parties, electric pubs and",
-        "clubs that buzz louder than",
-        "your morning alarm. Curated",
-        "by true party enthusiasts.",
-        "We've got your back!"
-    ] :
-    [
-        "Get ready for action-packed parties,",
-        "electric pubs, and clubs that buzz",
-        "louder than your morning alarm.",
-        "Curated by true party enthusiasts.",
-        "We've got your back!"
-    ]
+    const leftAlignedParagraph = isMobileScreen ?
+        [
+            "Get ready for action-packed",
+            "parties, electric pubs and",
+            "clubs that buzz louder than",
+            "your morning alarm. Curated",
+            "by true party enthusiasts.",
+            "We've got your back!"
+        ] :
+        [
+            "Get ready for action-packed parties,",
+            "electric pubs, and clubs that buzz",
+            "louder than your morning alarm.",
+            "Curated by true party enthusiasts.",
+            "We've got your back!"
+        ]
 
     const fomoLogoStyle2 = {
         position: 'relative',
@@ -280,19 +280,19 @@ function LandingInfoAreaComponent() {
         width: isMobileScreen ? '95vw' : '58vw',
         marginTop: isMobileScreen ? '57.5%' : '1%',
     }
-    
+
     return (
-            <Section
-                image={isMobileScreen ? backgroundImageMobile : backgroundImage}
-                aspectRatio={isMobileScreen ? 0.057 : 0.14}
-                style={{
-                    ...mainImageStyle
-                }}
-            > 
-                <div style={{ filter: isUserInterestFormEnabled ? 'blur(12px)' : '', ...contentStyle}}>
-                    <div 
-                        ref={sunsetViewRef}
-                        style={{
+        <Section
+            image={isMobileScreen ? backgroundImageMobile : backgroundImage}
+            aspectRatio={isMobileScreen ? 0.057 : 0.14}
+            style={{
+                ...mainImageStyle
+            }}
+        >
+            <div style={{...contentStyle}}>
+                <div
+                    ref={sunsetViewRef}
+                    style={{
                         top: '0%',
                         position: 'relative',
                         height: '100vh',
@@ -304,448 +304,449 @@ function LandingInfoAreaComponent() {
                         right: '0%',
                     }}>    
                         <span style={{
-                            fontSize: isMobileScreen ? '8vw' : '4vw', 
-                            color: 'white', 
+                            fontSize: isMobileScreen ? '8vw' : '4vw',
+                            color: 'white',
                             paddingLeft: isMobileScreen ? '15%' : '0%',
                             paddingRight: isMobileScreen ? '15%' : '0%',
-                            fontFamily: 'Nulshock', 
-                            fontWeight: 'bold', 
+                            fontFamily: 'Nulshock',
+                            fontWeight: 'bold',
                             textAlign: 'center',
                             justifyContent: 'center',
-                            marginTop: isMobileScreen ? '40%' : '2%', 
+                            marginTop: isMobileScreen ? '40%' : '2%',
                             transform: isFomoVisible ? 'transformY(50%)' : 'none',
                             transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
                             opacity: isFomoVisible ? 0 : 1
                         }}>
                             AS THE SUN GOES DOWN
                         </span>
-                        <img
-                            src={sunsetLogo}
-                            alt={"Sunset Logo"}
-                            style={{
-                                transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-                                opacity: isFomoVisible ? 0 : 1,
-                                ...sunsetLogoStyle
-                            }}
-                        />
-                        <img
-                            src={FOMOLogo}
-                            alt={"FOMO Logo"}
-                            style={{
-                                transform: isFomoVisible ? "none" : "translateY(20%)",
-                                transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
-                                opacity: isFomoVisible ? 1 : 0,
-                                ...fomoLogoStyle}}
-                        />
-                        <img
-                            src={FourHandsImage}
-                            alt={"4 hands doing cheers"}
-                            style={{
-                                transform: isFomoVisible ? "rotate(180deg)" : "none",
-                                transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                                opacity: isFomoVisible ? 0 : 1,
-                                ...fourhandsStyle
-                            }}
-                            exit={{ opacity: '0'}}
-                        />
-                        <span 
-                            style={{
-                                fontSize: isMobileScreen ? '8vw' : '4vw', 
-                                color: 'white', 
-                                fontFamily: 'Nulshock', 
-                                fontWeight: 'bold', 
-                                textAlign: 'center',
-                                justifyContent: 'center',
-                                marginLeft: '10%',
-                                marginRight: '10%',
-                                marginTop: isMobileScreen ? '80%' : '35%', 
-                                transform: isFomoVisible ? "none" : "translateY(5vh)",
-                                transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
-                                opacity: isFomoVisible ? 1: 0,
-                            }}
-                        >
+                    <img
+                        src={sunsetLogo}
+                        alt={"Sunset Logo"}
+                        style={{
+                            transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
+                            opacity: isFomoVisible ? 0 : 1,
+                            ...sunsetLogoStyle
+                        }}
+                    />
+                    <img
+                        src={FOMOLogo}
+                        alt={"FOMO Logo"}
+                        style={{
+                            transform: isFomoVisible ? "none" : "translateY(20%)",
+                            transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
+                            opacity: isFomoVisible ? 1 : 0,
+                            ...fomoLogoStyle
+                        }}
+                    />
+                    <img
+                        src={FourHandsImage}
+                        alt={"4 hands doing cheers"}
+                        style={{
+                            transform: isFomoVisible ? "rotate(180deg)" : "none",
+                            transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+                            opacity: isFomoVisible ? 0 : 1,
+                            ...fourhandsStyle
+                        }}
+                        exit={{opacity: '0'}}
+                    />
+                    <span
+                        style={{
+                            fontSize: isMobileScreen ? '8vw' : '4vw',
+                            color: 'white',
+                            fontFamily: 'Nulshock',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            marginLeft: '10%',
+                            marginRight: '10%',
+                            marginTop: isMobileScreen ? '80%' : '35%',
+                            transform: isFomoVisible ? "none" : "translateY(5vh)",
+                            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
+                            opacity: isFomoVisible ? 1 : 0,
+                        }}
+                    >
                             COMES ALIVE!
                         </span>
-                    </div>
+                </div>
+                <div style={{
+                    top: '0%',
+                    marginTop: isMobileScreen ? '235%' : '45%',
+                    position: 'absolute',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    width: '100%',
+                    left: '0%',
+                    right: '0%'
+                }}
+                >
                     <div style={{
-                        top: '0%',
-                        marginTop: isMobileScreen ? '235%' : '45%',
-                        position: 'absolute',
+                        position: 'relative',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center',
-                        width: '100%',
-                        left: '0%',
-                        right: '0%'
-                    }} 
-                    >   
-                        <div style={{
-                            position: 'relative',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            textAlign: 'left',
-                            marginLeft: isMobileScreen ? '12%' : '10%'
-                        }}>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: '500',
-                                    marginTop: isMobileScreen ? '11%' : '7%'
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-                                viewport={{ once: true }}
-                            >
-                                FOMO is your
-                            </motion.span>
-                            <motion.span 
-                                style={{
-                                    fontSize: '7.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: '-2.5%',
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
-                            >
-                                NOCTURNAL
-                            </motion.span>
-                            <motion.span 
-                                style={{
-                                    fontSize: '7.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: isMobileScreen ? '-2%' : '-4%',
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.25 }}
-                            >
-                                NAVIGATOR
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: isMobileScreen ? '400' : '500',
-                                    marginTop: isMobileScreen ? '-1%' : '-2.5%',
-                                    lineHeight: isMobileScreen ? '120%' : '100%',
-                                    paddingRight: isMobileScreen ? '20%' : '10%'
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.3 }}
-                            >
-                                ready to take you on wild rides through the cities that never sleep!
-                            </motion.span>
-                        </div>
-                        <motion.img
-                            src={mask1Image}
-                            alt={"Mask 1"}
-                            style={mask1ImageStyle}
-                            variants={maskImageVariantsRight}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.5 }}
-                        />
-                        <div
+                        justifyContent: 'center',
+                        textAlign: 'left',
+                        marginLeft: isMobileScreen ? '12%' : '10%'
+                    }}>
+                        <motion.span
                             style={{
-                                position: 'relative',
-                                fontSize: isMobileScreen ? '5.5vw' : '3.2vw',
+                                fontSize: isMobileScreen ? '6vw' : '3.5vw',
                                 color: 'white',
                                 fontFamily: 'Roboto',
-                                fontWeight: isMobileScreen ? '400' : '500',
-                                paddingLeft: isMobileScreen ? '0%' : '0%',
-                                paddingRight: isMobileScreen ? '10%' : '0%',
-                                textAlign: 'right',
-                                lineHeight: isMobileScreen ? '160%' : '',
-                                marginTop: isMobileScreen ? '75%' : '67.5%',
-                                marginRight: isMobileScreen ? '-5%' : '-30%'
+                                fontWeight: '500',
+                                marginTop: isMobileScreen ? '11%' : '7%'
                             }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.1}}
+                            viewport={{once: true}}
                         >
-                            {rightAlignedParagraph.map((line, index) => (
-                                <motion.span 
-                                    style={{
-                                        textAlign: 'right',
-                                        display: 'block',
-                                        marginTop: '-2.8%'
-                                    }}
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ 
-                                        type: "spring", 
-                                        stiffness: 100, 
-                                        damping: 10, 
-                                        delay: index * 0.2 // increasing delay for each line
-                                    }}
-                                >
-                                    {line}
-                                </motion.span>
-                            ))}
-                        </div>
-                        <motion.img
-                            src={mask2Image}
-                            alt={"Mask 2"}
-                            style={mask2ImageStyle}
-                            variants={maskImageVariantsLeft}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.5 }}
-                        />
-                        <div
+                            FOMO is your
+                        </motion.span>
+                        <motion.span
                             style={{
-                                fontSize: isMobileScreen ? '5.5vw' : '3.5vw',
+                                fontSize: '7.5vw',
                                 color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: isMobileScreen ? '400' : '500',
-                                textAlign: 'left',
-                                marginTop: isMobileScreen ? '75%' : '52%',
-                                marginLeft: isMobileScreen ? '0%' : '-16%',
-                                lineHeight : isMobileScreen ? '160%' : '',
-                            }}
-                        >
-                            {leftAlignedParagraph.map((line, index) => (
-                                <motion.span 
-                                    style={{
-                                        textAlign: 'left',
-                                        display: 'block',
-                                        marginTop: '-2.7%'
-                                    }}
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ 
-                                        type: "spring", 
-                                        stiffness: 100, 
-                                        damping: 10, 
-                                        delay: index * 0.2 // increasing delay for each line
-                                    }}
-                                >
-                                    {line}
-                                </motion.span>
-                            ))}
-                        </div>
-                        <motion.img
-                            src={mask3Image}
-                            alt={"Mask 3"}
-                            style={mask3ImageStyle}
-                            variants={maskImageVariantsRight}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.7 }}
-                        />
-                        <div style={{
-                            position: 'relative',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            textAlign: 'left',
-                            marginTop: isMobileScreen ? '40%' : '20%',
-                            marginLeft: isMobileScreen ? '0%' : '-10%'
-                        }}>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: '39%',
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-                            >
-                                AT FOMO,
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: '-2%',
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                WE'VE BOTTLED
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: '-2%',
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                THAT FEAR &
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: isMobileScreen ? '400' : '500',
-                                    marginTop: '-2%',
-                                    marginLeft : isMobileScreen ? '2%'  :''
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                turned it into a way of life.
-                            </motion.span>
-                        </div>
-                        <motion.img
-                            src={cheersImage}
-                            alt={"Cheers hands"}
-                            style={cheersImageStyle}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={cheersImageVariants}
-                        />
-                        <div style={{
-                            position: 'relative',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            textAlign: 'left',
-                            marginLeft: isMobileScreen ? '-10%' : '-25%',
-                            marginTop: isMobileScreen ? '55%' : '15%'
-                        }}>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: isMobileScreen ? '400' : '500',
-                                    marginTop: '35%'
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                because
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: '-2%'
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                THE FEAR OF
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '7.5vw' : '6vw',
-                                    color: 'white',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    marginTop: '-3%'
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                MISSING OUT
-                            </motion.span>
-                            <motion.span
-                                style={{
-                                    fontSize: isMobileScreen ? '6vw' : '3.5vw',
-                                    color: 'white',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: isMobileScreen ? '400' : '500',
-                                    marginTop: '-2%'
-                                }}
-                                initial={{ opacity: 0, y: '20vh'}}
-                                whileInView={{ opacity: 1, y: '0'}}
-                                viewport={{ once: true }}
-                                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.15 }}
-                            >
-                                is the thing of the past!
-                            </motion.span>
-                        </div>
-                        <motion.img
-                            src={mask4Image}
-                            alt={"Mask 4"}
-                            style={mask4ImageStyle}
-                            variants={maskImageVariantsLeft}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.7 }}
-                        />
-                        <motion.div
-                            style={{
                                 fontFamily: 'Nulshock',
-                                fontSize: isMobileScreen ? '7vw' : '4vw',
-                                color: 'white',
                                 fontWeight: 'bold',
-                                textAlign: 'center',
-                                paddingRight: isMobileScreen ? '0%' : '8%',
-                                marginTop: '55%',
-                                marginBottom: '15%',
-                                marginLeft: isMobileScreen ? '0%' : '12%',
-                                lineHeight: isMobileScreen ? '105%' : ''
+                                marginTop: '-2.5%',
                             }}
-                            initial="hidden"
-                            whileInView="stamp"
-                            viewport={{ once: true }}
-                            variants={stampVariants}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 10, delay: 0.25}}
                         >
-                            FASTEN YOUR
-                            {isMobileScreen ? <br/> : <span>&nbsp;</span>}
-                            SEATBELTS,
-                            <br/>
-                            BANGALORE & GOA
-                            <br/>
-                            ARE ABOUT TO
-                            {isMobileScreen ? <br/> : <span>&nbsp;</span>}
-                            GET WILD!
-                        </motion.div>
-                        <span
+                            NOCTURNAL
+                        </motion.span>
+                        <motion.span
                             style={{
-                                fontSize: isMobileScreen ? '6vw' : '4vw',
+                                fontSize: '7.5vw',
                                 color: 'white',
                                 fontFamily: 'Nulshock',
-                                fontWeight: 'normal',
-                                textAlign: 'center',
-                                marginTop: isMobileScreen ? '20%' : '6%'
+                                fontWeight: 'bold',
+                                marginTop: isMobileScreen ? '-2%' : '-4%',
                             }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 10, delay: 0.25}}
                         >
+                            NAVIGATOR
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '6vw' : '3.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: isMobileScreen ? '400' : '500',
+                                marginTop: isMobileScreen ? '-1%' : '-2.5%',
+                                lineHeight: isMobileScreen ? '120%' : '100%',
+                                paddingRight: isMobileScreen ? '20%' : '10%'
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 10, delay: 0.3}}
+                        >
+                            ready to take you on wild rides through the cities that never sleep!
+                        </motion.span>
+                    </div>
+                    <motion.img
+                        src={mask1Image}
+                        alt={"Mask 1"}
+                        style={mask1ImageStyle}
+                        variants={maskImageVariantsRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{once: true, amount: 0.5}}
+                    />
+                    <div
+                        style={{
+                            position: 'relative',
+                            fontSize: isMobileScreen ? '5.5vw' : '3.2vw',
+                            color: 'white',
+                            fontFamily: 'Roboto',
+                            fontWeight: isMobileScreen ? '400' : '500',
+                            paddingLeft: isMobileScreen ? '0%' : '0%',
+                            paddingRight: isMobileScreen ? '10%' : '0%',
+                            textAlign: 'right',
+                            lineHeight: isMobileScreen ? '160%' : '',
+                            marginTop: isMobileScreen ? '75%' : '67.5%',
+                            marginRight: isMobileScreen ? '-5%' : '-30%'
+                        }}
+                    >
+                        {rightAlignedParagraph.map((line, index) => (
+                            <motion.span
+                                style={{
+                                    textAlign: 'right',
+                                    display: 'block',
+                                    marginTop: '-2.8%'
+                                }}
+                                key={index}
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 10,
+                                    delay: index * 0.2 // increasing delay for each line
+                                }}
+                            >
+                                {line}
+                            </motion.span>
+                        ))}
+                    </div>
+                    <motion.img
+                        src={mask2Image}
+                        alt={"Mask 2"}
+                        style={mask2ImageStyle}
+                        variants={maskImageVariantsLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{once: true, amount: 0.5}}
+                    />
+                    <div
+                        style={{
+                            fontSize: isMobileScreen ? '5.5vw' : '3.5vw',
+                            color: 'white',
+                            fontFamily: 'Roboto',
+                            fontWeight: isMobileScreen ? '400' : '500',
+                            textAlign: 'left',
+                            marginTop: isMobileScreen ? '75%' : '52%',
+                            marginLeft: isMobileScreen ? '0%' : '-16%',
+                            lineHeight: isMobileScreen ? '160%' : '',
+                        }}
+                    >
+                        {leftAlignedParagraph.map((line, index) => (
+                            <motion.span
+                                style={{
+                                    textAlign: 'left',
+                                    display: 'block',
+                                    marginTop: '-2.7%'
+                                }}
+                                key={index}
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true}}
+                                transition={{
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 10,
+                                    delay: index * 0.2 // increasing delay for each line
+                                }}
+                            >
+                                {line}
+                            </motion.span>
+                        ))}
+                    </div>
+                    <motion.img
+                        src={mask3Image}
+                        alt={"Mask 3"}
+                        style={mask3ImageStyle}
+                        variants={maskImageVariantsRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{once: true, amount: 0.7}}
+                    />
+                    <div style={{
+                        position: 'relative',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        textAlign: 'left',
+                        marginTop: isMobileScreen ? '40%' : '20%',
+                        marginLeft: isMobileScreen ? '0%' : '-10%'
+                    }}>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '7.5vw' : '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                marginTop: '39%',
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.1}}
+                        >
+                            AT FOMO,
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '7.5vw' : '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                marginTop: '-2%',
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            WE'VE BOTTLED
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '7.5vw' : '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                marginTop: '-2%',
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            THAT FEAR &
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '6vw' : '3.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: isMobileScreen ? '400' : '500',
+                                marginTop: '-2%',
+                                marginLeft: isMobileScreen ? '2%' : ''
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            turned it into a way of life.
+                        </motion.span>
+                    </div>
+                    <motion.img
+                        src={cheersImage}
+                        alt={"Cheers hands"}
+                        style={cheersImageStyle}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{once: true}}
+                        variants={cheersImageVariants}
+                    />
+                    <div style={{
+                        position: 'relative',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        textAlign: 'left',
+                        marginLeft: isMobileScreen ? '-10%' : '-25%',
+                        marginTop: isMobileScreen ? '55%' : '15%'
+                    }}>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '6vw' : '3.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: isMobileScreen ? '400' : '500',
+                                marginTop: '35%'
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            because
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '7.5vw' : '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                marginTop: '-2%'
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            THE FEAR OF
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '7.5vw' : '6vw',
+                                color: 'white',
+                                fontFamily: 'Nulshock',
+                                fontWeight: 'bold',
+                                marginTop: '-3%'
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            MISSING OUT
+                        </motion.span>
+                        <motion.span
+                            style={{
+                                fontSize: isMobileScreen ? '6vw' : '3.5vw',
+                                color: 'white',
+                                fontFamily: 'Roboto',
+                                fontWeight: isMobileScreen ? '400' : '500',
+                                marginTop: '-2%'
+                            }}
+                            initial={{opacity: 0, y: '20vh'}}
+                            whileInView={{opacity: 1, y: '0'}}
+                            viewport={{once: true}}
+                            transition={{type: "spring", stiffness: 100, damping: 20, delay: 0.15}}
+                        >
+                            is the thing of the past!
+                        </motion.span>
+                    </div>
+                    <motion.img
+                        src={mask4Image}
+                        alt={"Mask 4"}
+                        style={mask4ImageStyle}
+                        variants={maskImageVariantsLeft}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{once: true, amount: 0.7}}
+                    />
+                    <motion.div
+                        style={{
+                            fontFamily: 'Nulshock',
+                            fontSize: isMobileScreen ? '7vw' : '4vw',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            textAlign: 'center',
+                            paddingRight: isMobileScreen ? '0%' : '8%',
+                            marginTop: '55%',
+                            marginBottom: '15%',
+                            marginLeft: isMobileScreen ? '0%' : '12%',
+                            lineHeight: isMobileScreen ? '105%' : ''
+                        }}
+                        initial="hidden"
+                        whileInView="stamp"
+                        viewport={{once: true}}
+                        variants={stampVariants}
+                    >
+                        FASTEN YOUR
+                        {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                        SEATBELTS,
+                        <br/>
+                        BANGALORE & GOA
+                        <br/>
+                        ARE ABOUT TO
+                        {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                        GET WILD!
+                    </motion.div>
+                    <span
+                        style={{
+                            fontSize: isMobileScreen ? '6vw' : '4vw',
+                            color: 'white',
+                            fontFamily: 'Nulshock',
+                            fontWeight: 'normal',
+                            textAlign: 'center',
+                            marginTop: isMobileScreen ? '20%' : '6%'
+                        }}
+                    >
                             COMING SOON
                         </span>
-                        <motion.div 
+                    <motion.div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -761,36 +762,36 @@ function LandingInfoAreaComponent() {
 
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
-                        initial={{ opacity: 0, y: '10vh' }}
-                        whileInView={{ opacity: 1, y: '0' }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
-                        >
-                            <img 
-                                src={isMobileScreen ? discoverTileMobileImage : discoverTileImage} 
-                                alt="discover tile"
-                                style={{
-                                    width: isMobileScreen ? '100%' : '80%',
-                                    justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '0%' : '10%'
-                                }}
-                                />
-                            <div style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                marginLeft: isMobileScreen ? '5%' : '5%',
-                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                                marginTop: isMobileScreen ? '25%' : '3%',
-                                textAlign: 'left'
-                            }}>
+                        initial={{opacity: 0, y: '10vh'}}
+                        whileInView={{opacity: 1, y: '0'}}
+                        viewport={{once: true}}
+                        transition={{type: "spring", stiffness: 100, damping: 20, duration: 0.5}}
+                    >
+                        <img
+                            src={isMobileScreen ? discoverTileMobileImage : discoverTileImage}
+                            alt="discover tile"
+                            style={{
+                                width: isMobileScreen ? '100%' : '80%',
+                                justifyContent: 'center',
+                                marginLeft: isMobileScreen ? '0%' : '10%'
+                            }}
+                        />
+                        <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            marginTop: isMobileScreen ? '25%' : '3%',
+                            textAlign: 'left'
+                        }}>
                                 <span
-                                style={{
-                                    fontSize:isMobileScreen ? '7vw' : '3.5vw',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold'
-                                }}
-                            >DISCOVER</span>
+                                    style={{
+                                        fontSize: isMobileScreen ? '7vw' : '3.5vw',
+                                        fontFamily: 'Nulshock',
+                                        fontWeight: 'bold'
+                                    }}
+                                >DISCOVER</span>
                             <p
                                 style={{
                                     fontFamily: 'Roboto',
@@ -799,9 +800,9 @@ function LandingInfoAreaComponent() {
                                     fontSize: isMobileScreen ? '5.5vw' : '2vw'
                                 }}
                             >Explore the city's coolest bars and most exciting events that match your vibe!</p>
-                            </div>
-                        </motion.div>
-                        <motion.div 
+                        </div>
+                    </motion.div>
+                    <motion.div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -816,40 +817,40 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
-                        initial={{ opacity: 0, y: '10vh' }}
-                        whileInView={{ opacity: 1, y: '0' }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
-                        >
-                            <img 
-                                src={isMobileScreen ? partyPackageTileMobileImage : partyPackageTileImage} 
-                                alt="party package"
-                                style={{
-                                    width: isMobileScreen ? '100%' : '80%',
-                                    justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '0%' : '10%'
-                                    
-                                }}/>
-                            <div style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                marginLeft: isMobileScreen ? '5%' : '2.5%',
-                                padding: isMobileScreen ? '5% 10%' : '0% 12.5%',
-                                marginTop: isMobileScreen ? '10%' : '2%',
-                                textAlign: 'left'
-                            }}>
+                        initial={{opacity: 0, y: '10vh'}}
+                        whileInView={{opacity: 1, y: '0'}}
+                        viewport={{once: true}}
+                        transition={{type: "spring", stiffness: 100, damping: 20, duration: 0.5}}
+                    >
+                        <img
+                            src={isMobileScreen ? partyPackageTileMobileImage : partyPackageTileImage}
+                            alt="party package"
+                            style={{
+                                width: isMobileScreen ? '100%' : '80%',
+                                justifyContent: 'center',
+                                marginLeft: isMobileScreen ? '0%' : '10%'
+
+                            }}/>
+                        <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            marginLeft: isMobileScreen ? '5%' : '2.5%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 12.5%',
+                            marginTop: isMobileScreen ? '10%' : '2%',
+                            textAlign: 'left'
+                        }}>
                                 <span
-                                style={{
-                                    fontSize: isMobileScreen ? '7vw' : '3.5vw',
-                                    fontFamily: 'Nulshock',
-                                    fontWeight: 'bold',
-                                    lineHeight: isMobileScreen ? '100%' : ''
-                                }}
-                            >
+                                    style={{
+                                        fontSize: isMobileScreen ? '7vw' : '3.5vw',
+                                        fontFamily: 'Nulshock',
+                                        fontWeight: 'bold',
+                                        lineHeight: isMobileScreen ? '100%' : ''
+                                    }}
+                                >
                                 PARTY
-                                {isMobileScreen ? <br/> : <span>&nbsp;</span>}
-                                PACKAGES
+                                    {isMobileScreen ? <br/> : <span>&nbsp;</span>}
+                                    PACKAGES
                             </span>
                             <p
                                 style={{
@@ -860,11 +861,12 @@ function LandingInfoAreaComponent() {
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
-                                We help you find and book the ideal party venue and the best party packages that suit your budget.
+                                We help you find and book the ideal party venue and the best party packages that suit
+                                your budget.
                             </p>
-                            </div>
-                        </motion.div>
-                        <motion.div 
+                        </div>
+                    </motion.div>
+                    <motion.div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -879,29 +881,29 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
-                        initial={{ opacity: 0, y: '10vh' }}
-                        whileInView={{ opacity: 1, y: '0' }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
-                        >
-                            <img 
-                                src={isMobileScreen ? fomoTipsTileMobileImage : fomoTipsTileImage} 
-                                alt="fomo tips tile"
-                                style={{
-                                    width: isMobileScreen ? '100%' : '80%',
-                                    justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '0%' : '10%'
-                                    
-                                }}/>
-                            <div style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                marginLeft: isMobileScreen ? '5%' : '5%',
-                                marginTop: isMobileScreen ? '20%' : '3%',
-                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                                textAlign: 'left'
-                            }}>
+                        initial={{opacity: 0, y: '10vh'}}
+                        whileInView={{opacity: 1, y: '0'}}
+                        viewport={{once: true}}
+                        transition={{type: "spring", stiffness: 100, damping: 20, duration: 0.5}}
+                    >
+                        <img
+                            src={isMobileScreen ? fomoTipsTileMobileImage : fomoTipsTileImage}
+                            alt="fomo tips tile"
+                            style={{
+                                width: isMobileScreen ? '100%' : '80%',
+                                justifyContent: 'center',
+                                marginLeft: isMobileScreen ? '0%' : '10%'
+
+                            }}/>
+                        <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginTop: isMobileScreen ? '20%' : '3%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            textAlign: 'left'
+                        }}>
                                 <span
                                     style={{
                                         fontSize: isMobileScreen ? '7vw' : '3.5vw',
@@ -909,20 +911,21 @@ function LandingInfoAreaComponent() {
                                         fontWeight: 'bold'
                                     }}
                                 >FOMO TIPS</span>
-                                <p
-                                    style={{
-                                        fontFamily: 'Roboto',
-                                        fontWeight: '400',
-                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                        paddingRight: isMobileScreen ? '15%' : '15%',
-                                        lineHeight: isMobileScreen ? '110%' : '120%',
-                                    }}
-                                >
-                                    Get FOMO-verified recommendations for the town's top parties, ensuring you never miss out again!
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div 
+                            <p
+                                style={{
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    paddingRight: isMobileScreen ? '15%' : '15%',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
+                                }}
+                            >
+                                Get FOMO-verified recommendations for the town's top parties, ensuring you never miss
+                                out again!
+                            </p>
+                        </div>
+                    </motion.div>
+                    <motion.div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -937,29 +940,29 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
-                        initial={{ opacity: 0, y: '10vh' }}
-                        whileInView={{ opacity: 1, y: '0' }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
-                        >
-                            <img 
-                                src={isMobileScreen ? contentTileMobileImage : contentTileImage} 
-                                alt="content tile"
-                                style={{
-                                    width: isMobileScreen ? '100%' : '80%',
-                                    justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '0%' : '10%'
-                                    
-                                }}/>
-                            <div style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                marginLeft: isMobileScreen ? '5%' : '5%',
-                                marginTop: isMobileScreen ? '25%' : '3%',
-                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                                textAlign: 'left'
-                            }}>
+                        initial={{opacity: 0, y: '10vh'}}
+                        whileInView={{opacity: 1, y: '0'}}
+                        viewport={{once: true}}
+                        transition={{type: "spring", stiffness: 100, damping: 20, duration: 0.5}}
+                    >
+                        <img
+                            src={isMobileScreen ? contentTileMobileImage : contentTileImage}
+                            alt="content tile"
+                            style={{
+                                width: isMobileScreen ? '100%' : '80%',
+                                justifyContent: 'center',
+                                marginLeft: isMobileScreen ? '0%' : '10%'
+
+                            }}/>
+                        <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginTop: isMobileScreen ? '25%' : '3%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            textAlign: 'left'
+                        }}>
                                 <span
                                     style={{
                                         fontSize: isMobileScreen ? '7vw' : '3.5vw',
@@ -969,19 +972,20 @@ function LandingInfoAreaComponent() {
                                 >
                                     CONTENT
                                 </span>
-                                <p
-                                    style={{
-                                        fontFamily: 'Roboto',
-                                        fontWeight: '400',
-                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                        lineHeight: isMobileScreen ? '110%' : '120%'
-                                    }}
-                                >
-                                    Engage with stories, watch, listen and comment on the influential figures in the nightlife industry.
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div 
+                            <p
+                                style={{
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    lineHeight: isMobileScreen ? '110%' : '120%'
+                                }}
+                            >
+                                Engage with stories, watch, listen and comment on the influential figures in the
+                                nightlife industry.
+                            </p>
+                        </div>
+                    </motion.div>
+                    <motion.div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -996,29 +1000,29 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
-                        initial={{ opacity: 0, y: '10vh' }}
-                        whileInView={{ opacity: 1, y: '0' }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
-                        >
-                            <img 
-                                src={isMobileScreen ? dealsTileMobileImage : dealsTileImage} 
-                                alt="deals tile"
-                                style={{
-                                    width: isMobileScreen ? '100%' : '80%',
-                                    justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '0%' : '10%'
-                                    
-                                }}/>
-                            <div style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                marginLeft: isMobileScreen ? '5%' : '5%',
-                                marginTop: isMobileScreen ? '25%' : '2.5%',
-                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                                textAlign: 'left'
-                            }}>
+                        initial={{opacity: 0, y: '10vh'}}
+                        whileInView={{opacity: 1, y: '0'}}
+                        viewport={{once: true}}
+                        transition={{type: "spring", stiffness: 100, damping: 20, duration: 0.5}}
+                    >
+                        <img
+                            src={isMobileScreen ? dealsTileMobileImage : dealsTileImage}
+                            alt="deals tile"
+                            style={{
+                                width: isMobileScreen ? '100%' : '80%',
+                                justifyContent: 'center',
+                                marginLeft: isMobileScreen ? '0%' : '10%'
+
+                            }}/>
+                        <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginTop: isMobileScreen ? '25%' : '2.5%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            textAlign: 'left'
+                        }}>
                                 <span
                                     style={{
                                         fontSize: isMobileScreen ? '7vw' : '3.5vw',
@@ -1026,19 +1030,19 @@ function LandingInfoAreaComponent() {
                                         fontWeight: 'bold'
                                     }}
                                 >DEALS</span>
-                                <p
-                                    style={{
-                                        fontFamily: 'Roboto',
-                                        fontWeight: '400',
-                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                        lineHeight: isMobileScreen ? '110%' : '120%',
-                                    }}
-                                >
-                                    Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div 
+                            <p
+                                style={{
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
+                                }}
+                            >
+                                Unearth the most exclusive and unheard-of deals and happy hours at local pubs and bars.
+                            </p>
+                        </div>
+                    </motion.div>
+                    <motion.div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -1052,29 +1056,29 @@ function LandingInfoAreaComponent() {
                         }}
                         whileHover={{scale: 1.02}}
                         whileTap={{scale: 0.98}}
-                        initial={{ opacity: 0, y: '10vh' }}
-                        whileInView={{ opacity: 1, y: '0' }}
-                        viewport={{ once: true }}
-                        transition={{ type: "spring", stiffness: 100, damping: 20, duration: 0.5 }}
-                        >
-                            <img 
-                                src={isMobileScreen ? loyaltyTileMobileImage : loyaltyTileImage} 
-                                alt="loyalty tile"
-                                style={{
-                                    width: isMobileScreen ? '100%' : '80%',
-                                    justifyContent: 'center',
-                                    marginLeft: isMobileScreen ? '0%' : '10%'
-                                    
-                                }}/>
-                            <div style={{
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                                marginLeft: isMobileScreen ? '5%' : '5%',
-                                marginTop: isMobileScreen ? '15%' : '3%',
-                                textAlign: 'left'
-                            }}>
+                        initial={{opacity: 0, y: '10vh'}}
+                        whileInView={{opacity: 1, y: '0'}}
+                        viewport={{once: true}}
+                        transition={{type: "spring", stiffness: 100, damping: 20, duration: 0.5}}
+                    >
+                        <img
+                            src={isMobileScreen ? loyaltyTileMobileImage : loyaltyTileImage}
+                            alt="loyalty tile"
+                            style={{
+                                width: isMobileScreen ? '100%' : '80%',
+                                justifyContent: 'center',
+                                marginLeft: isMobileScreen ? '0%' : '10%'
+
+                            }}/>
+                        <div style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginTop: isMobileScreen ? '15%' : '3%',
+                            textAlign: 'left'
+                        }}>
                                 <span
                                     style={{
                                         fontSize: isMobileScreen ? '7vw' : '3.5vw',
@@ -1087,76 +1091,78 @@ function LandingInfoAreaComponent() {
                                     {isMobileScreen ? <br/> : <span>&nbsp;</span>}
                                     REFERRAL
                                 </span>
-                                <p
-                                    style={{
-                                        fontFamily: 'Roboto',
-                                        fontWeight: '400',
-                                        fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                        lineHeight: isMobileScreen ? '110%' : '120%'
-                                    }}
-                                >
-                                    Create and share party content, review your favourite outlets and refer FOMO to your friends
-                                    to earn points, goodies and freebies
-                                </p>
-                            </div>
-                        </motion.div>
-                        <img
-                            src={FOMOLogo}
-                            alt={"FOMO logo footer"}
-                            style={fomoLogoStyle2}
-                        />
-                        <span
-                            style={{
-                                fontSize: '5.7vw',
-                                color: 'white',
-                                fontFamily: 'Germany Sans',
-                                fontWeight: 'normal',
-                                textAlign: 'center',
-                                marginTop: isMobileScreen ? '5%' : '0%'
-                            }}
-                        >
+                            <p
+                                style={{
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '400',
+                                    fontSize: isMobileScreen ? '5.5vw' : '2vw',
+                                    lineHeight: isMobileScreen ? '110%' : '120%'
+                                }}
+                            >
+                                Create and share party content, review your favourite outlets and refer FOMO to your
+                                friends
+                                to earn points, goodies and freebies
+                            </p>
+                        </div>
+                    </motion.div>
+                    <img
+                        src={FOMOLogo}
+                        alt={"FOMO logo footer"}
+                        style={fomoLogoStyle2}
+                    />
+                    <span
+                        style={{
+                            fontSize: '5.7vw',
+                            color: 'white',
+                            fontFamily: 'Germany Sans',
+                            fontWeight: 'normal',
+                            textAlign: 'center',
+                            marginTop: isMobileScreen ? '5%' : '0%'
+                        }}
+                    >
                             REDEFINING NIGHTLIFE EXPERIENCES
                         </span>
-                        <div
-                            style={{
+                    {!isMobileScreen || !isUserInterestFormEnabled
+                        ? <>
+                            <div style={{
                                 position: 'relative',
                                 marginTop: isMobileScreen ? '35%' : '12%',
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
                                 alignItems: 'center'
-                            }}
-                        >
-                            <img
-                                src={instaxs}
-                                alt="insta small logo"
-                                style={{
-                                    position: 'absolute',
-                                    marginTop: '1%',
-                                    width: isMobileScreen ? '20%' : '15%',
-                                    marginBottom: isMobileScreen ? '45%' : '35%'
-                                }}
-                            />
-                            <span
-                                style={{
-                                    fontSize: isMobileScreen ? '5vw' : '3vw',
-                                    color: 'white',
-                                    fontFamily: 'Roboto',
-                                    fontWeight: '300',
-                                    textAlign: 'center',
-                                    marginTop: isMobileScreen ? '0%' : '3%'
-                                }}
-                            >   
-                                Follow us on Instagram
-                            </span>
-                            <a
-                                href="https://www.instagram.com/thefomo.co/"
-                                target="_blank"  // This will open the link in a new tab
-                                rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
-                                style={{ textDecoration: 'none', 
-                                marginTop: isMobileScreen ? '-3%' : '-2%'
-                            }}  // This will remove the underline typically associated with links
-                            >
+                            }}>
+                                <img
+                                    src={instaxs}
+                                    alt="insta small logo"
+                                    style={{
+                                        position: 'absolute',
+                                        marginTop: '1%',
+                                        width: isMobileScreen ? '20%' : '15%',
+                                        marginBottom: isMobileScreen ? '45%' : '35%'
+                                    }}
+                                />
+                                <span
+                                    style={{
+                                        fontSize: isMobileScreen ? '5vw' : '3vw',
+                                        color: 'white',
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '300',
+                                        textAlign: 'center',
+                                        marginTop: isMobileScreen ? '0%' : '3%'
+                                    }}
+                                >
+                                        Follow us on Instagram
+                                    </span>
+                                <a
+                                    href="https://www.instagram.com/thefomo.co/"
+                                    target="_blank"  // This will open the link in a new tab
+                                    rel="noopener noreferrer"  // Recommended for security when using `target="_blank"`
+                                    style={{
+                                        textDecoration: 'none',
+                                        marginTop: isMobileScreen ? '-3%' : '-2%'
+                                    }}  // This will remove the underline typically associated with links
+                                >
                                 <span
                                     style={{
                                         fontSize: isMobileScreen ? '5vw' : '3vw',
@@ -1168,41 +1174,44 @@ function LandingInfoAreaComponent() {
                                 >
                                     @thefomo.co
                                 </span>
-                            </a>
-                        </div>
-                        <div style={{
-                            position: 'relative',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            marginTop: isMobileScreen ? '35%' : '12%'
-                        }}>
-                            <img
-                            src={whatsappxs}
-                            alt="whatsapp small logo"
-                            style={{
-                                position: 'absolute',
-                                width: isMobileScreen ? '27.5%' : '22%',
-                                paddingBottom: isMobileScreen ? '45%' : '45%'
-                            }}
-                        />
-                        <span
-                            style={{
-                                fontSize: isMobileScreen ? '5vw' : '3vw',
-                                color: 'white',
-                                fontFamily: 'Roboto',
-                                fontWeight: '300',
-                                textAlign: 'center',
-                                marginTop: isMobileScreen ? '8%' : '13%'
-                            }}
-                        >
-                            Contact us at
-                        </span>
-                        <a
-                            href="tel:+919945594437"
-                            style={{ textDecoration: 'none', marginTop: isMobileScreen ? '-4%' : '-1%' }}  // This will remove the underline typically associated with links
-                        >
+                                </a>
+                            </div>
+                            <div style={{
+                                position: 'relative',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                marginTop: isMobileScreen ? '35%' : '12%'
+                            }}>
+                                <img
+                                    src={whatsappxs}
+                                    alt="whatsapp small logo"
+                                    style={{
+                                        position: 'absolute',
+                                        width: isMobileScreen ? '27.5%' : '22%',
+                                        paddingBottom: isMobileScreen ? '45%' : '45%'
+                                    }}
+                                />
+                                <span
+                                    style={{
+                                        fontSize: isMobileScreen ? '5vw' : '3vw',
+                                        color: 'white',
+                                        fontFamily: 'Roboto',
+                                        fontWeight: '300',
+                                        textAlign: 'center',
+                                        marginTop: isMobileScreen ? '8%' : '13%'
+                                    }}
+                                >
+                                        Contact us at
+                                    </span>
+                                <a
+                                    href="tel:+919945594437"
+                                    style={{
+                                        textDecoration: 'none',
+                                        marginTop: isMobileScreen ? '-4%' : '-1%'
+                                    }}  // This will remove the underline typically associated with links
+                                >
                             <span
                                 style={{
                                     fontSize: isMobileScreen ? '5vw' : '3vw',
@@ -1214,35 +1223,37 @@ function LandingInfoAreaComponent() {
                             >
                                 +91 99455 94437
                             </span>
-                        </a>
-                        </div>
-                        <motion.div
-                            style={{
-                                background: '#FFFFFF 0% 0% no-repeat padding-box',
-                                border: '1px solid #707070',
-                                justifyContent: 'center',
-                                fontSize: isMobileScreen ? '4.5vw' : '3vw',
-                                fontFamily: 'Roboto',
-                                fontWeight: '500',
-                                padding: isMobileScreen ? '3% 5% 3% 5%' : '2% 2.5% 2% 2.5%',
-                                marginTop: isMobileScreen ? '30%' : '10%',
-                                width: '40%',
-                                borderRadius: isMobileScreen ? '50px' : '75px',
-                                boxShadow: '0px 3px 15px #00000099',
-                                cursor: 'pointer',
-                                userSelect: 'none'
-                            }}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale : 0.95 }}
-                            onTap={handleFormOpenClick}
-                        >
+                                </a>
+                            </div>
+                            <motion.div
+                                style={{
+                                    background: '#FFFFFF 0% 0% no-repeat padding-box',
+                                    border: '1px solid #707070',
+                                    justifyContent: 'center',
+                                    fontSize: isMobileScreen ? '4.5vw' : '3vw',
+                                    fontFamily: 'Roboto',
+                                    fontWeight: '500',
+                                    padding: isMobileScreen ? '3% 5% 3% 5%' : '2% 2.5% 2% 2.5%',
+                                    marginTop: isMobileScreen ? '30%' : '10%',
+                                    width: '40%',
+                                    borderRadius: isMobileScreen ? '50px' : '75px',
+                                    boxShadow: '0px 3px 15px #00000099',
+                                    cursor: 'pointer',
+                                    userSelect: 'none'
+                                }}
+                                whileHover={{scale: 1.1}}
+                                whileTap={{scale: 0.95}}
+                                onTap={handleFormOpenClick}
+                            >
                             <span>
                                 Join the Party
                             </span>
-                        </motion.div>
-                    </div>
+                            </motion.div>
+                        </> : null}
                 </div>
-                {isUserInterestFormEnabled === true && <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled} />}
+            </div>
+            {isUserInterestFormEnabled === true &&
+                <FormComponent isUserInterestFormEnabled setIsUserInterestFormEnabled={setIsUserInterestFormEnabled}/>}
         </Section>
     )
 }
