@@ -771,9 +771,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? discoverTileMobileImage : discoverTileImage}
                             alt="discover tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '90%',
+                                width: isMobileScreen ? '100%' : '80%',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '5%'
+                                marginLeft: isMobileScreen ? '0%' : '10%'
                             }}
                         />
                         <div style={{
@@ -781,9 +781,8 @@ function LandingInfoAreaComponent() {
                             left: 0,
                             top: 0,
                             marginLeft: isMobileScreen ? '5%' : '5%',
-                            padding: isMobileScreen ? '5% 10%' : '0% 7.5%',
-                            paddingRight: isMobileScreen ? '10%' : '10%',
-                            marginTop: isMobileScreen ? '25%' : '5%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            marginTop: isMobileScreen ? '25%' : '3%',
                             textAlign: 'left'
                         }}>
                                 <span
@@ -827,9 +826,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? partyPackageTileMobileImage : partyPackageTileImage}
                             alt="party package"
                             style={{
-                                width: isMobileScreen ? '100%' : '90%',
+                                width: isMobileScreen ? '100%' : '80%',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '5%'
+                                marginLeft: isMobileScreen ? '0%' : '10%'
 
                             }}/>
                         <div style={{
@@ -837,8 +836,8 @@ function LandingInfoAreaComponent() {
                             left: 0,
                             top: 0,
                             marginLeft: isMobileScreen ? '5%' : '2.5%',
-                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                            marginTop: isMobileScreen ? '10%' : '4%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 12.5%',
+                            marginTop: isMobileScreen ? '10%' : '2%',
                             textAlign: 'left'
                         }}>
                                 <span
@@ -891,19 +890,18 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? fomoTipsTileMobileImage : fomoTipsTileImage}
                             alt="fomo tips tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '90%',
+                                width: isMobileScreen ? '100%' : '80%',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '5%'
+                                marginLeft: isMobileScreen ? '0%' : '10%'
 
                             }}/>
                         <div style={{
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '7.5%',
+                            marginLeft: isMobileScreen ? '5%' : '5%',
                             marginTop: isMobileScreen ? '20%' : '3%',
-                            padding: isMobileScreen ? '5% 10%' : '0% 5%',
-                            paddingRight: isMobileScreen ? '10%' : '10%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             textAlign: 'left'
                         }}>
                                 <span
@@ -951,19 +949,18 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? contentTileMobileImage : contentTileImage}
                             alt="content tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '90%',
+                                width: isMobileScreen ? '100%' : '80%',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '5%'
+                                marginLeft: isMobileScreen ? '0%' : '10%'
 
                             }}/>
                         <div style={{
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '7.5%',
-                            marginTop: isMobileScreen ? '25%' : '4%',
-                            padding: isMobileScreen ? '5% 10%' : '0% 5%',
-                            paddingRight: isMobileScreen ? '10%' : '10%',
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginTop: isMobileScreen ? '25%' : '3%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             textAlign: 'left'
                         }}>
                                 <span
@@ -1012,19 +1009,18 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? dealsTileMobileImage : dealsTileImage}
                             alt="deals tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '90%',
+                                width: isMobileScreen ? '100%' : '80%',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '5%'
+                                marginLeft: isMobileScreen ? '0%' : '10%'
 
                             }}/>
                         <div style={{
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '7.5%',
-                            marginTop: isMobileScreen ? '25%' : '4%',
-                            padding: isMobileScreen ? '5% 10%' : '0% 5%',
-                            paddingRight: isMobileScreen ? '10%' : '10%',
+                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginTop: isMobileScreen ? '25%' : '2.5%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             textAlign: 'left'
                         }}>
                                 <span
@@ -1069,20 +1065,19 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? loyaltyTileMobileImage : loyaltyTileImage}
                             alt="loyalty tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '90%',
+                                width: isMobileScreen ? '100%' : '80%',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '5%'
+                                marginLeft: isMobileScreen ? '0%' : '10%'
 
                             }}/>
                         <div style={{
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            padding: isMobileScreen ? '5% 10%' : '0% 5%',
-                            marginLeft: isMobileScreen ? '5%' : '7.5%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
+                            marginLeft: isMobileScreen ? '5%' : '5%',
                             marginTop: isMobileScreen ? '15%' : '3%',
-                            textAlign: 'left',
-                            paddingRight: isMobileScreen ? '10%' : '10%'
+                            textAlign: 'left'
                         }}>
                                 <span
                                     style={{
