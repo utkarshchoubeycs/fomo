@@ -772,8 +772,7 @@ function LandingInfoAreaComponent() {
                             alt="discover tile"
                             style={{
                                 width: isMobileScreen ? '100vw' : '80vw',
-                                justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '0vw'
+                                justifyContent: 'center'
                             }}
                         />
                         <div style={{
@@ -783,8 +782,7 @@ function LandingInfoAreaComponent() {
                             marginLeft: isMobileScreen ? '5%' : '5%',
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             marginTop: isMobileScreen ? '25%' : '3%',
-                            textAlign: 'left',
-                            overflow: 'contain'
+                            textAlign: 'left'
                         }}>
                                 <span
                                     style={{
@@ -828,8 +826,7 @@ function LandingInfoAreaComponent() {
                             alt="party package"
                             style={{
                                 width: isMobileScreen ? '100vw' : '80vw',
-                                justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '0vw',
+                                justifyContent: 'center'
                             }}/>
                         <div style={{
                             position: 'absolute',
@@ -848,7 +845,7 @@ function LandingInfoAreaComponent() {
                                         lineHeight: isMobileScreen ? '100%' : ''
                                     }}
                                 >
-                                PARTY
+                                    PARTY
                                     {isMobileScreen ? <br/> : <span>&nbsp;</span>}
                                     PACKAGES
                             </span>
@@ -858,7 +855,7 @@ function LandingInfoAreaComponent() {
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '5.5vw' : '2vw',
                                     lineHeight: isMobileScreen ? '110%' : '120%',
-                                    marginTop: isMobileScreen ? '1%' : '0%'
+                                    marginTop: isMobileScreen ? '2.5%' : '0%'
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
@@ -892,9 +889,7 @@ function LandingInfoAreaComponent() {
                             alt="fomo tips tile"
                             style={{
                                 width: isMobileScreen ? '100vw' : '80vw',
-                                justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '0vw'
-
+                                justifyContent: 'center'
                             }}/>
                         <div style={{
                             position: 'absolute',
@@ -951,9 +946,7 @@ function LandingInfoAreaComponent() {
                             alt="content tile"
                             style={{
                                 width: isMobileScreen ? '100vw' : '80vw',
-                                justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '0vw'
-
+                                justifyContent: 'center'
                             }}/>
                         <div style={{
                             position: 'absolute',
@@ -1011,9 +1004,7 @@ function LandingInfoAreaComponent() {
                             alt="deals tile"
                             style={{
                                 width: isMobileScreen ? '100vw' : '80vw',
-                                justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '0vw'
-
+                                justifyContent: 'center'
                             }}/>
                         <div style={{
                             position: 'absolute',
@@ -1067,9 +1058,7 @@ function LandingInfoAreaComponent() {
                             alt="loyalty tile"
                             style={{
                                 width: isMobileScreen ? '100vw' : '80vw',
-                                justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0vw' : '0vw'
-
+                                justifyContent: 'center'
                             }}/>
                         <div style={{
                             position: 'absolute',
@@ -1097,7 +1086,8 @@ function LandingInfoAreaComponent() {
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    lineHeight: isMobileScreen ? '110%' : '120%'
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
+                                    marginTop: isMobileScreen ? '2.5%' : '0%'
                                 }}
                             >
                                 Create and share party content, review your favourite outlets and refer FOMO to your
