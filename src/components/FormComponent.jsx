@@ -97,10 +97,10 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                 color: '#000',
                 zIndex: 10
             }}
-            className="absolute bottom-8 md:bottom-12 mx-9 md:mx-20 lg:mx-28 w-5/6 rounded-3xl"
+            className="absolute bottom-8 md:bottom-12 mx-9 md:mx-20 lg:mx-28 2xl:mx-44 w-5/6 rounded-3xl"
         >
             <div className="flex justify-center -mt-16 md:-mt-24">
-                <img src={logoImage} alt="Logo" className="w-32 h-32 md:w-48 md:h-48"/>
+                <img src={logoImage} alt="Logo" className="w-32 h-32 md:w-48 md:h-48 2xl:w-72 2xl:h-80"/>
             </div>
             <div className='flex flex-col' style={{color: '#fff'}}>
                 <span style={{fontFamily: 'Roboto', fontWeight: '800'}} className='text-lg md:text-2xl justify-center'>Shoot Your Queries</span>
@@ -109,7 +109,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                     <span style={{fontFamily: 'Roboto', fontWeight: '200'}}>Customised party packages, venues & villas in Bangalore and Goa!</span>
                 </div>
 
-                <div className='flex flex-col my-5 mt-8 space-y-4 mx-10 md:mx-32 lg:mx-56'
+                <div className='flex flex-col my-5 mt-8 space-y-4 mx-10 md:mx-32 lg:mx-56 2xl:mx-80'
                      style={{color: '#000', fontFamily: 'Roboto', fontWeight: '400'}}>
                     <div className='flex flex-col md:flex-row items-center'>
                         <div className='flex-1'>
@@ -145,7 +145,7 @@ const FormComponent = ({isUserInterestFormEnabled, setIsUserInterestFormEnabled}
                         </div>
                     </div>
                 </div>
-                <div className='mt-16 mb-10 mr-10 md:mr-32 lg:mr-56 md:mt-2 flex justify-end items-end'>
+                <div className='mt-16 mb-10 mr-10 md:mr-32 lg:mr-56 2xl:mr-80 md:mt-2 flex justify-end items-end'>
                     <motion.button
                         style={{
                             background: 'transparent linear-gradient(107deg, #000000 0%, #7021B2 100%) 0% 0% no-repeat padding-box',
