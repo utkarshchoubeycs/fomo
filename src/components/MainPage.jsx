@@ -771,9 +771,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? discoverTileMobileImage : discoverTileImage}
                             alt="discover tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '80%',
+                                width: isMobileScreen ? '100vw' : '80vw',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '10%'
+                                marginLeft: isMobileScreen ? '0%' : '0vw'
                             }}
                         />
                         <div style={{
@@ -783,7 +783,8 @@ function LandingInfoAreaComponent() {
                             marginLeft: isMobileScreen ? '5%' : '5%',
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             marginTop: isMobileScreen ? '25%' : '3%',
-                            textAlign: 'left'
+                            textAlign: 'left',
+                            overflow: 'contain'
                         }}>
                                 <span
                                     style={{
@@ -826,10 +827,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? partyPackageTileMobileImage : partyPackageTileImage}
                             alt="party package"
                             style={{
-                                width: isMobileScreen ? '100%' : '80%',
+                                width: isMobileScreen ? '100vw' : '80vw',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '10%'
-
+                                marginLeft: isMobileScreen ? '0%' : '0vw',
                             }}/>
                         <div style={{
                             position: 'absolute',
@@ -837,8 +837,8 @@ function LandingInfoAreaComponent() {
                             top: 0,
                             marginLeft: isMobileScreen ? '5%' : '2.5%',
                             padding: isMobileScreen ? '5% 10%' : '0% 12.5%',
-                            marginTop: isMobileScreen ? '10%' : '2%',
-                            textAlign: 'left'
+                            marginTop: isMobileScreen ? '11%' : '2%',
+                            textAlign: 'left',
                         }}>
                                 <span
                                     style={{
@@ -857,7 +857,8 @@ function LandingInfoAreaComponent() {
                                     fontFamily: 'Roboto',
                                     fontWeight: '400',
                                     fontSize: isMobileScreen ? '5.5vw' : '2vw',
-                                    lineHeight: isMobileScreen ? '110%' : '120%'
+                                    lineHeight: isMobileScreen ? '110%' : '120%',
+                                    marginTop: isMobileScreen ? '1%' : '0%'
                                 }}
                             >
                                 Perfect for large group bookings for private and corporate events.
@@ -890,9 +891,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? fomoTipsTileMobileImage : fomoTipsTileImage}
                             alt="fomo tips tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '80%',
+                                width: isMobileScreen ? '100vw' : '80vw',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '10%'
+                                marginLeft: isMobileScreen ? '0%' : '0vw'
 
                             }}/>
                         <div style={{
@@ -949,9 +950,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? contentTileMobileImage : contentTileImage}
                             alt="content tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '80%',
+                                width: isMobileScreen ? '100vw' : '80vw',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '10%'
+                                marginLeft: isMobileScreen ? '0%' : '0vw'
 
                             }}/>
                         <div style={{
@@ -1009,9 +1010,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? dealsTileMobileImage : dealsTileImage}
                             alt="deals tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '80%',
+                                width: isMobileScreen ? '100vw' : '80vw',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '10%'
+                                marginLeft: isMobileScreen ? '0%' : '0vw'
 
                             }}/>
                         <div style={{
@@ -1065,9 +1066,9 @@ function LandingInfoAreaComponent() {
                             src={isMobileScreen ? loyaltyTileMobileImage : loyaltyTileImage}
                             alt="loyalty tile"
                             style={{
-                                width: isMobileScreen ? '100%' : '80%',
+                                width: isMobileScreen ? '100vw' : '80vw',
                                 justifyContent: 'center',
-                                marginLeft: isMobileScreen ? '0%' : '10%'
+                                marginLeft: isMobileScreen ? '0vw' : '0vw'
 
                             }}/>
                         <div style={{
