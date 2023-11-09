@@ -779,7 +779,7 @@ function LandingInfoAreaComponent() {
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginLeft: isMobileScreen ? '0%' : '0%',
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             marginTop: isMobileScreen ? '25%' : '3%',
                             textAlign: 'left'
@@ -832,8 +832,8 @@ function LandingInfoAreaComponent() {
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '2.5%',
-                            padding: isMobileScreen ? '5% 10%' : '0% 12.5%',
+                            marginLeft: isMobileScreen ? '5%' : '0%',
+                            padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             marginTop: isMobileScreen ? '11%' : '2%',
                             textAlign: 'left',
                         }}>
@@ -895,7 +895,7 @@ function LandingInfoAreaComponent() {
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginLeft: isMobileScreen ? '5%' : '0%',
                             marginTop: isMobileScreen ? '20%' : '3%',
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             textAlign: 'left'
@@ -952,7 +952,7 @@ function LandingInfoAreaComponent() {
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginLeft: isMobileScreen ? '5%' : '0%',
                             marginTop: isMobileScreen ? '25%' : '3%',
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             textAlign: 'left'
@@ -1010,7 +1010,7 @@ function LandingInfoAreaComponent() {
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginLeft: isMobileScreen ? '5%' : '0%',
                             marginTop: isMobileScreen ? '25%' : '2.5%',
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
                             textAlign: 'left'
@@ -1065,7 +1065,7 @@ function LandingInfoAreaComponent() {
                             left: 0,
                             top: 0,
                             padding: isMobileScreen ? '5% 10%' : '0% 10%',
-                            marginLeft: isMobileScreen ? '5%' : '5%',
+                            marginLeft: isMobileScreen ? '5%' : '0%',
                             marginTop: isMobileScreen ? '15%' : '3%',
                             textAlign: 'left'
                         }}>
