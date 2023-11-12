@@ -270,7 +270,7 @@ function LandingInfoAreaComponent() {
                         justifyContent: 'center',
                         textAlign: 'left',
                         marginLeft: isMobileScreen ? '12%' : '10%',
-                        marginTop: isMobileScreen ? '10%' : '0%'
+                        marginTop: isMobileScreen ? '0%' : '0%'
                     }}>
                         <motion.span
                             style={{
@@ -1109,9 +1109,9 @@ function LandingInfoAreaComponent() {
                                     fontFamily: 'Roboto',
                                     fontWeight: '500',
                                     padding: isMobileScreen ? '3% 5% 3% 5%' : '2% 2.5% 2% 2.5%',
-                                    marginTop: isMobileScreen ? '30%' : '10%',
+                                    marginTop: isMobileScreen ? '25%' : '10%',
                                     width: '40%',
-                                    borderRadius: isMobileScreen ? '50px' : '75px',
+                                    borderRadius: isMobileScreen ? '30px' : '75px',
                                     boxShadow: '0px 3px 15px #00000099',
                                     cursor: 'pointer',
                                     userSelect: 'none'
