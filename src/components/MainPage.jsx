@@ -1,14 +1,12 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {motion, useScroll} from 'framer-motion'
+import React, {useState, useEffect} from 'react';
+import {motion} from 'framer-motion'
 
-import FourHandsImage from '../assets/P0.webp';
 import FOMOLogo from '../assets/P2.webp';
 
 import mask1Image from '../assets/P3.webp';
 import mask2Image from '../assets/P4.webp';
 import mask3Image from '../assets/P5.webp';
 import cheersImage from '../assets/P6.webp';
-import sunsetLogo from '../assets/P1.webp';
 import mask4Image from '../assets/P7.webp';
 import backgroundImage from '../assets/BG.webp';
 import backgroundImageMobile from '../assets/BG_Mobile.webp';
@@ -31,6 +29,7 @@ import whatsappxs from '../assets/whatsappSmall.webp';
 import instaxs from '../assets/instaSmall.webp';
 
 import FormComponent from './FormComponent';
+import HeroComponent from './HeroComponent';
 
 const parentStyle = {
     display: 'grid',
@@ -88,34 +87,19 @@ function MainPage() {
 
 function LandingInfoAreaComponent() {
 
-    const sunsetViewRef = useRef();
+    
     const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
-    const [isFomoVisible, setIsFomoVisible] = useState(false);
     const [isUserInterestFormEnabled, setIsUserInterestFormEnabled] = useState(false);
 
     const handleFormOpenClick = () => {
         setIsUserInterestFormEnabled(true);
     }
 
-    const {scrollYProgress} = useScroll({
-        target: sunsetViewRef,
-        offset: ["start end", "end end"]
-    });
-
     useEffect(() => {
-        const unsubScrollYProgress = scrollYProgress.on("change", value => {
-
-            const threshold = isMobileScreen ? 0.65 : 0.9;
-
-            if (value <= threshold) setIsFomoVisible(false);
-            else setIsFomoVisible(true);
-        })
-
         if (window.innerWidth < 768) setIsMobileScreen(true);
         else setIsMobileScreen(false);
 
-        return () => unsubScrollYProgress();
-    }, [scrollYProgress, isMobileScreen]);
+    }, [isMobileScreen]);
 
     // Last section animation variant
     const stampVariants = {
@@ -184,49 +168,38 @@ function LandingInfoAreaComponent() {
         }
     };
 
-    const fomoLogoStyle = {
-        position: 'absolute',
-        width: isMobileScreen ? '70vw' : '45vw',
-        marginTop: isMobileScreen ? '75%' : '0%'
-    };
-
     const mask1ImageStyle = {
-        position: 'absolute',
+        position: 'relative',
         width: '100%',
-        height: isMobileScreen ? '' : '10%',
-        marginTop: isMobileScreen ? '50%' : '30%'
+        marginTop: isMobileScreen ? '0%' : '-7.5%'
     }
 
     const mask2ImageStyle = {
-        position: 'absolute',
+        position: 'relative',
         width: '95%',
-        height: isMobileScreen ? '' : '8%',
         marginLeft: '-5%',
-        marginTop: isMobileScreen ? '177%' : '115%'
+        marginTop: isMobileScreen ? '5%' : '-5%'
     }
 
     const mask3ImageStyle = {
-        position: 'absolute',
+        position: 'relative',
         width: '98%',
         marginRight: '-2%',
-        height: isMobileScreen ? '' : '6%',
-        marginTop: isMobileScreen ? '300%' : '197%'
+        marginTop: isMobileScreen ? '7.5%' : '0%'
     }
 
     const cheersImageStyle = {
-        position: 'absolute',
+        position: 'relative',
         width: isMobileScreen ? '70vw' : '40vw',
-        marginTop: isMobileScreen ? '395%' : '259%',
+        marginTop: isMobileScreen ? '0%' : '-2.5%',
         marginRight: isMobileScreen ? '-10%' : '-32%'
     }
 
     const mask4ImageStyle = {
-        position: 'absolute',
+        position: 'relative',
         width: isMobileScreen ? '80%' : '99%',
-        top: '0%',
-        height: isMobileScreen ? '' : '6%',
         marginLeft: isMobileScreen ? '-20%' : '-1%',
-        marginTop: isMobileScreen ? '520%' : '320%',
+        marginTop: isMobileScreen ? '10%' : '0%',
     }
 
     const rightAlignedParagraph = isMobileScreen ? [
@@ -268,19 +241,6 @@ function LandingInfoAreaComponent() {
         marginTop: isMobileScreen ? '20%' : '5%'
     };
 
-    const sunsetLogoStyle = {
-        position: 'absolute',
-        width: isMobileScreen ? '60vw' : '41vw',
-        marginLeft: '0%',
-        marginTop: isMobileScreen ? '70%' : '10%',
-    }
-
-    const fourhandsStyle = {
-        position: 'absolute',
-        width: isMobileScreen ? '95vw' : '58vw',
-        marginTop: isMobileScreen ? '57.5%' : '1%',
-    }
-
     return (
         <Section
             image={isMobileScreen ? backgroundImageMobile : backgroundImage}
@@ -290,84 +250,7 @@ function LandingInfoAreaComponent() {
             }}
         >
             <div style={{...contentStyle}}>
-                <div
-                    ref={sunsetViewRef}
-                    style={{
-                        top: '0%',
-                        position: 'relative',
-                        height: '100vh',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        width: '100%',
-                        left: '0%',
-                        right: '0%',
-                    }}>    
-                        <span style={{
-                            fontSize: isMobileScreen ? '8vw' : '4vw',
-                            color: 'white',
-                            paddingLeft: isMobileScreen ? '15%' : '0%',
-                            paddingRight: isMobileScreen ? '15%' : '0%',
-                            fontFamily: 'Nulshock',
-                            fontWeight: 'bold',
-                            textAlign: 'center',
-                            justifyContent: 'center',
-                            marginTop: isMobileScreen ? '40%' : '2%',
-                            transform: isFomoVisible ? 'transformY(50%)' : 'none',
-                            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                            opacity: isFomoVisible ? 0 : 1
-                        }}>
-                            AS THE SUN GOES DOWN
-                        </span>
-                    <img
-                        src={sunsetLogo}
-                        alt={"Sunset Logo"}
-                        style={{
-                            transition: "all 0.4s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
-                            opacity: isFomoVisible ? 0 : 1,
-                            ...sunsetLogoStyle
-                        }}
-                    />
-                    <img
-                        src={FOMOLogo}
-                        alt={"FOMO Logo"}
-                        style={{
-                            transform: isFomoVisible ? "none" : "translateY(20%)",
-                            transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.45s",
-                            opacity: isFomoVisible ? 1 : 0,
-                            ...fomoLogoStyle
-                        }}
-                    />
-                    <img
-                        src={FourHandsImage}
-                        alt={"4 hands doing cheers"}
-                        style={{
-                            transform: isFomoVisible ? "rotate(180deg)" : "none",
-                            transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
-                            opacity: isFomoVisible ? 0 : 1,
-                            ...fourhandsStyle
-                        }}
-                        exit={{opacity: '0'}}
-                    />
-                    <span
-                        style={{
-                            fontSize: isMobileScreen ? '8vw' : '4vw',
-                            color: 'white',
-                            fontFamily: 'Nulshock',
-                            fontWeight: 'bold',
-                            textAlign: 'center',
-                            justifyContent: 'center',
-                            marginLeft: '10%',
-                            marginRight: '10%',
-                            marginTop: isMobileScreen ? '80%' : '35%',
-                            transform: isFomoVisible ? "none" : "translateY(5vh)",
-                            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.75s",
-                            opacity: isFomoVisible ? 1 : 0,
-                        }}
-                    >
-                            COMES ALIVE!
-                        </span>
-                </div>
+                <HeroComponent />
                 <div style={{
                     top: '0%',
                     marginTop: isMobileScreen ? '235%' : '45%',
@@ -394,7 +277,7 @@ function LandingInfoAreaComponent() {
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: '500',
-                                marginTop: isMobileScreen ? '11%' : '7%'
+                                marginTop: isMobileScreen ? '0%' : '7%'
                             }}
                             initial={{opacity: 0, y: '20vh'}}
                             whileInView={{opacity: 1, y: '0'}}
@@ -471,7 +354,7 @@ function LandingInfoAreaComponent() {
                             paddingRight: isMobileScreen ? '10%' : '0%',
                             textAlign: 'right',
                             lineHeight: isMobileScreen ? '160%' : '',
-                            marginTop: isMobileScreen ? '75%' : '67.5%',
+                            marginTop: isMobileScreen ? '10%' : '4%',
                             marginRight: isMobileScreen ? '-5%' : '-30%'
                         }}
                     >
@@ -513,7 +396,7 @@ function LandingInfoAreaComponent() {
                             fontFamily: 'Roboto',
                             fontWeight: isMobileScreen ? '400' : '500',
                             textAlign: 'left',
-                            marginTop: isMobileScreen ? '75%' : '52%',
+                            marginTop: isMobileScreen ? '0%' : '-5%',
                             marginLeft: isMobileScreen ? '0%' : '-16%',
                             lineHeight: isMobileScreen ? '160%' : '',
                         }}
@@ -554,7 +437,7 @@ function LandingInfoAreaComponent() {
                         display: 'flex',
                         flexDirection: 'column',
                         textAlign: 'left',
-                        marginTop: isMobileScreen ? '40%' : '20%',
+                        marginTop: isMobileScreen ? '15%' : '-5%',
                         marginLeft: isMobileScreen ? '0%' : '-10%'
                     }}>
                         <motion.span
@@ -563,7 +446,7 @@ function LandingInfoAreaComponent() {
                                 color: 'white',
                                 fontFamily: 'Nulshock',
                                 fontWeight: 'bold',
-                                marginTop: '39%',
+                                marginTop: '0%',
                             }}
                             initial={{opacity: 0, y: '20vh'}}
                             whileInView={{opacity: 1, y: '0'}}
@@ -634,7 +517,7 @@ function LandingInfoAreaComponent() {
                         flexDirection: 'column',
                         textAlign: 'left',
                         marginLeft: isMobileScreen ? '-10%' : '-25%',
-                        marginTop: isMobileScreen ? '55%' : '15%'
+                        marginTop: isMobileScreen ? '0%' : '-10%'
                     }}>
                         <motion.span
                             style={{
@@ -642,7 +525,7 @@ function LandingInfoAreaComponent() {
                                 color: 'white',
                                 fontFamily: 'Roboto',
                                 fontWeight: isMobileScreen ? '400' : '500',
-                                marginTop: '35%'
+                                marginTop: '0%'
                             }}
                             initial={{opacity: 0, y: '20vh'}}
                             whileInView={{opacity: 1, y: '0'}}
@@ -714,8 +597,8 @@ function LandingInfoAreaComponent() {
                             fontWeight: 'bold',
                             textAlign: 'center',
                             paddingRight: isMobileScreen ? '0%' : '8%',
-                            marginTop: '55%',
-                            marginBottom: '15%',
+                            marginTop: '7.5%',
+                            marginBottom: '10%',
                             marginLeft: isMobileScreen ? '0%' : '12%',
                             lineHeight: isMobileScreen ? '105%' : ''
                         }}
