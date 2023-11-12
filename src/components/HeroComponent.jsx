@@ -54,15 +54,12 @@ const HeroComponent = () => {
         <div
             ref={sunsetViewRef}
             style={{
-                top: '0%',
                 position: 'relative',
                 height: '100vh',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                width: '100%',
-                left: '0%',
-                right: '0%',
+                width: '100%'
             }}>    
                 <span style={{
                     fontSize: isMobileScreen ? '8vw' : '4vw',

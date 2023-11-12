@@ -171,7 +171,7 @@ function LandingInfoAreaComponent() {
     const mask1ImageStyle = {
         position: 'relative',
         width: '100%',
-        marginTop: isMobileScreen ? '0%' : '-7.5%'
+        marginTop: isMobileScreen ? '-8.5%' : '-7.5%'
     }
 
     const mask2ImageStyle = {
@@ -185,7 +185,7 @@ function LandingInfoAreaComponent() {
         position: 'relative',
         width: '98%',
         marginRight: '-2%',
-        marginTop: isMobileScreen ? '7.5%' : '0%'
+        marginTop: isMobileScreen ? '10%' : '0%'
     }
 
     const cheersImageStyle = {
@@ -269,7 +269,8 @@ function LandingInfoAreaComponent() {
                         flexDirection: 'column',
                         justifyContent: 'center',
                         textAlign: 'left',
-                        marginLeft: isMobileScreen ? '12%' : '10%'
+                        marginLeft: isMobileScreen ? '12%' : '10%',
+                        marginTop: isMobileScreen ? '10%' : '0%'
                     }}>
                         <motion.span
                             style={{
@@ -354,7 +355,7 @@ function LandingInfoAreaComponent() {
                             paddingRight: isMobileScreen ? '10%' : '0%',
                             textAlign: 'right',
                             lineHeight: isMobileScreen ? '160%' : '',
-                            marginTop: isMobileScreen ? '10%' : '4%',
+                            marginTop: isMobileScreen ? '12.5%' : '4%',
                             marginRight: isMobileScreen ? '-5%' : '-30%'
                         }}
                     >
