@@ -1110,7 +1110,6 @@ function LandingInfoAreaComponent() {
                                     fontWeight: '500',
                                     padding: isMobileScreen ? '3% 5% 3% 5%' : '2% 2.5% 2% 2.5%',
                                     marginTop: isMobileScreen ? '25%' : '10%',
-                                    width: '40%',
                                     borderRadius: isMobileScreen ? '30px' : '75px',
                                     boxShadow: '0px 3px 15px #00000099',
                                     cursor: 'pointer',
