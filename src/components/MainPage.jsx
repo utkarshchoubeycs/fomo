@@ -1081,7 +1081,7 @@ function LandingInfoAreaComponent() {
                                         Contact us at
                                     </span>
                                 <a
-                                    href="tel:+919945594437"
+                                    href="tel:+919845034133"
                                     style={{
                                         textDecoration: 'none',
                                         marginTop: isMobileScreen ? '-4%' : '-1%'
@@ -1096,7 +1096,7 @@ function LandingInfoAreaComponent() {
                                     textAlign: 'center',
                                 }}
                             >
-                                +91 99455 94437
+                                +91 98450 34133
                             </span>
                                 </a>
                             </div>
